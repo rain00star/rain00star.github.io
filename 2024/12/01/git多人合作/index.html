@@ -315,28 +315,20 @@
               <div class="markdown-body">
                 
                 <p>[TOC]</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1UB4y1Z7Jg/?spm_id_from=333.337.search-card.all.click&vd_source=a8de5b20aced8e4ba8bfa351984edc3b">https://www.bilibili.com/video/BV1UB4y1Z7Jg/?spm_id_from=333.337.search-card.all.click&amp;vd_source=a8de5b20aced8e4ba8bfa351984edc3b</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1UB4y1Z7Jg/?spm_id_from=333.337.search-card.all.click&amp;vd_source=a8de5b20aced8e4ba8bfa351984edc3b">https://www.bilibili.com/video/BV1UB4y1Z7Jg/?spm_id_from=333.337.search-card.all.click&amp;vd_source=a8de5b20aced8e4ba8bfa351984edc3b</a></p>
 <h4 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h4><p>远程仓库克隆时，Git默认把本地的master分支和远程的master分支对应</p>
 <p>仓库克隆命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git clone (ssh链接)<br></code></pre></td></tr></table></figure>
-
 <p>查看分支：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git branch<br></code></pre></td></tr></table></figure>
-
 <p>查看远程仓库信息：(仓库分支)</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git remote -v<br></code></pre></td></tr></table></figure>
-
 <h4 id="推送分支-新建分支"><a href="#推送分支-新建分支" class="headerlink" title="推送分支(新建分支)"></a>推送分支(新建分支)</h4><p>命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git push (仓库名) (分支名)<br></code></pre></td></tr></table></figure>
-
 <h3 id="在dev分支上协作开发，抓取远程分支"><a href="#在dev分支上协作开发，抓取远程分支" class="headerlink" title="在dev分支上协作开发，抓取远程分支"></a>在dev分支上协作开发，抓取远程分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git checkout -b dev<br></code></pre></td></tr></table></figure>
-
 <h4 id="提交文件"><a href="#提交文件" class="headerlink" title="提交文件"></a>提交文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git add &quot;xxx&quot;<br></code></pre></td></tr></table></figure>
-
 <h4 id="推送本地"><a href="#推送本地" class="headerlink" title="推送本地"></a>推送本地</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git commit -m &quot;xxx&quot;<br></code></pre></td></tr></table></figure>
-
 <h4 id="推送远程"><a href="#推送远程" class="headerlink" title="推送远程"></a>推送远程</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git push (仓库名) (分支名)<br></code></pre></td></tr></table></figure>
-
 <p>如果远程代码更新，需要先<code>git pull</code> 解决冲突</p>
 <p>Pycharm提供操作快捷键，比较方便。</p>
 
