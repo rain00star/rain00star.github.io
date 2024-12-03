@@ -1,0 +1,1758 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.jpg">
+  <link rel="icon" href="/img/icon.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="rainstar">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="0.9.75 (beta) 18, Aug  Add Slovak language thanks to Petr Mátl. Add syntax highlight for turtle. Add move table row &#x2F; column related operations in main menu. Improve compatibility with GFM for a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RainStar&#39;s Blog">
+<meta property="og:url" content="https://rain00star.github.io/2024/12/03/algorithm-enhance/Typora/resources/app/Docs/Change%20Log/index.html">
+<meta property="og:site_name" content="RainStar&#39;s Blog">
+<meta property="og:description" content="0.9.75 (beta) 18, Aug  Add Slovak language thanks to Petr Mátl. Add syntax highlight for turtle. Add move table row &#x2F; column related operations in main menu. Improve compatibility with GFM for a">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-12-03T13:23:51.862Z">
+<meta property="article:modified_time" content="2024-12-03T13:23:51.905Z">
+<meta property="article:author" content="rainstar">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>RainStar&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"rain00star.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"noNmr9chT20dHBom1tUWnaWV-gzGzoHsz","app_key":"al8tnZ6DMkS0VQ1cKWpSbLvr","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>RainStar</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Links</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/frontback.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-12-03 21:23" pubdate>
+          December 3, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="beta">0.9.75 (beta)</h2>
+<p>18, Aug</p>
+<ol type="1">
+<li>Add Slovak language thanks to Petr Mátl.</li>
+<li>Add syntax highlight for turtle.</li>
+<li>Add move table row / column related operations in main menu.</li>
+<li>Improve compatibility with GFM for auto generated anchor names.</li>
+<li>Fix some settings not updated in preferences panel.</li>
+</ol>
+<h2 id="beta-1">0.9.74 (beta)</h2>
+<p>08, Aug</p>
+<ol type="1">
+<li>Remove unnecessary <code>&lt;span&gt;</code> from exported
+HTML.</li>
+<li>Fix issue Home / End key.</li>
+</ol>
+<h2 id="beta-2">0.9.73 (beta)</h2>
+<p>03, Aug</p>
+<p><a target="_blank" rel="noopener" href="https://support.typora.io/What&#39;s-New-0.9.73/">Detail</a></p>
+<ol type="1">
+<li>Redesign of preference panels.</li>
+<li>Add table operations in menu bar, move "image" related operation to
+"Format" menu.</li>
+<li>Add smalltalk language syntax.</li>
+<li>Use new app update component on Windows.</li>
+<li>Fix auto reload not working.</li>
+<li>Improve mermaid gantt rendering.</li>
+<li>Support auto escape image path when export.</li>
+<li>Add pre-defined settings for reading speed.</li>
+<li>Fix bug that sidebar folder will not be kept after move to
+trash.</li>
+<li>Fix bugs about export HTML without styles.</li>
+<li>Fix bug that global search cannot contain special keys like
+"#".</li>
+</ol>
+<h2 id="beta-3">0.9.72 (beta)</h2>
+<p>21, Jun</p>
+<ol type="1">
+<li>Fix bug that user cannot input after confirm or error dialog pops
+up.</li>
+<li>Fix bug about typewriter mode.</li>
+<li>Fix bug that open folder not working.</li>
+<li>Fix bug about internal links on export.</li>
+</ol>
+<h2 id="beta-4">0.9.71 (beta)</h2>
+<p>20, Jun</p>
+<ol type="1">
+<li>[Dev] Upgrade to Electron to 5.0 for better performance. Linux 32bit
+is no longer supported.</li>
+<li>Improve URL parse logic.</li>
+<li>Add Gherkin language syntax highlight.</li>
+<li>Support Catalan language.</li>
+<li>Support “Descending” order when sorting in file panel.</li>
+<li>UI Improvement on Night theme.</li>
+<li>Improve search and quick open on unicode characters.</li>
+<li>Improve logics about file save and multi-window management.</li>
+<li>Unify default rules for line break options.</li>
+<li>Fix some bugs on file side panel.</li>
+<li>Fix some bugs on PDF export. Zoom oversize mermaid diagrams, math
+blocks and tables on exported PDF.</li>
+<li>Fix spellcheck on pt-PT.</li>
+<li>Fix bug that inline math not get updated sometimes.</li>
+<li>Fix quote and brackets when using Chinese IME.</li>
+<li>Fix bug that <code>$</code> get omitted on headings.</li>
+<li>Fix some bugs about cursor jump on click or on Shift + Enter.</li>
+<li>Fix bugs about <code>&amp;</code> cannot be escaped in some
+cases.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-5">0.9.70 (beta)</h2>
+<p>20, Apr</p>
+<ol type="1">
+<li>Fix wrong cursor position calculation logic on lines contain
+emoji.</li>
+<li>Fix quote auto pair issue.</li>
+</ol>
+<h2 id="beta-6">0.9.69 (beta)</h2>
+<p>19, Apr</p>
+<ol type="1">
+<li>Fix security bug on export and editing.</li>
+<li>Add ASN.1 syntax highlight support.</li>
+<li>Fix no default theme is loaded on first launch.</li>
+<li>Improve copy &amp; paste logic.</li>
+<li>Improve search function, now search will not ignore whitespace.</li>
+<li>Add error message for flowchart when rendering failed.</li>
+<li>Fix image operations, support <code>align</code> attribute for
+<code>img</code> tag.</li>
+<li>Fix emoji auto complete.</li>
+<li>Fix bug that math not rendered on open sometimes, fix cursor issues
+relates to inline math.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-7">0.9.68 (beta)</h2>
+<p>20, Mar, 2019</p>
+<ol type="1">
+<li>Fix security issues.</li>
+<li>Fix regression bug on side bar, edit, images, links related
+functions.</li>
+<li>Add syntax highlight for SPARQL and Crystal.</li>
+</ol>
+<h2 id="beta-8">0.9.67 (beta)</h2>
+<p>16, Mar, 2019</p>
+<ol type="1">
+<li>Fix export HTML not working.</li>
+<li>Improve Pandoc version detect logic.</li>
+</ol>
+<h2 id="beta-9">0.9.66 (beta)</h2>
+<p>15, Mar, 2019</p>
+<p><a target="_blank" rel="noopener" href="https://support.typora.io/What&#39;s-New-0.9.66/">Detail</a></p>
+<ol type="1">
+<li>Fix security issues.</li>
+<li>Fix unnecessary escape in outline.</li>
+<li>Fix click outline will cause content jumping.</li>
+<li>Fix hide status bar not working.</li>
+<li>Add language Vietnamese by <a target="_blank" rel="noopener" href="https://github.com/1234hdpa">1234hdpa</a>.</li>
+<li>Remove options for emoji autocomplete, it is now enabled by
+default.</li>
+<li>Update flowchart library and fix issues related to flowchart.</li>
+<li>Add options to configure reading speed.</li>
+<li>Add <code>oz</code> ad supported language for syntax highlight.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-10">0.9.65 (beta)</h2>
+<p>18, Feb, 2019</p>
+<ol type="1">
+<li>Save last chosen encodings for file.</li>
+<li>Add Indonesia language support by <a target="_blank" rel="noopener" href="https://github.com/snatalius">snatalius</a>.</li>
+<li>Allow drag &amp; drop to insert file links quickly.</li>
+<li>Fix XSS for inline math, add security check for area tag.</li>
+<li>Fix math block rendering issue.</li>
+<li>Fix footnotes numbering on export.</li>
+<li>Improve compatibility on Linux OS.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-11">0.9.64 (beta)</h2>
+<p>25, Jan, 2019</p>
+<ol type="1">
+<li>Fix an XSS issue.</li>
+<li>Fix word count in selection in word count panel.</li>
+</ol>
+<h2 id="beta-12">0.9.63 (beta)</h2>
+<p>25, Jan, 2019</p>
+<p><a target="_blank" rel="noopener" href="https://support.typora.io/What&#39;s-New-0.9.63/">Detail</a></p>
+<ol type="1">
+<li>Improve open quickly.</li>
+<li>Support “Copy without Theme Styling”.</li>
+<li>Add recent folders in jump list.</li>
+<li>Show full path on file tree when hover on items.</li>
+<li>Improved Japanese and Hrvatski translation.</li>
+<li>Fix bugs on parsing Markdown content.</li>
+<li>Improve math support and update to mhchem 3.3 for Chemistry
+support.</li>
+<li>Fix button actions and links for spellcheck panel.</li>
+<li>Add basic context menu in source code mode.</li>
+<li>Fix bugs cursor jump when input block quotes or task lists.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-13">0.9.62 (beta)</h2>
+<p>10, Jan, 2019</p>
+<ol type="1">
+<li>Fix bugs on math input and rendering.</li>
+<li>Other regression bug fix.</li>
+</ol>
+<h2 id="beta-14">0.9.61 (beta)</h2>
+<p>08, Jan, 2019</p>
+<ol type="1">
+<li>Support global search in opened folder.</li>
+<li>Support filter in outline panel.</li>
+<li>Support search in preferences panel.</li>
+<li>Support select default unit for word count (character count, line
+counts, etc).</li>
+<li>Support move file by drag &amp; drop in file tree panel, support
+duplicate file in file panel.</li>
+<li>Add Portuguese (Portugal) support by <a target="_blank" rel="noopener" href="https://github.com/jcamilo93">camilo93</a>, add Galician support
+by <a target="_blank" rel="noopener" href="https://github.com/nunhes">nunhes</a>.</li>
+<li>Add COLOL as supported code highlight language.</li>
+<li>Fix text in menu bar is invisible on Linux.</li>
+<li>Update MathJax Rendering engine to 2.7.5</li>
+<li>Fix word count bug when document contains list.</li>
+<li>Support disable GPU acceleration when launch Typora.</li>
+<li>Add warnings for file move/delete, add options to reset all warning
+dialogs.</li>
+<li>Fix an SSX issue when rendering <code>&lt;img&gt;</code>.</li>
+<li>Fix bugs about math block in exported PDF/docx</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-15">0.9.60 (beta)</h2>
+<p>27, Oct, 2018</p>
+<ol type="1">
+<li>Fix rename or move file would make window unresponsive.</li>
+<li>Fix shift+ctrl+v will trigger paste twice.</li>
+<li>Fix cannot open markdown file by double click on Linux.</li>
+<li>Fix links relates to spellcheck.</li>
+<li>Fix some content cannot be parsed in limited time.</li>
+<li>Fix inline math would get corrupt or wrong cursor after
+editing.</li>
+</ol>
+<h2 id="beta-16">0.9.59 (beta)</h2>
+<p>23, Oct, 2018</p>
+<p><a target="_blank" rel="noopener" href="https://support.typora.io/What&#39;s-New-0.9.59/">Detail</a></p>
+<ol type="1">
+<li>Support spellcheck for non-English languages.</li>
+<li>Save learned spelling and support unlearn spelling from context
+menu.</li>
+<li>Add menu item to open file properties on Windows.</li>
+<li>Fix “preserve line break” get ignore when export as PDF. Fix
+incorrect modify/create time for exported PDF file.</li>
+<li>Add warnings when user enter typewriter/focus mode in their first
+time.</li>
+<li>Fix bug about cursor and update issues for math.</li>
+<li>Improve typing response, improve scroll performance and slightly
+improve speed for opening document.</li>
+<li>Improve behaviors for “indent first line”.</li>
+<li>Fix bug that image storage folder not updated after open new
+file.</li>
+<li>Add sort function for file tree in sidebar.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-17">0.9.58 (beta)</h2>
+<p>12, Sep, 2018</p>
+<ol type="1">
+<li>Add options for custom image storage folder.</li>
+<li>Fix a critical bug triggered when pasting contents into tables.</li>
+<li>Fix bugs relates to loading remote images.</li>
+<li>Fix bugs that <code>&lt;source&gt;</code> tag inside
+<code>&lt;video&gt;</code> does not work.</li>
+<li>Fix a security issue when loading local iframes. (Special Thanks to
+Zhiyang Zeng(<span class="citation" data-cites="Wester">@Wester</span>)
+from Tencent Blade Team).</li>
+<li>Fix bugs about pasting into lists.</li>
+<li>Fix save failure when user does not have a "document" folder.</li>
+<li>Auto hide menubar when entering full screen mode.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-18">0.9.57 (beta)</h2>
+<p>30, Aug, 2018</p>
+<ol type="1">
+<li>Fix image export.</li>
+<li>Fix crashment on glibc 2.28. (Linux)</li>
+<li>Fix copy math into MS Word (Windows).</li>
+<li>Fix parse error for lists and links.</li>
+<li>Fix outline not updated after switch documents.</li>
+<li>Improve paste behavior.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-19">0.9.56 (beta)</h2>
+<p>22, Aug, 2018</p>
+<ol type="1">
+<li>Fix some bugs on previous version.</li>
+</ol>
+<h2 id="beta-20">0.9.54 (beta)</h2>
+<p>19, Aug, 2018</p>
+<p><a target="_blank" rel="noopener" href="http://support.typora.io/What&#39;s-New-0.9.54/">Detail</a></p>
+<ol type="1">
+<li>support preview for inline HTML, support HTML blocks.</li>
+<li>Support all common HTML tags including <code>video</code>,
+<code>iframe</code>, <code>kbd</code>, <code>details</code>,
+<code>ruby</code>, etc.</li>
+<li>Change a few default shortcut keys.</li>
+<li>Follow CommonMark’s standard for parsing line break. Now line break
+is aligned in inline styles.</li>
+<li>Improve UI for table, math, search panel, etc. And fix some CSS
+issues.</li>
+<li>Add Swedish UI. (Thanks to <a target="_blank" rel="noopener" href="https://github.com/FelixZY"><span class="citation" data-cites="FelixZY">@FelixZY</span></a>)</li>
+<li>Improve paste logic, and support parsing/converting more HTML
+contents, include gist snip, iframe embed, etc.</li>
+<li>Fix <code>Return</code> key and related undo/redo on tables.</li>
+<li>Fix rendering bugs when <code>Indent first line of paragraph</code>
+is enabled.</li>
+<li>Math block with Pandoc style attributes can be still parsed as Math
+block.</li>
+<li>Search text will begin from current caret position, instead of start
+from document beginning.</li>
+<li>Fix bug that sometimes Typora window is invisible on start.</li>
+<li>Fix typo for language <code>sqlite</code>, add <code>tsx</code>,
+<code>stylus</code>, <code>julia</code> syntax highlight.</li>
+<li>Language and other attribute of code fences will be included when
+export using Pandoc.</li>
+<li>Support HTML Entity Number.</li>
+<li>Improve logic about picking correct smart quotes. Fix smart pants
+not exported when using Pandoc.</li>
+<li>Fix window will scroll to incorrect position when user input code or
+math block.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-21">0.9.53 (beta)</h2>
+<p>1, Jun, 2018</p>
+<ol type="1">
+<li>Fix Markdown line break does not work.</li>
+<li>Fix bugs relates to SmartyPants.</li>
+<li>Fix return key on tables.</li>
+<li>Fix mirror styles and typos.</li>
+<li>Remove default shortcut keys of "typewriter" mode to prevent user
+from activating it accidentally and does not know how to exit.</li>
+</ol>
+<h2 id="beta-22">0.9.52 (beta)</h2>
+<p>27, May, 2018</p>
+<ol type="1">
+<li>Add Smart Punctuation (SmartyPants) Support.</li>
+<li>Support remap unicode punctuations on parse. <a target="_blank" rel="noopener" href="http://support.typora.io/SmartyPants">detail</a>.</li>
+<li>Fix bugs on saving process.</li>
+<li>Fix bugs that some options are not saved after change.</li>
+<li>Fix bugs and improve UI of table functions.</li>
+<li>Fix bug that styles inside underline (<code>&lt;u&gt;</code>) are
+not rendered.</li>
+<li>Fix undo/redo logic when changing styles or in source code
+mode.</li>
+<li>Add syntax highlight for pseudocode.</li>
+<li>Add Hungarian interface. Improve labels and translations.</li>
+<li>Improve URL detect logic.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-23">0.9.51 (beta)</h2>
+<p>15, May, 2018</p>
+<ol type="1">
+<li>Add Croatian language.</li>
+<li>Add Dependency on deb package.</li>
+<li>Fix logic when quiting and open Typora.</li>
+<li>other bug fix.</li>
+</ol>
+<h2 id="beta-24">0.9.50 (beta)</h2>
+<p>4, May, 2018</p>
+<ol type="1">
+<li>Fix a bug that some code fences cannot be edited.</li>
+</ol>
+<h2 id="beta-25">0.9.49 (beta)</h2>
+<p>2, May, 2018</p>
+<ol type="1">
+<li>Add option to reopen last files/folders or open custom folders on
+start up.</li>
+<li>Add 'Save All' command in menubar.</li>
+<li>Allow escape <code>^</code> when superscript is enabled.</li>
+<li>Better select word, delete word and triple click support.</li>
+<li>Bug fix on typing in inline math.</li>
+<li>Support launch flag in advanced setting.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-26">0.9.48 (beta)</h2>
+<p>3, Apr, 2018</p>
+<ol type="1">
+<li>Add options for preserve or ignore whitespace/single line break when
+editing or export.</li>
+<li>Update mermaid support and re-enable html labels in mermaid
+diagram.</li>
+<li>Use colored emoji on Windows.</li>
+<li>Fix bugs on ordered lists.</li>
+<li>Improve logic for auto pair.</li>
+<li>Remember typewriter/focus mode on window close.</li>
+<li>Improve syntax highlight logic in source code mode.</li>
+<li>Fix bugs on editing files in One Drive.</li>
+<li>Re-open unsaved content when restart Typora after crash.</li>
+<li>Add Dutch language support.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-27">0.9.47 (beta)</h2>
+<p>14, Mar, 2018</p>
+<ol type="1">
+<li>Fix insert table or headins from enu not work in v0.9.46</li>
+</ol>
+<h2 id="beta-28">0.9.46 (beta)</h2>
+<p>13, Mar, 2018</p>
+<ol type="1">
+<li>Task lists follows GFM's spec (<a target="_blank" rel="noopener" href="https://github.com/typora/typora-issues/issues/643">#643</a>). You
+may need to update your theme if your theme are downloaded.</li>
+<li>Support disable auto-warp for code fences.</li>
+<li>Support paste image directly. Add default actions and quick actions
+when insert images.</li>
+<li>New language supports: German by <a target="_blank" rel="noopener" href="https://github.com/rcvd">rcvd</a> and Gert, Czech by <a target="_blank" rel="noopener" href="https://github.com/byDave251">byDave251</a>, Greek by <a target="_blank" rel="noopener" href="https://github.com/typora/kiriakosv">kiriakosv</a>.</li>
+<li>Add <code>mediawiki-texvc</code> support for math.</li>
+<li>Improve UI for mermaid and sequence.</li>
+<li>Fix bug for copy and resize table.</li>
+<li>Improve export quotation for math equations for PDF, ePub and image
+output.</li>
+<li>Fix parsing errors for blockquote and emphasis.</li>
+<li>Fix bugs relates to Chinese IME.</li>
+<li>Other bug fix and improvements.</li>
+</ol>
+<h2 id="beta-29">0.9.44 (beta)</h2>
+<p>9, Feb, 2018</p>
+<ol type="1">
+<li>Fix bug that sometimes sidebar cannot be hide completely after
+resize.</li>
+<li>Use background on diagram nodes, fix hyperlink on flowchart cannot
+be opened.</li>
+<li>Improve URL auto detect logic.</li>
+<li>Fix <code>****</code> cannot be parsed as
+<code>&lt;hr&gt;</code>.</li>
+<li>Fix bug relates to context menu.</li>
+<li>Other mirror fix.</li>
+</ol>
+<h2 id="beta-30">0.9.43 (beta)</h2>
+<p>6, Feb, 2018</p>
+<ol type="1">
+<li>New language support: Spanish by <a target="_blank" rel="noopener" href="https://github.com/thepiratejester">thepiratejester</a>, French by
+<a target="_blank" rel="noopener" href="https://github.comMOrdinateur">MOrdinateur</a>, Russian by <a target="_blank" rel="noopener" href="https://github.com/dragomano">dragomano</a>, Japanese by <a target="_blank" rel="noopener" href="https://github.com/tomochan001">tomochan001</a>, Portuguese by <a target="_blank" rel="noopener" href="https://github.com/akz92">akz92</a>.</li>
+<li>Improve parse logic for block quotes, lists, and tables.</li>
+<li>Support custom tab size for code blocks. Add options for default
+ordered list styles.</li>
+<li>Improve compatibility with net drivers.</li>
+<li>Fix <code>&lt;br&gt;</code> not exported.</li>
+<li>Fix scrollbar on sidebar cannot be dragged.</li>
+<li>Fix a bug that window may become invisible on start up
+sometimes.</li>
+<li>Add syntax highlight for <code>SAS</code>.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-31">0.9.42 (beta)</h2>
+<p>25, Jan, 2018</p>
+<ol type="1">
+<li>Improve Simplified Chinese translation by <a target="_blank" rel="noopener" href="https://github.com/NoDotCat">NoDotCat</a>, <a target="_blank" rel="noopener" href="https://github.com/HowardTangHw">HowardTangHw</a>, <a target="_blank" rel="noopener" href="https://github.com/Emphasia">Emphasia</a></li>
+<li>More language support: Traditional Chinese translation (by <a target="_blank" rel="noopener" href="https://github.com/cyberrob">cyberrob</a>), Polish translation (by
+<a target="_blank" rel="noopener" href="https://github.com/iriusturar">iriusturar</a>), Korean
+translation (by <a target="_blank" rel="noopener" href="https://github.com/ryush00">ryush00</a>, <a target="_blank" rel="noopener" href="https://github.com/marigold9124">marigold9124</a>), Italian
+translation (by <a target="_blank" rel="noopener" href="https://github.com/starise">starise</a>, <a target="_blank" rel="noopener" href="https://github.com/jethro17">jethro17</a>).</li>
+<li>Support resize on sidebar.</li>
+<li>Add Privacy Policy.</li>
+<li>Support quick open.</li>
+<li>Fix some bugs for table editing.</li>
+<li>Fix a bug that highlight, superscript, subscript, image and inline
+math is not rendered in outline.</li>
+<li>Fix a bug that Typora may be opened in nonexistent display when
+multiple displays are used.</li>
+<li>Some performance improvement on opening file.</li>
+<li>Fix a bug that flowchart is not correctly rendered when Windows
+style line ending is used.</li>
+<li>Equation numbering is support after export as docx format for some
+math formula.</li>
+<li>Fix a word count bug for Korean language.</li>
+<li>Fix bugs on list editing.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-32">0.9.41 (beta)</h2>
+<p>14, Dec, 2017</p>
+<ol type="1">
+<li>Add Chinese user interface.</li>
+<li>Tables with long content supports scroll horizontally.</li>
+<li>Improve PDF export, fix bugs relates to PDF export.</li>
+<li>Add <a target="_blank" rel="noopener" href="http://support.typora.io/Strict-Mode/">strict mode</a>
+option for parsing markdown.</li>
+<li>Fix bug that cannot open correct link address for hyperlink
+syntax.</li>
+<li>Some fix bug about markdown parse logic.</li>
+<li>Fix bugs about <code>[TOC]</code> .</li>
+<li>Fix a bug that some options in advanced settings are not
+applied.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-33">0.9.38 (beta)</h2>
+<p>29, Oct, 2017</p>
+<ol type="1">
+<li>Support <code>&lt;br/&gt;</code> tag in live rendering.</li>
+<li>Update emoji library to cover emojis introduced during Unicode
+7.0~10.0</li>
+<li>Add syntax highlight for twig.</li>
+<li>Improve auto indent in code fences</li>
+<li>Fix bug that file attributes are reset after save.</li>
+<li>Fix bugs on PDF export.</li>
+<li>Fix a bug that YAML does not follow CRLF preference.</li>
+<li>Fix a bug that user cannot open folder from command line
+sometime.</li>
+<li>Fix window restore logic relates to multiple screens.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-34">0.9.37 (beta)</h2>
+<p>25, Sep, 2017</p>
+<ol type="1">
+<li>Support show word count in selection.</li>
+<li>Add syntax highlight for scheme.</li>
+<li>Support natural sort in files panel.</li>
+<li>Fix task list cannot be copy/pasted correctly.</li>
+<li>Fix code fences padding on PDF export.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-35">0.9.36 (beta)</h2>
+<p>26, Aug, 2017</p>
+<ol type="1">
+<li>Fix a bug that user cannot jump using [TOC].</li>
+<li>Fix on exported HTML, <code>@include-when-export</code> failed to
+convert as <code>&lt;link&gt;</code>.</li>
+</ol>
+<h2 id="beta-36">0.9.34 (beta)</h2>
+<p>24, Aug, 2017</p>
+<ol type="1">
+<li>Add menu items for changing task list status.</li>
+<li>Add syntax highlight for makefile, tcl.</li>
+<li>Fix mermaid gantt cannot be rendered.</li>
+<li>Fix backspace after emoji.</li>
+<li>Fix window will scroll to top when switch from inactive window to
+active one.</li>
+<li>Fix a bug that sometimes <code>Return</code> does not work.</li>
+<li>Hot fix for <code>-</code> will be converted to other character in
+exported PDF.</li>
+<li>Fix a bug that typora cannot be opened from terminal multiple
+times.</li>
+<li>Other mirror fix.</li>
+</ol>
+<h2 id="beta-37">0.9.33 (beta)</h2>
+<p>15, Aug, 2017</p>
+<ol type="1">
+<li>Fix a critical bug that some code fences may crash the app.</li>
+</ol>
+<h2 id="beta-38">0.9.32 (beta)</h2>
+<p>13, Aug, 2017</p>
+<ol type="1">
+<li>Fix 100% CPU usage with menu on KDE on some linux distribution.</li>
+<li>Fix some regression bug:
+<ol type="1">
+<li><code>Ctrl+-</code>/<code>Ctrl+=</code>/<code>ctrl+[</code>/<code>ctrl+]</code>
+not work as expect.</li>
+<li>Auto pair for normal markdown characters does not work.</li>
+<li>Fix for <code>&lt;img height="200" /&gt;</code> , the height
+attribute won't be correctly added when rendering.</li>
+<li>Performance improving when typing.</li>
+<li>Zoom level sometimes is incorrect on startup.</li>
+</ol></li>
+<li><code>@import</code> and <code>@include-when-export</code> will be
+converted to linked stylesheet when export to HTML.</li>
+<li>Fix a bug that <code>ctrl</code>+click on hyperlink cannot open
+other protocol like <code>magic:</code> or others.</li>
+<li>Fix a bug that selection should extend by word in some cases.</li>
+<li>Fix a bug that after selection, the select anchor will always move
+to its start boundary.</li>
+<li>Ctrl+Ip/Down key and PageUp/PageDown key can exit code fences when
+the cursor is at start/end position of the code fences.</li>
+<li>Better image select logic when editing: double click and auto select
+all raw text of an image.</li>
+<li>Can copy tables to Words from context menu.</li>
+<li>Select word/select line also supports code fences and source code
+mode.</li>
+</ol>
+<h2 id="beta-39">0.9.30 (beta)</h2>
+<p>9, Aug, 2017</p>
+<ol type="1">
+<li>Support file tree/list in left side panel.</li>
+<li>Start using CSS variable in themes. Change theme styles may be
+easier.</li>
+<li>Support relative link to files without adding <code>.md</code> or
+<code>.markdown</code> explicitly.</li>
+<li>Diagrams can auto fit the max-width.</li>
+<li>Improve auto detect logic for urls.</li>
+<li>Fix exported HTML/PDF does not follow original markdown's logic of
+line break.</li>
+<li>Fix syntax highlight in night theme and syntax for protobuf, diff
+and php+html does not work.</li>
+<li>Change some inappropriate descriptions in menu, dialog and
+tooltip.</li>
+<li>Fix bug that some <code>&lt;a&gt;</code> tags are not parsed
+correctly.</li>
+<li>No auto-pair for markdown symbols in inline math.</li>
+<li>Support Chinese character in header anchors.</li>
+<li>Fix bug of delete and return key on selected text or table.</li>
+<li>Find/Replace input supports undo/redo and hit selection in code
+fences won't be removed.</li>
+<li>Fix excepted HTML tags are not escaped in exported HTML.</li>
+<li>Fix nav key on context menu</li>
+<li>Fix bug that Math block cannot be copied.</li>
+<li>Add tooltips on button.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-40">0.9.29 (beta)</h2>
+<p>24, Apr, 2017</p>
+<ol type="1">
+<li>Fix a critical bug.</li>
+</ol>
+<h2 id="beta-41">0.9.28 (beta)</h2>
+<p>22, Apr, 2017</p>
+<ol type="1">
+<li>Fix launch errors.</li>
+</ol>
+<h2 id="beta-42">0.9.27 (beta)</h2>
+<p>17, Apr, 2017</p>
+<ol type="1">
+<li>Support setting line ending char. Support CRLF line ending.</li>
+<li>Add syntax highlight support for <code>ProtoBuf</code>, fix syntax
+highlight for <code>php+html</code> and <code>diff</code>.</li>
+<li>Fix styles for "unibody" style.</li>
+<li>Fix font not applied when exporting.</li>
+<li>Improve copy/paste to prevent data or style lost.</li>
+<li>Fix key navigation on context menu.</li>
+<li>Fix a few typos in text resource.</li>
+<li>Fix header anchor cannot support some unicode char.</li>
+<li>Fix spellcheck sometimes not working in Linux.</li>
+</ol>
+<h2 id="beta-43">0.9.25 (beta)</h2>
+<p>09, Mar, 2017</p>
+<ol type="1">
+<li>Fix "import" does not work.</li>
+<li>Imporve encoding detecting logic for better compatibility.</li>
+</ol>
+<h2 id="beta-44">0.9.24 (beta)</h2>
+<p>27, Feb, 2017</p>
+<ol type="1">
+<li>Support <code>alt</code> key on Windows to popup related menu.</li>
+<li>Support open recent files from menubar.</li>
+<li>Fix a bug that Typora cannot detect the encode of some files
+correctly. Allow manually select file encode from menubar.</li>
+<li>Fix bugs that table headers and bold Chinese characters cannot be
+printed (export to PDF) correctly.</li>
+<li>Fix crash when export contents into jpg file.</li>
+<li>Show horizontal scrollbar when some table or dialog is too
+width.</li>
+<li>Set default extensions for save and export dialog.</li>
+<li>Add syntax highligh for <code>fortran</code>. Fix bugs of syntax
+highlight function for <code>Scala</code> and <code>C#</code>.</li>
+<li>Exported HTML (without class) for code fences could follow w3c
+recommendations and be more friendly with Prism.</li>
+<li>Fix some bugs relates to crash and data lose.</li>
+<li>Fix bugs that some behavior for links are not correct.</li>
+<li>Fix table parsing logic for special characters.</li>
+<li>Fix a bug that some math block is invalid in exported EPub.</li>
+<li>Fix a bug that <code>\&#123;</code> is not correctly handled in inline
+math.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-45">0.9.23 (beta)</h2>
+<p>4, Jan, 2017</p>
+<ol type="1">
+<li>Support move table row/col when drag on left/top side of table
+row/col or using shortcut keys: shift + ctrl + arrow key.</li>
+<li>Add syntax highlighting for <code>cmake</code>, <code>cypher</code>,
+<code>dart</code>, <code>django</code>, <code>dtd</code>,
+<code>dylan</code>, <code>handlebars</code>, <code>idl</code>,
+<code>web idl</code>, <code>yacas</code>, <code>mbox</code>,
+<code>vhdl</code>, <code>julia</code>, <code>haxe</code>, and
+<code>hxml</code>.</li>
+<li>Remove <code>//</code> after <code>mailto:</code> for auto generated
+mail link.</li>
+<li>Fix image position for flowchart.</li>
+<li>Fix a bug that some link url or image url are escaped twice.</li>
+<li>Fix a bug that <code>:+1:</code> is not recognized as emoji.</li>
+<li>Fix refresh mathjax will convert inline math when inline math is not
+enabled.</li>
+<li>Fix freeze when insert images.</li>
+<li>Other bug fix and improvements.</li>
+</ol>
+<h2 id="beta-46">0.9.22 (beta)</h2>
+<p>20, Nov, 2016</p>
+<ol type="1">
+<li>Fix the logic for relative path for
+<code>typora-root-url</code>.</li>
+<li>Support recent used files on Windows jumplist.</li>
+<li>Support paste images into Typora(after set-up).</li>
+<li>Support copy images to selected folder when insert images.</li>
+<li>Fix bugs related to collapsible outline panel.</li>
+<li>Fix bugs that exported PDF may contain HTML in bookmark.</li>
+<li>Fix bugs about undo/redo for nest task list.</li>
+<li>Fix mermaid no responding when Chinese character exists.</li>
+<li>Change <code>Copy as Markdown</code> option from opt-in to
+opt-out.</li>
+<li>Support elixir for code fences.</li>
+<li>Fix cli support on Linux.</li>
+<li>Fix some typo on interface.</li>
+</ol>
+<h2 id="beta-47">0.9.21 (beta)</h2>
+<p>18, Oct, 2016</p>
+<ol type="1">
+<li>Support insert image from local file. Support drag &amp; drop
+multiple images.</li>
+<li>Add preference to use relative path when insert images.</li>
+<li>Improve footnote export and behavior.</li>
+<li>Add option for auto-numbering math blocks. Support command for
+refreshing math expression.</li>
+<li>Add option set left outline panel collapsible.</li>
+<li>Support <code>&lt;img&gt;</code> tag without a close tag.</li>
+<li>Remove unnecessary math delimiter for exported LaTeX.</li>
+<li>Add syntax highlight for <code>ocaml</code>, <code>F#</code>,
+<code>elm</code>, <code>spreadsheet</code> and
+<code>pgp(Ascii Armor)</code>.</li>
+<li>Auto-save time schedule can be configured in advanced options.</li>
+</ol>
+<h2 id="beta-48">0.9.20 (beta)</h2>
+<p>6, Oct, 2016</p>
+<ol type="1">
+<li>Add support for simple HTML fragments, only includes:
+<code>&lt;!--comments--&gt;</code>,
+<code>&lt;a href="http://typora.io"&gt;link&lt;/a&gt;</code>,
+<code>&lt;img src="http://www.w3.org/html/logo/img/mark-word-icon.png" width="200px" /&gt;</code>.</li>
+<li>Fix syntax highlight for <code>Octave</code> is not working, and add
+<code>matlab</code> as its alias.</li>
+<li>Math expressions now support export to epub. Diagrams will be
+converted to images when export to epub/docx.</li>
+<li>Fix a bug that arrow of diagrams is missing when export to
+HTML/PDF.</li>
+<li>Fix a critical bug on tables.</li>
+<li>Fix some export options are missing in <code>Export</code>
+menu.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-49">0.9.19 (beta)</h2>
+<p>26, Sep, 2016</p>
+<ol type="1">
+<li>Launched our <a target="_blank" rel="noopener" href="http://theme.typora.io">Theme Gallery</a> to
+share and download Typora themes.</li>
+<li>Fix a bug the menubar won't show automatically when Typora is
+fullscreened.</li>
+<li>Improve paste behavior.</li>
+<li>Fix unnecessary scroll.</li>
+<li>Fix backspace after UTF-32 character.</li>
+<li>Fix bugs related to inline code inside table.</li>
+<li>Recover outline panel status when switch from source code mode.</li>
+<li>Other bug fix.</li>
+<li>A Linux build (Debian/Ubuntu) is <a target="_blank" rel="noopener" href="https://typora.io/#linux">available</a>.</li>
+</ol>
+<h2 id="beta-50">0.9.18 (beta)</h2>
+<p>4, Sep, 2016</p>
+<ol type="1">
+<li>Add options to auto pair common markdown symbols, like `*_ etc.</li>
+<li>Add options to show markdown source for simple blocks when focus,
+like headings.</li>
+<li>Fix a bug that sometimes special characters will cause inline math
+not rendered.</li>
+<li>Fix a bug that sometime <code>Enter</code> key is not working.</li>
+<li>Fix some bugs under high DPI screen.</li>
+<li>Fix a bug that footnote definition cannot be correctly input.</li>
+</ol>
+<h2 id="beta-51">0.9.17 (beta)</h2>
+<p>27, Aug, 2016</p>
+<ol type="1">
+<li>Fix special characters cannot be input inside inline math.</li>
+<li>Fix backspace cannot expand inline style.</li>
+</ol>
+<h2 id="beta-52">0.9.16 (beta)</h2>
+<p>19, Aug, 2016</p>
+<ol type="1">
+<li>Support diagrams, includes sequence, flowchart and mermaid (<a target="_blank" rel="noopener" href="http://support.typora.io/Draw-Diagrams-With-Markdown/">doc</a>).</li>
+<li>Fix a bug related to parsing <code>*</code> and escaped
+character.</li>
+<li>Fix backspace inside code fences.</li>
+<li>Fix escape character will gone in inline math, inline code, and
+other inline styles.</li>
+<li>Fix special character, such as <code>#</code> cannot be inserted in
+ceylon code block.</li>
+<li>Fix quote mark would cause typora not respond sometimes.</li>
+<li>Allow custom keybindings (<a target="_blank" rel="noopener" href="http://support.typora.io/Custom-Key-Binding/">doc</a>).</li>
+<li>Allow custom search service (<a target="_blank" rel="noopener" href="http://support.typora.io/Add-Search-Service/">doc</a>).</li>
+<li>Fix shift+ctrl+home/end key on Windows.</li>
+<li>Other bug fix and improvements.</li>
+</ol>
+<h2 id="beta-53">0.9.15 (beta)</h2>
+<p>29, Jul, 2016</p>
+<ol type="1">
+<li>Fix a bug that <code>**</code> is not correctly parsed.</li>
+<li>Fix bookmark not generated when export to PDF when there's h5 and h6
+in article.</li>
+<li>Fix list indentation not correctly saved.</li>
+<li>Fix footnotes contains "_" cannot be exported correctly.</li>
+<li>Fix a bug some file format cannot be exported via pandoc.</li>
+<li>Add "Textile" as one export option.</li>
+<li>Improve URL auto detection.</li>
+<li>Fix content will be pasted twice when paste from typora to
+Word.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-54">0.9.14 (beta)</h2>
+<p>25, Jul, 2016</p>
+<ol type="1">
+<li>Fix print/export PDF not work.</li>
+</ol>
+<h2 id="beta-55">0.9.13 (beta)</h2>
+<p>24, Jul, 2016</p>
+<ol type="1">
+<li>Release x64 build.</li>
+<li>Add focus mode and typewriter mode support.</li>
+<li>Remember last status of outline bar.</li>
+<li>Add syntax support for assembly and TOML.</li>
+<li>Avoid the usage of 'AltGr' key combination in assigned
+shortcut.</li>
+<li>Support kramdown style <code>[toc]</code> syntax.</li>
+<li>Improve list indent/outdent logic.</li>
+<li>Fix HTML entities not escaped in meta block.</li>
+<li>Fix a bug that triple click cannot select current line
+correctly.</li>
+<li>Fix auto indent for brackets in code fences.</li>
+<li>Add options to export reStructuredText, and OPML format.</li>
+<li>Fix user.css not included in exported HTML/PDF.</li>
+<li>Fix some export option not work in unibody window style.</li>
+<li>Fix cannot export/print in dark theme.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-56">0.9.12 (beta)</h2>
+<p>22, Jun, 2016</p>
+<ol type="1">
+<li>Fix a critical bug that the indent in multi-level lists may keep
+increasing after save.</li>
+<li>Fix the scrollbar style on side panel.</li>
+</ol>
+<h2 id="beta-57">0.9.11 (beta)</h2>
+<p>21, Jun, 2016</p>
+<ol type="1">
+<li>Fix a critical bug that the indents of multi-level lists are wrong
+when parsing and generating markdown source.</li>
+<li>Better ECMAScript6 syntax highlight support for javascript code
+fences. Add syntax highlight support for NSIS, JSX (<a target="_blank" rel="noopener" href="http://facebook.github.io/react">React</a>'s JavaScript syntax
+extension), vue, LiveScript, mathematica, properties (and .ini), tiki
+wiki, dockerfile in code fences.</li>
+<li>Hide auto-complete lists when scrolling.</li>
+<li>Fix internal link to heading (like <a href="#0.9.4.5-(beta)">this</a>) not work.</li>
+<li>Fix a bug sometimes, pasting would append duplicate texts.</li>
+<li>Rule change: capitalized characters are not allowed in filenames for
+theme css file</li>
+<li>Make link clickable in about page.</li>
+<li>Support single column table in insert table dialog.</li>
+<li>Add enabled optional inline style support, like highlight or inline
+math, in menubar.</li>
+</ol>
+<h2 id="beta-58">0.9.10 (beta)</h2>
+<p>15, Jun, 2016</p>
+<ol type="1">
+<li>Fix style that sometimes user can see script content.</li>
+<li>Fix auto pair match inside image and avoid glitch when complete
+brackets.</li>
+<li>Fix paste table, and paste inside footnotes.</li>
+<li>Fix <code>]</code> cannot be escaped in footnotes.</li>
+<li>Fix <code>h6</code> indent inside <code>[TOC]</code>.</li>
+<li>Fix multiple level lists inside blockquote cannot be parsed
+correctly.</li>
+<li>Enable ESC key to close insert table dialog.</li>
+<li>Fix outline sidebar jumpping around when scrolling.</li>
+<li>Fix ctrl+home/end not working.</li>
+</ol>
+<h2 id="beta-59">0.9 (beta)</h2>
+<p>2, Jun, 2016</p>
+<ol type="1">
+<li>Fix a bug that Typora cannot be launched by opening md files on PCs
+without <em>Visual C++ library</em> installed.</li>
+</ol>
+<h2 id="beta-60">0.9.8 (beta)</h2>
+<p>1, Jun, 2016</p>
+<ol type="1">
+<li>Fix a critical bug about saving in source code mode.</li>
+<li>Fix save dialog keep poping up sometimes.</li>
+<li>Improve logic for auto match paired quotes and brackets.</li>
+<li>Fix inline math cannot be exported to some file types via
+pandoc.</li>
+<li>Fix a bug that improper file name is auto generated when the article
+contains YAML forn matters.</li>
+</ol>
+<h2 id="beta-61">0.9.7 (beta)</h2>
+<p>30, May, 2016</p>
+<ol type="1">
+<li>Fix typora.exe is misreported by some anti virus software.</li>
+</ol>
+<h2 id="beta-62">0.9.6 (beta)</h2>
+<p>27, May, 2016</p>
+<ol type="1">
+<li>Add mobile "responsive" support for exported HTML.</li>
+<li>Pandoc requires 1.16 and above. Fix exporting fail using
+Pandoc.</li>
+<li>Better support for monitoring file content change by external
+apps.</li>
+<li>Fix generating PDF takes too much time and reduce file size for PDF.
+Also fix a bug anchor link in PDF not working and Chinese character in
+printed PDF is not selectable.</li>
+<li>Fix shortcut keys for <code>h6</code> not working.</li>
+<li>Add syntax highlight for Powershell.</li>
+<li>Remember windows size when creating new window.</li>
+<li>Can open <code>.md</code> file from <code>cmd.exe</code> directly,
+if typora is its default reader.</li>
+<li>Fix that some advance options not work. Add options to auto hide
+menu bar.</li>
+<li>Fix a critical bug in paste/undo which may case data lose.</li>
+<li>Make <code>\label</code> work in math block.</li>
+<li>Fix unnecessary empty char in inserted footnote.</li>
+<li>Fix auto pair match and find&amp;replace in math block.</li>
+<li>Fix up/down key behavior on code fences.</li>
+<li>Fix some HTML code (like <code>&amp;phone;</code>) not escaped in
+inline code.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-63">0.9.5 (beta)</h2>
+<p>5, May, 2016</p>
+<ol type="1">
+<li>Add pandoc integration, import function and export function for
+docx, rtf, LaTeX, etc.</li>
+<li>Able to open <code>.md</code> file or import supported files by drag
+and drop into typora's window.</li>
+<li>Fix a bug that sometimes PDF cannot be exported correctly.</li>
+<li>Fix <code>H4</code> style in <code>pixyll</code> theme.</li>
+<li>Fix sql mode error for code blocks.</li>
+<li>Fix a bug for parsing headers with underline style.</li>
+<li>Fix a bug for undo/redo for editing lists.</li>
+<li>Fix a bug when pasting lists.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-64">0.9.4 (beta)</h2>
+<p>23, Apr, 2016</p>
+<ol type="1">
+<li>Fix LaTeX is not correctly exported after opening existing
+files.</li>
+<li>Fix a bug which may cause content inside list items get lost.</li>
+<li>Fix wrong indent for content inside list after parsing raw
+markdown.</li>
+<li>Support "Open File Location" action.</li>
+<li>Fix a bug that if image path contains special chars like quotes, the
+image cannot be displayed correctly.</li>
+<li>Fix a bug related to paste lists.</li>
+<li>Fix a bug some line breaks disappear in exported PDF.</li>
+</ol>
+<h2 id="beta-65">0.9.3 (beta)</h2>
+<p>19, Apr, 2016</p>
+<ol type="1">
+<li>Fix the wrong bookmark structure in exported PDF.</li>
+<li>Fix sometimes Chinese characters cannot be saved to file
+correctly.</li>
+<li>In exported HTML, file name will be set to
+<code>&lt;title&gt;</code> tag.</li>
+</ol>
+<h2 id="beta-66">0.9.2 (beta)</h2>
+<p>18, Apr, 2016</p>
+<ol type="1">
+<li>Better save feature: Support file auto save (need enable it from
+preference panel) and allow users to recover unsaved drafts form
+preference panel.</li>
+<li>Better word count: Now click word count button from status bar,
+detailed info would show.</li>
+<li>Better Print: Fix a bug that current window, instead of generated
+web view woulc be printted.</li>
+<li>Better PDF exporting: Now exported PDF could contains Table of
+Contents as bookmarks, just like Mac version</li>
+<li>Better fullscreen mode: Fullscreen mode can auto show menu bar for
+native style windows, and auto show/hide title bar control buttons for
+unibody windows. Newly created windows would also be fullscreen in
+fullscreen mode.</li>
+<li>Fix table cannot be deleted in the beginning of the article.</li>
+<li>Fix a bug that some lines will be duplicated after open.</li>
+<li>Fix files on external disks cannot be opened.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-67">0.9.1 (beta)</h2>
+<p>6, Apr, 2016</p>
+<ol type="1">
+<li>Fix a critical bug for saving.</li>
+<li>Fix a critical bug for task list.</li>
+</ol>
+<h2 id="beta-68">0.9.0 (beta)</h2>
+<p>4, Apr, 2016</p>
+<ol type="1">
+<li>Rewrite typora's Markdown parse engine and largely improve the
+performance on opening mid-sized files.</li>
+<li>Fix bugs for pair auto-complete.</li>
+<li>Fix bugs for Korean IME.</li>
+<li>Fix a bug that typora will eat and replace non-breaking space.</li>
+<li>Fix relative image path on exported HTML.</li>
+<li>Fix a bug typora will detech wrong encoding sometimes.</li>
+<li>Other bugs.</li>
+</ol>
+<h2 id="beta-69">0.8.8 (beta)</h2>
+<p>13, Mar, 2016</p>
+<ol type="1">
+<li>Fix minor parse issue for URL, subscript and superscript.</li>
+<li>Fix compatibility issue between Chinese IME and auto-pair
+feature</li>
+<li>Include and autoload MathJax extension, including chemistry package
+and others (e.g. <span class="math inline">\(\ce{C6H5-CHO}\)</span>).</li>
+<li>Fix bug triggered by pressing <code>ctrl+`</code> twice.</li>
+<li>Fix some menu item under "Edit" submenu does not work.</li>
+<li>Support open hyperlink from context menu.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-70">0.8.6 (beta)</h2>
+<p>4, Mar, 2016</p>
+<ol type="1">
+<li>Fix a critical bug on Delete key.</li>
+</ol>
+<h2 id="beta-71">0.8.5 (beta)</h2>
+<p>3, Mar, 2016</p>
+<ol type="1">
+<li>Support ==highlight== syntax (should enable it from preference
+panel).</li>
+<li>Support auto complete pairs of brackets, quotes and
+parentheses.</li>
+<li>Fix bugs on lists.</li>
+<li>Fix cut on windows.</li>
+<li>Fix selection styles in code fences, python code in code fences will
+use 4-space indent.</li>
+<li>Fix customize font size, local image, local font does not work for
+exported PDF.</li>
+<li>Fix bugs for LaTeX editing/rendering.</li>
+<li>Auto insert path/urls from clipboard when insert images/hyperlinks
+from menubar or shortcut keys.</li>
+<li>Other bug fix.</li>
+</ol>
+<h2 id="beta-72">0.8.3 (beta)</h2>
+<p>24, Feb, 2015</p>
+<ol type="1">
+<li>Add basic support for editing in source code mode directly.</li>
+<li>Support signle line break (shift+return).</li>
+<li>Improve LaTeX rendering quality.</li>
+<li>Support non-UTF8/16 encoded files, includes Shift-JIS, Big5, EUC-JP,
+EUC-KR, GB18030, ISO-8859-1, ISO-8859-2, ISO-8859-5, ISO-8859-6,
+ISO-8859-7, ISO-8859-8, ISO-8859-9, windows-1250, windows-1251,
+windows-1252, windows-1253, windows-1254, windows-1255, windows-1256.
+Other encodings is not supported yet.</li>
+<li>Fix bug that tab+subbullet will be parsed as code fences.</li>
+<li>Fix syntax highlight support for PHP, SQL, Objective-c, etc.</li>
+<li>Fix then behavior when pressing ctrl or shift and arrow key.</li>
+<li>Fix bugs in find/replace.</li>
+<li>Fix small bugs in exported HTMLs.</li>
+<li>Support drag &amp; drop to insert images and fix images not shown
+with relative path.</li>
+<li>Fix cut &amp; paste function.</li>
+</ol>
+<h2 id="beta-73">0.7.7 (beta)</h2>
+<p>11, Jun, 2015</p>
+<ol type="1">
+<li>Imporve stability and reliability on saving</li>
+</ol>
+<h2 id="beta-74">0.7.6 (beta)</h2>
+<p>3, Jun, 2015</p>
+<ol type="1">
+<li>Fix a critical bug which may cause data lose.</li>
+<li>Fix syntax parse for task list.</li>
+<li>Improve theme <code>newsprint</code>.</li>
+<li>Fix the unnecessary io operation when starting Typora.</li>
+</ol>
+<h2 id="beta-75">0.7.5 (beta)</h2>
+<p>24, DEC, 2015</p>
+<p>First beta version.</p>
+<h2 id="alpha">0.7.0 (alpha)</h2>
+<p>19, DEC, 2015</p>
+<p>First alpha version.</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>https://rain00star.github.io/2024/12/03/algorithm-enhance/Typora/resources/app/Docs/Change Log/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>rainstar</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>December 3, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/12/03/algorithm-enhance/Typora/resources/app/Docs/Auto%20Save,%20Version%20Control%20and%20Recovery/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/12/03/algorithm-enhance/Typora/resources/app/Docs/Code%20Fences%20Language%20Support/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/snowflake.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
