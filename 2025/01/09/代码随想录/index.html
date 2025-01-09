@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736407983518.png">
 <meta property="article:published_time" content="2025-01-09T03:21:30.000Z">
-<meta property="article:modified_time" content="2025-01-09T10:48:11.207Z">
+<meta property="article:modified_time" content="2025-01-09T14:38:19.433Z">
 <meta property="article:author" content="rainstar">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary_large_image">
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k words
+          2.1k words
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          17 mins
+          18 mins
         
       </span>
     
@@ -428,7 +428,12 @@
 <p>遍历（1<sub>n-1，n）和（n,1</sub>n-1)这2*(n-1)个点即可</p>
 <h3 id="详细代码-3">详细代码</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;math.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;climits&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">110</span>;<br><span class="hljs-type">int</span> a[N][N];<br><span class="hljs-type">int</span> sum[N][N];<br><span class="hljs-type">int</span> n,m;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; n &gt;&gt; m;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i&lt;=n; i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= m; j++)<br>        &#123;<br>            cin &gt;&gt; a[i][j];<br>            sum[i][j] = sum[i<span class="hljs-number">-1</span>][j] + sum[i][j<span class="hljs-number">-1</span>] - sum[i<span class="hljs-number">-1</span>][j<span class="hljs-number">-1</span>] + a[i][j];<br>        &#125;<br>    &#125;<br>    <span class="hljs-type">int</span> ans = INT_MAX;<br>    <span class="hljs-comment">//横向划分</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++)<br>    &#123;<br>        <span class="hljs-type">int</span> a = sum[i][m];<br>        <span class="hljs-type">int</span> b = sum[n][m] - sum[i][m];<br>        ans = <span class="hljs-built_in">min</span>(ans,<span class="hljs-built_in">abs</span>(a-b));<br>    &#125;<br>    <span class="hljs-comment">//纵向划分</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; m; i++)<br>    &#123;<br>        <span class="hljs-type">int</span> a = sum[n][i];<br>        <span class="hljs-type">int</span> b = sum[n][m] - sum[n][i];<br>        ans = <span class="hljs-built_in">min</span>(ans,<span class="hljs-built_in">abs</span>(a-b));<br>    &#125;<br>    cout &lt;&lt; ans &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="数组专题总结">数组专题总结</h2>
+<h2 id="数组专题知识点总结">数组专题知识点总结</h2>
+<p>二分：区间规则（左闭右闭，左闭右开）</p>
+<p>双指针：快慢指针、头尾指针</p>
+<p>滑动窗口：一层for遍历窗口结尾，动态跳着起止位置进行窗口缩小</p>
+<p>模拟顺时针螺旋：分为上行、右列、下行、左列一圈，逐圈模拟</p>
+<p>前缀和：一维和二维</p>
 
                 
               </div>
