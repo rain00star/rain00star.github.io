@@ -19,18 +19,20 @@
   <meta name="author" content="rainstar">
   <meta name="keywords" content="">
   
-    <meta name="description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)） 1. 左闭右闭： - 假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;targ">
+    <meta name="description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码随想录">
 <meta property="og:url" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/index.html">
 <meta property="og:site_name" content="RainStar&#39;s Blog">
-<meta property="og:description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)） 1. 左闭右闭： - 假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;targ">
+<meta property="og:description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;g">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736407983518.png">
 <meta property="article:published_time" content="2025-01-09T03:21:30.000Z">
-<meta property="article:modified_time" content="2025-01-09T03:44:11.272Z">
+<meta property="article:modified_time" content="2025-01-09T10:48:11.207Z">
 <meta property="article:author" content="rainstar">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736407983518.png">
   
   
   
@@ -252,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k words
+          2k words
         
       </span>
     
@@ -263,7 +265,7 @@
         
         
         
-          9 mins
+          17 mins
         
       </span>
     
@@ -319,15 +321,17 @@
 <strong>704. 二分查找</strong> 、 27.
 移除元素、<strong>977.有序数组的平方</strong></h1>
 <h2 id="二分查找">二分查找</h2>
-<h3 id="知识点">知识点</h3>
-<p>性质一分为二，寻找两种性质的边界。
-区间规则：（区分r=mid/r=mid+1和while(r&gt;l)/while(r &gt;= l)） 1.
-左闭右闭： -
-假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;target时，mid不满足要求，target应落在[l,mid-1]，所以r取mid
--
-1;同理，当nums[mid]&lt;target时，mid不满足要求，target落入[mid+1,r]，所以l取mid+1；</p>
+<h3 id="知识点-区间定义">知识点-区间定义</h3>
+<p>性质一分为二，寻找两种性质的边界。</p>
+<p>区间规则：（区分r=mid/r=mid+1和while(r&gt;l)/while(r &gt;= l)）</p>
+<ol type="1">
+<li>左闭右闭：</li>
+</ol>
 <ul>
-<li>取[l,r]闭区间，r==l有意义，所以while循环里为r&gt;=l</li>
+<li><p>假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;target时，mid不满足要求，target应落在[l,mid-1]，所以r取mid
+-
+1;同理，当nums[mid]&lt;target时，mid不满足要求，target落入[mid+1,r]，所以l取mid+1；</p></li>
+<li><p>取[l,r]闭区间，r==l有意义，所以while循环里为r&gt;=l</p></li>
 </ul>
 <ol start="2" type="1">
 <li>左闭右开：</li>
@@ -338,25 +342,25 @@
 <li><p>取[l,r)开区间，r==l没有意义，所以while循环里为r&gt;l ###
 详细代码</p></li>
 </ul>
-<p>题目链接：https://leetcode.cn/problems/binary-search/</p>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-search/">https://leetcode.cn/problems/binary-search/</a></p>
 <p>讲解文档链接：<a target="_blank" rel="noopener" href="https://programmercarl.com/0704.二分查找.html">https://programmercarl.com/0704.%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.html</a></p>
-<h4 id="左闭右闭写法">左闭右闭写法：</h4>
+<h4 id="左闭右闭写法">左闭右闭写法</h4>
 <p><strong>两个注意事项，r的初始化定义以及mid防溢出</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">search</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-type">int</span> l = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> r = nums.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>;   <span class="hljs-comment">//target落在[l,r]区间，必须减一</span><br>        <span class="hljs-type">int</span> mid;<br>        <span class="hljs-comment">//左闭右闭</span><br>        <span class="hljs-keyword">while</span>(r&gt;=l)<br>        &#123;<br>            mid = l + (r - l) / <span class="hljs-number">2</span>;   <span class="hljs-comment">//防止int溢出，相当于（l+r）/2</span><br>            <span class="hljs-keyword">if</span>(nums[mid] &gt; target)  r = mid - <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&lt;target) l = mid + <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> mid;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
-<h4 id="左闭右开写法">左闭右开写法：</h4>
+<h4 id="左闭右开写法">左闭右开写法</h4>
 <p>注意事项与左闭右闭相同，要注意区分</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">search</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-type">int</span> l = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> r = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">while</span>(r &gt; l)<br>        &#123;<br>            <span class="hljs-type">int</span> mid = l + (r - l) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(nums[mid] &gt; target) r = mid;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &lt; target) l = mid + <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> mid;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 <h3 id="相关习题">相关习题</h3>
 <p>待补充</p>
 <h2 id="双指针算法">双指针算法</h2>
-<h3 id="知识点-1">知识点</h3>
+<h3 id="知识点-双指针分类">知识点-双指针分类</h3>
 <ul>
 <li>快慢指针：例如移除元素，slow指针看成移除后的新数组下标，将quick指针筛选出来的值一个个填入（不需要开辟额外数组空间）</li>
 <li>头尾指针：例如有序数组的平方，两头指针往中间夹，这个比较好想，主要纠结的是如何存储，这里需要开辟额外数组空间来解决该问题
 ### 详细代码</li>
 </ul>
 <h4 id="移除元素">移除元素</h4>
-<p>题目链接：https://leetcode.cn/problems/remove-element/</p>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-element/">https://leetcode.cn/problems/remove-element/</a></p>
 <p>讲解文档链接：<a target="_blank" rel="noopener" href="https://programmercarl.com/0027.移除元素.html">https://programmercarl.com/0027.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.html</a></p>
 <h5 id="暴力做法数组元素替代">暴力做法：数组元素替代</h5>
 <p>注意事项：</p>
@@ -367,7 +371,7 @@
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">removeElement</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> val)</span> </span>&#123;<br>        <span class="hljs-type">int</span> slow = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> quick = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(quick = <span class="hljs-number">0</span>; quick&lt;nums.<span class="hljs-built_in">size</span>(); quick++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(nums[quick] != val)  nums[slow++]=nums[quick];<br>        &#125;<br>        <span class="hljs-keyword">return</span> slow;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 <h4 id="有序数组的平方">有序数组的平方</h4>
-<p>题目链接：https://leetcode.cn/problems/squares-of-a-sorted-array/</p>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/squares-of-a-sorted-array/">https://leetcode.cn/problems/squares-of-a-sorted-array/</a></p>
 <p>讲解文档链接：<a target="_blank" rel="noopener" href="https://programmercarl.com/0977.有序数组的平方.html">https://programmercarl.com/0977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.html</a></p>
 <h5 id="暴力做法排序">暴力做法：排序</h5>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">sortedSquares</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        &#123;<br>            nums[i] = nums[i]*nums[i];<br>        &#125;<br>        <span class="hljs-built_in">sort</span>(nums.<span class="hljs-built_in">begin</span>(),nums.<span class="hljs-built_in">end</span>());<br>        <span class="hljs-keyword">return</span> nums;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
@@ -377,6 +381,54 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">sortedSquares</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">result</span><span class="hljs-params">(n<span class="hljs-number">+1</span>)</span></span>;<br>        <span class="hljs-type">int</span> l = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> r = n;<br>        <span class="hljs-keyword">while</span>(r &gt;= l)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(nums[l]*nums[l] &gt;= nums[r]*nums[r])<br>            &#123;<br>                result[n--] = nums[l]*nums[l];<br>                l++;<br>            &#125;<span class="hljs-keyword">else</span><br>            &#123;<br>                result[n--] = nums[r]*nums[r];<br>                r--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 <h3 id="相关习题-1">相关习题</h3>
 <p>待补充</p>
+<h1 id="day2209.长度最小的子数组">day2|209.长度最小的子数组</h1>
+<h2 id="长度最小的子数组">长度最小的子数组</h2>
+<h3 id="知识点-滑动窗口">知识点-滑动窗口</h3>
+<p>暴力做法需要两层for循环来遍历子数组的起始和终止位置；</p>
+<p>使用滑动窗口（满足和&gt;=target的连续子数组），可以用一层for循环代替。<strong>该层for循环遍历的是终止位置</strong>，起始位置的遍历通过当前窗口内的值来不断缩小，可以看成终止位置是元素入队，直至满足条件，起始位置是让元素出队，直至满足条件。探索每一个符合条件的子数组，记录最小值。</p>
+<p>这个过程中每个元素被操作两次（入队和出队），时间复杂度为O(n)。</p>
+<h3 id="详细代码">详细代码</h3>
+<p>题目：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/">https://leetcode.cn/problems/minimum-size-subarray-sum/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.html#%E6%80%9D%E8%B7%AF">https://programmercarl.com/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.html#%E6%80%9D%E8%B7%AF</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">minSubArrayLen</span><span class="hljs-params">(<span class="hljs-type">int</span> target, vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> ans = INT_MAX;<br>        <span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        &#123;<br>            sum+=nums[i];<br>            <span class="hljs-keyword">while</span>(sum &gt;= target)<br>            &#123;<br>                ans = <span class="hljs-built_in">min</span>(ans,i-j<span class="hljs-number">+1</span>);<br>                sum -= nums[j++];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(ans!=INT_MAX) <span class="hljs-keyword">return</span> ans;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="相关题目">相关题目</h3>
+<p>待补充</p>
+<h2 id="螺旋矩阵ii">螺旋矩阵II</h2>
+<h3 id="知识点-模拟">知识点-模拟</h3>
+<p>顺指针螺旋可以看成是将上行、右列、下行、左列看成一圈，逐圈重复。</p>
+<p>上行：左至右</p>
+<p>右列：上至下</p>
+<p>下行：右至左</p>
+<p>左列：下至上</p>
+<p>每列模拟填充左闭右开区间，避免重复，如下图：</p>
+<figure>
+<img src="/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736407983518.png" srcset="/img/loading.gif" lazyload alt="1736407983518">
+<figcaption aria-hidden="true">1736407983518</figcaption>
+</figure>
+<h3 id="详细代码-1">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">generateMatrix</span>(<span class="hljs-type">int</span> n) &#123;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">ans</span>(n,<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(n));<br>        <span class="hljs-type">int</span> startx = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> starty = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> i,j = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> loop = n/<span class="hljs-number">2</span>;   <span class="hljs-comment">//需要循环几圈</span><br>        <span class="hljs-type">int</span> offset = <span class="hljs-number">1</span>;   <span class="hljs-comment">//遵循左闭右开进行模拟，offset辅助定义边界</span><br>        <span class="hljs-type">int</span> count = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span>(loop--)<br>        &#123;<br>            i = startx;<br>            j = starty;<br>            <span class="hljs-comment">//上行</span><br>            <span class="hljs-keyword">for</span>(j; j &lt; n-offset; j++)<br>                ans[i][j]=count++;<br>            <span class="hljs-comment">//右列</span><br>            <span class="hljs-keyword">for</span>(i; i &lt; n-offset; i++)<br>                ans[i][j]=count++;<br>            <span class="hljs-comment">//下行</span><br>            <span class="hljs-keyword">for</span>(j; j&gt;starty; j--)<br>                ans[i][j]=count++;<br>            <span class="hljs-comment">//左列</span><br>            <span class="hljs-keyword">for</span>(i; i&gt;startx; i--)<br>                ans[i][j]=count++;<br>            startx++;<br>            starty++;<br>            offset++;    <span class="hljs-comment">//本来应该加2（头尾），但头在startx和starty中完成加一，这里仅需要加一</span><br>        &#125;<br>        <span class="hljs-keyword">if</span>(n%<span class="hljs-number">2</span>)<br>        &#123;<br>            ans[n/<span class="hljs-number">2</span>][n/<span class="hljs-number">2</span>]=count;   <span class="hljs-comment">//中间位置坐标为（n/2,n/2）</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="相关题目-1">相关题目</h3>
+<p>待补充</p>
+<h2 id="区间和">区间和</h2>
+<h3 id="知识点-前缀和">知识点-前缀和</h3>
+<p>a表示原数组，sum表示前缀和数组（下标从1开始）</p>
+<p>一维：sum[i] = sum[i-1]+a[i] ；a[i~j] = sum[j] - sum[i-1]</p>
+<p>二维：sum[i] [j] = sum[i] [j-1] + sum[i-1] [j] + a[i] [j] - sum[i-1]
+[j-1] ;</p>
+<p>​ a[(x,y)~(a,b)] = sum[a] [b] - sum[x-1] [b] - sum[a] [y-1] + sum[x-1]
+[y-1]</p>
+<h3 id="详细代码-2">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">100010</span>;<br><span class="hljs-type">int</span> sum[N];<br><span class="hljs-type">int</span> n;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; n;<br>    <span class="hljs-type">int</span> x;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    &#123;<br>        cin &gt;&gt; x;<br>        sum[i] = sum[i<span class="hljs-number">-1</span>] + x;<br>    &#125;<br>    <span class="hljs-type">int</span> a,b;<br>    <span class="hljs-keyword">while</span>(cin &gt;&gt; a &gt;&gt; b)<br>    &#123;<br>        a++;   <span class="hljs-comment">//习惯下标从1开始</span><br>        b++;<br>        cout &lt;&lt; sum[b]-sum[a<span class="hljs-number">-1</span>] &lt;&lt; endl;<br>    &#125;    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="开发商购买土地">开发商购买土地</h2>
+<h3 id="知识点-前缀和的应用">知识点-前缀和的应用</h3>
+<p>二维：sum[i] [j] = sum[i] [j-1] + sum[i-1] [j] + a[i] [j] - sum[i-1]
+[j-1] ;</p>
+<p>​ a[(x,y)~(a,b)] = sum[a] [b] - sum[x-1] [b] - sum[a] [y-1] + sum[x-1]
+[y-1]</p>
+<p>遍历（1<sub>n-1，n）和（n,1</sub>n-1)这2*(n-1)个点即可</p>
+<h3 id="详细代码-3">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;math.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;climits&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">110</span>;<br><span class="hljs-type">int</span> a[N][N];<br><span class="hljs-type">int</span> sum[N][N];<br><span class="hljs-type">int</span> n,m;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; n &gt;&gt; m;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i&lt;=n; i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= m; j++)<br>        &#123;<br>            cin &gt;&gt; a[i][j];<br>            sum[i][j] = sum[i<span class="hljs-number">-1</span>][j] + sum[i][j<span class="hljs-number">-1</span>] - sum[i<span class="hljs-number">-1</span>][j<span class="hljs-number">-1</span>] + a[i][j];<br>        &#125;<br>    &#125;<br>    <span class="hljs-type">int</span> ans = INT_MAX;<br>    <span class="hljs-comment">//横向划分</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++)<br>    &#123;<br>        <span class="hljs-type">int</span> a = sum[i][m];<br>        <span class="hljs-type">int</span> b = sum[n][m] - sum[i][m];<br>        ans = <span class="hljs-built_in">min</span>(ans,<span class="hljs-built_in">abs</span>(a-b));<br>    &#125;<br>    <span class="hljs-comment">//纵向划分</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; m; i++)<br>    &#123;<br>        <span class="hljs-type">int</span> a = sum[n][i];<br>        <span class="hljs-type">int</span> b = sum[n][m] - sum[n][i];<br>        ans = <span class="hljs-built_in">min</span>(ans,<span class="hljs-built_in">abs</span>(a-b));<br>    &#125;<br>    cout &lt;&lt; ans &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="数组专题总结">数组专题总结</h2>
 
                 
               </div>
