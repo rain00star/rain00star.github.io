@@ -27,8 +27,13 @@
 <meta property="og:description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;g">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736407983518.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736563092460.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736565507407.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736580298564.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736580868243.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736580919443.png">
 <meta property="article:published_time" content="2025-01-09T03:21:30.000Z">
-<meta property="article:modified_time" content="2025-01-10T16:45:25.005Z">
+<meta property="article:modified_time" content="2025-01-11T07:48:00.064Z">
 <meta property="article:author" content="rainstar">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary_large_image">
@@ -254,7 +259,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.6k words
+          5.2k words
         
       </span>
     
@@ -265,7 +270,7 @@
         
         
         
-          31 mins
+          44 mins
         
       </span>
     
@@ -474,6 +479,100 @@
 <p>在原链表的基础上,使用cur、tmp、prev指针，边遍历边翻转。</p>
 <p>NULL起始（第一步指向NULL）容易想清while中的处理逻辑。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * struct ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode *next;</span><br><span class="hljs-comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode* <span class="hljs-title">reverseList</span><span class="hljs-params">(ListNode* head)</span> </span>&#123;<br>        ListNode* cur = head;<br>        ListNode* pre = <span class="hljs-literal">NULL</span>;<br>        <span class="hljs-keyword">while</span>(cur)<br>        &#123;<br>            ListNode* tmp = cur-&gt;next;<br>            cur-&gt;next = pre;<br>            pre = cur;<br>            cur = tmp;<br>        &#125;<br>        <span class="hljs-keyword">return</span> pre;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h1 id="day424.-两两交换链表中的节点-19.删除链表的倒数第n个节点面试题-02.07.-链表相交-142.环形链表ii-链表总结">day4|<strong>24.
+两两交换链表中的节点</strong> 、19.删除链表的倒数第N个节点、面试题
+02.07. 链表相交、 <strong>142.环形链表II</strong> 、链表总结</h1>
+<h2 id="两两交换链表中的节点">24.两两交换链表中的节点</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/swap-nodes-in-pairs/description/">https://leetcode.cn/problems/swap-nodes-in-pairs/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0024.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9.html">https://programmercarl.com/0024.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9.html</a></p>
+<h3 id="详细代码-4">详细代码</h3>
+<p>利用虚假头结点统一操作；</p>
+<p>注意xx-&gt;next必须保证xx不为NULL。更新操作见下图：</p>
+<figure>
+<img src="/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736563092460.png" srcset="/img/loading.gif" lazyload alt="1736563092460">
+<figcaption aria-hidden="true">1736563092460</figcaption>
+</figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * struct ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode *next;</span><br><span class="hljs-comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode* <span class="hljs-title">swapPairs</span><span class="hljs-params">(ListNode* head)</span> </span>&#123;<br>        ListNode* dummyhead = <span class="hljs-keyword">new</span> <span class="hljs-built_in">ListNode</span>(<span class="hljs-number">0</span>);<br>        dummyhead-&gt;next = head;<br>        ListNode* tmphead = dummyhead;<br>        ListNode* pre = tmphead-&gt;next;<br>        <span class="hljs-keyword">while</span>(pre &amp;&amp; pre-&gt;next)<br>        &#123;<br>            ListNode* cur = pre-&gt;next;<br>            ListNode* tmp = cur-&gt;next;<br>            cur-&gt;next = pre;<br>            pre-&gt;next = tmp;<br>            tmphead-&gt;next = cur;<br><br>            tmphead = pre;<br>            pre = pre-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dummyhead-&gt;next;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="删除链表的倒数第n个节点">19.删除链表的倒数第N个节点</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/">https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0019.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE">https://programmercarl.com/0019.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE</a></p>
+<h3 id="暴力做法">暴力做法</h3>
+<p>需要两次遍历，第一遍先统计节点个数，第二遍进行删除。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * struct ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode *next;</span><br><span class="hljs-comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode* <span class="hljs-title">removeNthFromEnd</span><span class="hljs-params">(ListNode* head, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>        ListNode* dummyhead = <span class="hljs-keyword">new</span> <span class="hljs-built_in">ListNode</span>(<span class="hljs-number">0</span>);<br>        dummyhead-&gt;next = head;<br>        ListNode* p = head;<br>        <span class="hljs-type">int</span> size = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(p)<br>        &#123;<br>            size++;<br>            p = p -&gt;next;<br>        &#125;<br>        n = size - n + <span class="hljs-number">1</span>;<br>        ListNode* cur = dummyhead;<br>        <span class="hljs-keyword">while</span>(--n)   <span class="hljs-comment">//移动n-1次</span><br>        &#123;<br>            cur = cur -&gt; next;<br>        &#125;<br>        ListNode* tmp = cur-&gt;next;<br>        cur-&gt;next = tmp-&gt;next;<br>        <span class="hljs-keyword">delete</span> tmp;<br>        <span class="hljs-keyword">return</span> dummyhead-&gt;next;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="双指针做法">双指针做法</h3>
+<p>快慢指针，fast指针先向前走n+1步后，slow才开始和fast指针同时前进，n+1步是为了让slow指针指向要删除的前一节点。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * struct ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode *next;</span><br><span class="hljs-comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode* <span class="hljs-title">removeNthFromEnd</span><span class="hljs-params">(ListNode* head, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>        ListNode* dummyhead = <span class="hljs-keyword">new</span> <span class="hljs-built_in">ListNode</span>(<span class="hljs-number">0</span>);<br>        dummyhead-&gt;next = head;<br>        ListNode* fast = dummyhead;<br>        ListNode* slow = dummyhead;<br>        n++;<br>        <span class="hljs-keyword">while</span>(n--)    <span class="hljs-comment">//走n+1步</span><br>        &#123;<br>            fast = fast-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">while</span>(fast)<br>        &#123;<br>            fast = fast-&gt;next;<br>            slow = slow-&gt;next;<br>        &#125;<br>        ListNode* tmp = slow-&gt;next;<br>        slow-&gt;next = tmp-&gt;next;<br>        <span class="hljs-keyword">delete</span> tmp;<br>        <span class="hljs-keyword">return</span> dummyhead-&gt;next;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="面试题-02.07.-链表相交">面试题 02.07. 链表相交</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/">https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/%E9%9D%A2%E8%AF%95%E9%A2%9802.07.%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4.html#%E6%80%9D%E8%B7%AF">https://programmercarl.com/%E9%9D%A2%E8%AF%95%E9%A2%9802.07.%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4.html#%E6%80%9D%E8%B7%AF</a></p>
+<h3 id="详细代码-5">详细代码</h3>
+<p><strong>注意事项：</strong></p>
+<p>相交处的判断依据是节点指针相同，而不是节点值相同。</p>
+<p>技巧：末尾对齐进行比较</p>
+<figure>
+<img src="/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736565507407.png" srcset="/img/loading.gif" lazyload alt="1736565507407">
+<figcaption aria-hidden="true">1736565507407</figcaption>
+</figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * struct ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode *next;</span><br><span class="hljs-comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode *<span class="hljs-title">getIntersectionNode</span><span class="hljs-params">(ListNode *headA, ListNode *headB)</span> </span>&#123;<br>        <span class="hljs-type">int</span> lenA = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> lenB = <span class="hljs-number">0</span>;<br>        ListNode* p1 = headA;<br>        ListNode* p2 = headB;<br>        <span class="hljs-keyword">while</span>(p1)<br>        &#123;<br>            lenA++;<br>            p1 = p1-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">while</span>(p2)<br>        &#123;<br>            lenB++;<br>            p2 = p2-&gt;next;<br>        &#125;<br>        <span class="hljs-type">int</span> gap = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span>(lenA &gt;= lenB)<br>        &#123;<br>            gap = lenA - lenB;<br>            p1 = headA;<br>            p2 = headB;<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            gap = lenB - lenA;<br>            p1 = headB;<br>            p2 = headA;<br>        &#125;<br>        <span class="hljs-keyword">while</span>(gap--)<br>        &#123;<br>            p1 = p1-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">while</span>(p1 != p2)   <span class="hljs-comment">//指针相等</span><br>        &#123;<br>            p1 = p1-&gt;next;<br>            p2 = p2-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> p1;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="环形链表ii">142.环形链表II</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">https://leetcode.cn/problems/linked-list-cycle-ii/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0142.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE">https://programmercarl.com/0142.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE</a></p>
+<h3 id="思路">思路</h3>
+<h4 id="判断有无环">判断有无环</h4>
+<p>双指针算法，快慢指针，fast指针比slow指针每次多走一步，只要有封闭的环，fast指针一定在环内与slow指针相遇。（封闭空间，fast每次相对于slow多走1个节点，追赶）</p>
+<h4 id="判断入口处">判断入口处</h4>
+<figure>
+<img src="/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736580298564.png" srcset="/img/loading.gif" lazyload alt="1736580298564">
+<figcaption aria-hidden="true">1736580298564</figcaption>
+</figure>
+<p>相遇时： slow指针走过的节点数为: <code>x + y</code>，
+fast指针走过的节点数：<code>x + y + n (y + z)</code>，n为fast指针在环内走了n圈才遇到slow指针，
+（y+z）为 一圈内节点的个数A。</p>
+<p>因为fast指针是一步走两个节点，slow指针一步走一个节点， 所以
+fast指针走过的节点数 = slow指针走过的节点数 * 2：</p>
+<figure class="highlight gml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gml">(<span class="hljs-variable language_">x</span> + <span class="hljs-variable language_">y</span>) * <span class="hljs-number">2</span> = <span class="hljs-variable language_">x</span> + <span class="hljs-variable language_">y</span> + n (<span class="hljs-variable language_">y</span> + z)<br></code></pre></td></tr></table></figure>
+<p>两边消掉一个（x+y）: <code>x + y = n (y + z)</code></p>
+<p>因为要找环形的入口，那么要求的是x，因为x表示 头结点到
+环形入口节点的的距离。</p>
+<p>所以要求x ，将x单独放在左面：<code>x = n (y + z) - y</code> ,</p>
+<p>再从n(y+z)中提出一个
+（y+z）来，整理公式之后为如下公式：<code>x = (n - 1) (y + z) + z</code>
+注意这里n一定是大于等于1的，因为
+fast指针至少要多走一圈才能相遇slow指针。</p>
+<p>这个公式说明什么呢？</p>
+<p>先拿n为1的情况来举例，意味着fast指针在环形里转了一圈之后，就遇到了
+slow指针了。</p>
+<p>当 n为1的时候，公式就化解为 <code>x = z</code>，</p>
+<p>所以，<strong>从头结点出发一个指针，从相遇节点
+也出发一个指针，这两个指针每次只走一个节点，
+那么当这两个指针相遇的时候就是 环形入口的节点</strong>。</p>
+<p>问题：<strong>为什么第一次在环中相遇，slow的 步数 是 x+y 而不是 x +
+若干环的长度 + y 呢？</strong></p>
+<p>极端情况：</p>
+<p>如果slow进环入口，fast也在环入口，那么把这个环展开成直线，就是如下图的样子：</p>
+<figure>
+<img src="/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736580868243.png" srcset="/img/loading.gif" lazyload alt="1736580868243">
+<figcaption aria-hidden="true">1736580868243</figcaption>
+</figure>
+<p>可以看出如果slow 和
+fast同时在环入口开始走，一定会在环入口3相遇，slow走了一圈，fast走了两圈。</p>
+<p>重点来了，slow进环的时候，fast一定是在环的任意一个位置，如图：</p>
+<figure>
+<img src="/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736580919443.png" srcset="/img/loading.gif" lazyload alt="1736580919443">
+<figcaption aria-hidden="true">1736580919443</figcaption>
+</figure>
+<p>距离更近，追赶的距离更短了，一定会在环入口3之前相遇，所以slow指针不会超过一圈。</p>
+<h3 id="详细代码-6">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * struct ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode *next;</span><br><span class="hljs-comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode *<span class="hljs-title">detectCycle</span><span class="hljs-params">(ListNode *head)</span> </span>&#123;<br><br>        ListNode* fast = head;<br>        ListNode* slow = head;<br>        <span class="hljs-keyword">while</span>(fast &amp;&amp; fast-&gt;next)    <span class="hljs-comment">//添加fast!=NULL或者虚拟节点（链表为空的情况）</span><br>        &#123;<br>            fast = fast-&gt;next-&gt;next;<br>            slow = slow-&gt;next;<br>            <span class="hljs-keyword">if</span>(fast == slow)<br>            &#123;<br>                ListNode* index1 = head;<br>                ListNode* index2 = fast;<br>                <span class="hljs-keyword">while</span>(index1 != index2)<br>                &#123;<br>                    index1 = index1-&gt;next;<br>                    index2 = index2-&gt;next;<br>                &#125;<br>                <span class="hljs-keyword">return</span> index1;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="链表总结">链表总结</h2>
+<ol type="1">
+<li>虚拟头结点：</li>
+</ol>
+<p>一般涉及到 增删改操作，用虚拟头结点都会方便很多（同一），
+如果只能查的话，用不用虚拟头结点都差不多。</p>
+<ol start="2" type="1">
+<li>双指针算法（快慢指针）在链表操作中有奇效。</li>
+</ol>
 
                 
               </div>
