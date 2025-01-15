@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736755902513.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736847411100.png">
 <meta property="article:published_time" content="2025-01-09T03:21:30.000Z">
-<meta property="article:modified_time" content="2025-01-14T10:29:35.626Z">
+<meta property="article:modified_time" content="2025-01-15T03:55:40.807Z">
 <meta property="article:author" content="rainstar">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary_large_image">
@@ -262,7 +262,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.2k words
+          8.9k words
         
       </span>
     
@@ -273,7 +273,7 @@
         
         
         
-          69 mins
+          75 mins
         
       </span>
     
@@ -325,7 +325,7 @@
               <div class="markdown-body">
                 
                 <p>[TOC]</p>
-<h1>day1| <strong>704. 二分查找</strong> 、 27. 移除元素、<strong>977.有序数组的平方</strong></h1>
+<h1>day1| 704. 二分查找 、 27. 移除元素、<strong>977.有序数组的平方</strong></h1>
 <h2 id="二分查找">二分查找</h2>
 <h3 id="知识点-区间定义">知识点-区间定义</h3>
 <p>性质一分为二，寻找两种性质的边界。</p>
@@ -691,6 +691,37 @@
 </ul>
 <p>两数之和需要返回索引：借助map，边遍历边插入寻找的方法。</p>
 <p>三数之和或以上：双指针算法，注意去重。（哈希去重较复杂）</p>
+<h1>day8|344.反转字符串 、541. 反转字符串II、卡码网：54.替换数字</h1>
+<h2 id="344-翻转字符串">344.翻转字符串</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-string/description/">https://leetcode.cn/problems/reverse-string/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0344.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.html">https://programmercarl.com/0344.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.html</a></p>
+<h3 id="思路-6">思路</h3>
+<p>假设字符串总长为n。</p>
+<p>第一想法是按数组索引<code>i</code>和<code>n-i</code>指示要交换的两个字符。</p>
+<p>**代码技巧：**这里使用双指针（头尾指针）可以省去关系的对应。</p>
+<h3 id="详细代码-18">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">reverseString</span><span class="hljs-params">(vector&lt;<span class="hljs-type">char</span>&gt;&amp; s)</span> </span>&#123;<br>        <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> j = s.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">while</span>(j &gt; i)<br>        &#123;<br>            <span class="hljs-type">char</span> tmp = s[i];<br>            s[i] = s[j];<br>            s[j] = tmp;<br>            i++;<br>            j--; <br>        &#125;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="541-反转字符串II">541. 反转字符串II</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-string-ii/">https://leetcode.cn/problems/reverse-string-ii/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0541.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2II.html">https://programmercarl.com/0541.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2II.html</a></p>
+<h3 id="思路-7">思路</h3>
+<p>先算出需要经过多少个2*k正常轮次；再用取余运算判断剩余的操作</p>
+<h3 id="详细代码-19">详细代码</h3>
+<p>这里自己手写的<code>reversestring</code>函数可以用库函数reverse替代：</p>
+<p>reversestring(s,start,start + k - 1)  =&gt; reverse(s.begin() + start, s.begin() + start + k)</p>
+<p>区分：手写为左闭右闭，库函数为左闭右开</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">reversestring</span><span class="hljs-params">(string &amp;s,<span class="hljs-type">int</span> start,<span class="hljs-type">int</span> end)</span></span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">while</span>(end &gt; start)<br>        &#123;<br>            <span class="hljs-type">char</span> tmp = s[start];<br>            s[start] = s[end];<br>            s[end] = tmp;<br>            start++;<br>            end--;<br>        &#125;<br>    &#125;<br>    <span class="hljs-function">string <span class="hljs-title">reverseStr</span><span class="hljs-params">(string s, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = s.<span class="hljs-built_in">length</span>();<br>        <span class="hljs-type">int</span> loop = n/(<span class="hljs-number">2</span>*k);<br>        <span class="hljs-type">int</span> start = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(loop--)<br>        &#123;<br>            <span class="hljs-type">int</span> end = start + k - <span class="hljs-number">1</span>;<br>            <span class="hljs-built_in">reversestring</span>(s,start,end);<br>            start += <span class="hljs-number">2</span>*k;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(n % (<span class="hljs-number">2</span>*k) &gt; <span class="hljs-number">0</span> &amp;&amp; n % (<span class="hljs-number">2</span>*k) &lt; k)<br>        &#123;<br>            <span class="hljs-built_in">reversestring</span>(s,start,n<span class="hljs-number">-1</span>);<br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (n % (<span class="hljs-number">2</span>*k) &gt;= k)<br>        &#123;<br>            <span class="hljs-type">int</span> end = start + k - <span class="hljs-number">1</span>;<br>            <span class="hljs-built_in">reversestring</span>(s,start,end);<br>        &#125;<br>        <span class="hljs-keyword">return</span> s;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="卡码网：54-替换数字">卡码网：54.替换数字</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://kamacoder.com/problempage.php?pid=1064">https://kamacoder.com/problempage.php?pid=1064</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/kamacoder/0054.%E6%9B%BF%E6%8D%A2%E6%95%B0%E5%AD%97.html">https://programmercarl.com/kamacoder/0054.%E6%9B%BF%E6%8D%A2%E6%95%B0%E5%AD%97.html</a></p>
+<h3 id="思路-8">思路</h3>
+<p>利用acm模式，不需要存储，逐个输出即可；</p>
+<p>另一种双指针算法，可以存储，<strong>很多数组填充类的问题，其做法都是先预先给数组扩容带填充后的大小，然后在从后向前进行操作</strong>，尾指针指向填充完新串的末尾，头指针指向旧串的末尾。</p>
+<h3 id="详细代码-20">详细代码</h3>
+<h4 id="原做法-3">原做法</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    string s;<br>    cin &gt;&gt; s;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; s.<span class="hljs-built_in">length</span>(); i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(s[i] &gt;= <span class="hljs-string">&#x27;0&#x27;</span> &amp;&amp; s[i] &lt;= <span class="hljs-string">&#x27;9&#x27;</span>)<br>            cout &lt;&lt; <span class="hljs-string">&quot;number&quot;</span>;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; s[i];<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="双指针算法-3">双指针算法</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    string s;<br>    cin &gt;&gt; s;<br>    <span class="hljs-type">int</span> oldindex = s.<span class="hljs-built_in">length</span>()<span class="hljs-number">-1</span>;<br>    <span class="hljs-type">int</span> cnt = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; s.<span class="hljs-built_in">length</span>(); i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(s[i] &gt;= <span class="hljs-string">&#x27;0&#x27;</span> &amp;&amp; s[i] &lt;= <span class="hljs-string">&#x27;9&#x27;</span>) cnt++;<br>    &#125;<br>    <span class="hljs-comment">//扩容</span><br>    s.<span class="hljs-built_in">resize</span>(s.<span class="hljs-built_in">size</span>()+cnt*<span class="hljs-number">5</span>);<br>    <span class="hljs-type">int</span> newindex = s.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">while</span>(oldindex &gt;= <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(s[oldindex] &gt;= <span class="hljs-string">&#x27;0&#x27;</span> &amp;&amp; s[oldindex] &lt;= <span class="hljs-string">&#x27;9&#x27;</span>)<br>        &#123;<br>            s[newindex--]=<span class="hljs-string">&#x27;r&#x27;</span>;<br>            s[newindex--]=<span class="hljs-string">&#x27;e&#x27;</span>;<br>            s[newindex--]=<span class="hljs-string">&#x27;b&#x27;</span>;<br>            s[newindex--]=<span class="hljs-string">&#x27;m&#x27;</span>;<br>            s[newindex--]=<span class="hljs-string">&#x27;u&#x27;</span>;<br>            s[newindex--]=<span class="hljs-string">&#x27;n&#x27;</span>;<br>            oldindex--;<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            s[newindex--]=s[oldindex--];<br>        &#125;<br>    &#125;<br>    cout &lt;&lt; s &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
