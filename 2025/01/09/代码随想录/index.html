@@ -19,12 +19,12 @@
   <meta name="author" content="rainstar">
   <meta name="keywords" content="">
   
-    <meta name="description" content="day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;target">
+    <meta name="description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码随想录">
 <meta property="og:url" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/index.html">
 <meta property="og:site_name" content="RainStar&#39;s Blog">
-<meta property="og:description" content="day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;target">
+<meta property="og:description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;gt">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736407983518.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736563092460.png">
@@ -70,7 +70,7 @@
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739175281407.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739251969835.png">
 <meta property="article:published_time" content="2025-01-09T03:21:30.000Z">
-<meta property="article:modified_time" content="2025-02-12T06:05:29.436Z">
+<meta property="article:modified_time" content="2025-02-13T15:58:40.638Z">
 <meta property="article:author" content="rainstar">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary_large_image">
@@ -296,7 +296,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          35k words
+          36k words
         
       </span>
     
@@ -307,7 +307,7 @@
         
         
         
-          295 mins
+          300 mins
         
       </span>
     
@@ -358,7 +358,8 @@
             
               <div class="markdown-body">
                 
-                <h1 id="day1-704.-二分查找-27.-移除元素977.有序数组的平方">day1| 704.
+                <p>[TOC]</p>
+<h1 id="day1-704.-二分查找-27.-移除元素977.有序数组的平方">day1| 704.
 二分查找 、 27. 移除元素、<strong>977.有序数组的平方</strong></h1>
 <h2 id="二分查找">二分查找</h2>
 <h3 id="知识点-区间定义">知识点-区间定义</h3>
@@ -2106,6 +2107,59 @@ nums[i]，nums[i]变为9后，<strong>记录当前变为9的位置，将nums[i]�
 <h4 id="其他-1">其他</h4>
 <p>最大子序和：</p>
 <p>加油站：</p>
+<h1 id="day37dp理论基础509.-斐波那契数70.-爬楼梯746.-使用最小花费爬楼梯">day37|dp理论基础、509.
+斐波那契数、70. 爬楼梯、746. 使用最小花费爬楼梯</h1>
+<h2 id="理论基础-3">理论基础</h2>
+<p>解题步骤：</p>
+<ol type="1">
+<li>确定dp数组（dp table）以及下标的含义</li>
+<li>确定递推公式</li>
+<li>dp数组如何初始化</li>
+<li>确定遍历顺序</li>
+<li>举例推导dp数组</li>
+</ol>
+<h2 id="斐波那契数">509. 斐波那契数</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/fibonacci-number/description/">https://leetcode.cn/problems/fibonacci-number/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0509.%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0.html#%E6%80%9D%E8%B7%AF">https://programmercarl.com/0509.%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0.html#%E6%80%9D%E8%B7%AF</a></p>
+<h3 id="思路-78">思路</h3>
+<ol type="1">
+<li><p>dp[i]：表示第i个斐波那契数；</p></li>
+<li><p>dp[i] = dp[i-1]+dp[i-2];</p></li>
+<li><p>dp[0] = 0, dp [1] = 1;</p></li>
+<li><p>每个数的计算需要前两个数，从前往后进行计算</p></li>
+</ol>
+<p>可以使用<strong>两个数组元素</strong>进行空间优化。</p>
+<h3 id="详细代码-92">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-type">int</span> dp[<span class="hljs-number">31</span>];<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++)<br>        &#123;<br>            dp[i] = dp[i<span class="hljs-number">-1</span>] + dp[i<span class="hljs-number">-2</span>];<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n]; <br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="爬楼梯">70.爬楼梯</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/description/">https://leetcode.cn/problems/climbing-stairs/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0070.%E7%88%AC%E6%A5%BC%E6%A2%AF.html">https://programmercarl.com/0070.%E7%88%AC%E6%A5%BC%E6%A2%AF.html</a></p>
+<h3 id="思路-79">思路</h3>
+<ol type="1">
+<li>dp[i]：爬n阶楼梯有多少种方法；</li>
+<li>dp[i] = dp[i-1] + dp[i-2]
+；前一步要么在i-2，要么在i-1,在走到i-2阶的方法上加一个2步，在走到i-1阶的方法上加一个1步，最后一步不同，肯定不是一种方法。</li>
+<li>dp[1] = 1, dp[2] = 2;</li>
+<li>前往后</li>
+</ol>
+<h3 id="详细代码-93">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">climbStairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-type">int</span> dp[<span class="hljs-number">46</span>];<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">3</span>; i &lt;= n; i++)<br>            dp[i] = dp[i<span class="hljs-number">-1</span>] + dp[i<span class="hljs-number">-2</span>];<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="相关题目推荐">相关题目推荐</h3>
+<h2 id="使用最小花费爬楼梯">746.使用最小花费爬楼梯</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/min-cost-climbing-stairs/description/">https://leetcode.cn/problems/min-cost-climbing-stairs/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0746.%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF.html">https://programmercarl.com/0746.%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF.html</a></p>
+<h3 id="思路-80">思路</h3>
+<ol type="1">
+<li><p>dp[i]：表示到第i阶的最小花费；</p></li>
+<li><p>dp[i] = min(dp[i-1]+cost[i-1],dp[i-2+cost[i-2]]);</p></li>
+<li><p>dp[0] = 0; dp[1] = 0;</p></li>
+<li><p>前往后</p></li>
+</ol>
+<h3 id="详细代码-94">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">minCostClimbingStairs</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; cost)</span> </span>&#123;<br>        <span class="hljs-type">int</span> dp[<span class="hljs-number">1010</span>];<br>        <span class="hljs-type">int</span> n = cost.<span class="hljs-built_in">size</span>();<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++)<br>            dp[i] = <span class="hljs-built_in">min</span>(dp[i<span class="hljs-number">-1</span>]+cost[i<span class="hljs-number">-1</span>],dp[i<span class="hljs-number">-2</span>]+cost[i<span class="hljs-number">-2</span>]);<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="相关题目-9">相关题目</h3>
+<p>如果第一步花费，最后一步不花费：dp[i]不直接表示跳到第i阶的最小花费，是包含下一步的最小花费（除第0.1阶），后续求dp[n]的时候只需要求其前一步的最小花费。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp">dp[i] = <span class="hljs-built_in">min</span>(dp[i<span class="hljs-number">-1</span>],dp[i<span class="hljs-number">-2</span>])+cost[i] (i &gt;= <span class="hljs-number">2</span>)<br><br><span class="hljs-keyword">return</span> <span class="hljs-built_in">min</span>(dp[n<span class="hljs-number">-1</span>],dp[n<span class="hljs-number">-2</span>]);<br></code></pre></td></tr></table></figure>
 
                 
               </div>
