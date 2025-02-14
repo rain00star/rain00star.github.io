@@ -69,8 +69,10 @@
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739071380552.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739175281407.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739251969835.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739528668291.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739528720197.png">
 <meta property="article:published_time" content="2025-01-09T03:21:30.000Z">
-<meta property="article:modified_time" content="2025-02-13T15:58:40.638Z">
+<meta property="article:modified_time" content="2025-02-14T10:34:50.806Z">
 <meta property="article:author" content="rainstar">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary_large_image">
@@ -296,7 +298,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          36k words
+          38k words
         
       </span>
     
@@ -307,7 +309,7 @@
         
         
         
-          300 mins
+          313 mins
         
       </span>
     
@@ -2160,6 +2162,97 @@ nums[i]，nums[i]变为9后，<strong>记录当前变为9的位置，将nums[i]�
 <h3 id="相关题目-9">相关题目</h3>
 <p>如果第一步花费，最后一步不花费：dp[i]不直接表示跳到第i阶的最小花费，是包含下一步的最小花费（除第0.1阶），后续求dp[n]的时候只需要求其前一步的最小花费。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp">dp[i] = <span class="hljs-built_in">min</span>(dp[i<span class="hljs-number">-1</span>],dp[i<span class="hljs-number">-2</span>])+cost[i] (i &gt;= <span class="hljs-number">2</span>)<br><br><span class="hljs-keyword">return</span> <span class="hljs-built_in">min</span>(dp[n<span class="hljs-number">-1</span>],dp[n<span class="hljs-number">-2</span>]);<br></code></pre></td></tr></table></figure>
+<h1 id="day3862.不同路径63.不同路径ii343.整数拆分96.不同的二叉搜索树">day38|62.不同路径、63.不同路径II、343.整数拆分、96.不同的二叉搜索树</h1>
+<h2 id="不同路径">62.不同路径</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-paths/description/">https://leetcode.cn/problems/unique-paths/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0062.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84.html">https://programmercarl.com/0062.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84.html</a></p>
+<h3 id="思路-81">思路</h3>
+<h4 id="暴搜-超时">暴搜-超时</h4>
+<p>类似深度遍历的思路。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> j, <span class="hljs-type">int</span> m,<span class="hljs-type">int</span> n)</span></span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">if</span>(i &gt; m || j &gt; n)  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;     <span class="hljs-comment">//越过边界</span><br>        <span class="hljs-keyword">if</span>(i == m &amp;&amp; j == n)    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;  <span class="hljs-comment">//到达终点</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">dfs</span>(i<span class="hljs-number">+1</span>,j,m,n)+<span class="hljs-built_in">dfs</span>(i,j<span class="hljs-number">+1</span>,m,n);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">dfs</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,m,n);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="dp">dp</h4>
+<ol type="1">
+<li>dp[i] [j]表示到达坐标(i,j)的路径条数;</li>
+<li>dp[i] [j] = dp[i-1] [j] + dp[i] [j-1];</li>
+<li>初始化，dp[i] [1] (所有i) = 1（只有一路向下一条）；dp[1] [j] =
+1;</li>
+<li>从前往后遍历</li>
+</ol>
+<p>空间优化，使用一维数组，与前一个位置及当前位置有关。</p>
+<h4 id="数论">数论</h4>
+<p>总共走m+n-2步，从中跳出m-1步向下=&gt;组合数C(m+n-2,m-1)。</p>
+<p>组合数的计算，C(a,b) = a! / b! *
+(a-b)!，a递减b次，抵消(a-b)!，b递减至1，边阶乘边相除，避免int溢出。</p>
+<h3 id="详细代码-95">详细代码</h3>
+<h4 id="dp-二维">dp-二维</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-type">int</span> dp[<span class="hljs-number">110</span>][<span class="hljs-number">110</span>];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i&lt;= m; i++)  dp[i][<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)  dp[<span class="hljs-number">1</span>][i] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= m; i++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">2</span>; j &lt;=n; j++)<br>                dp[i][j] = dp[i][j<span class="hljs-number">-1</span>] + dp[i<span class="hljs-number">-1</span>][j];<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[m][n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="dp-一维">dp-一维</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-type">int</span> dp[<span class="hljs-number">110</span>];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) dp[i] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; m; i++)    <span class="hljs-comment">//接下来m-1行</span><br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">2</span>; j &lt;= n; j++)<br>                dp[j] = dp[j] + dp[j<span class="hljs-number">-1</span>];<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="数论-1">数论</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-type">int</span> a = m + n - <span class="hljs-number">2</span>;<br>        <span class="hljs-type">int</span> b = m - <span class="hljs-number">1</span>;<br>        <span class="hljs-comment">//求C(a,b)</span><br>        <span class="hljs-type">int</span> count = b;     <span class="hljs-comment">//只算a-&gt;(a-b),后面与(a-b)!抵消</span><br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> fenzi = <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> fenmu = b;<br>        <span class="hljs-keyword">while</span>(count--)<br>        &#123;<br>            fenzi *= (a--);<br>            <span class="hljs-keyword">while</span>(fenmu != <span class="hljs-number">0</span> &amp;&amp; fenzi % fenmu == <span class="hljs-number">0</span>)<br>            &#123;<br>                fenzi /= fenmu;<br>                fenmu--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> fenzi;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="不同路径ii">63.不同路径II</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-paths-ii/description/">https://leetcode.cn/problems/unique-paths-ii/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0063.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84II.html">https://programmercarl.com/0063.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84II.html</a></p>
+<h3 id="思路-82">思路</h3>
+<ol type="1">
+<li>dp[i] [j]表示从起点到终点(i,j)的总路径条数；</li>
+<li>dp[i] [j] = dp[i-1] [j] + dp[i] [j-1] (终点无障碍) 或者 0
+(终点处有障碍)；</li>
+<li>初始化，与上一题相同dp[i] [0] = dp[0] [i] = 1 ,
+但如果第一行或第一列中出现障碍，后面所有的终点总路径条数变为1；</li>
+<li>前往后遍历；</li>
+</ol>
+<p>空间可优化为一维数组。（同上）</p>
+<h3 id="详细代码-96">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">uniquePathsWithObstacles</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; obstacleGrid)</span> </span>&#123;<br>        <span class="hljs-type">int</span> dp[<span class="hljs-number">110</span>][<span class="hljs-number">110</span>];<br>        <span class="hljs-type">int</span> m = obstacleGrid.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-type">int</span> n = obstacleGrid[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; m; i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(obstacleGrid[i][<span class="hljs-number">0</span>] == <span class="hljs-number">1</span>)<br>            &#123;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = i; j &lt; m; j++)<br>                &#123;<br>                    dp[j][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>                &#125;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-keyword">else</span><br>                dp[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(obstacleGrid[<span class="hljs-number">0</span>][i] == <span class="hljs-number">1</span>)<br>            &#123;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = i; j &lt; n; j++)<br>                &#123;<br>                    dp[<span class="hljs-number">0</span>][j] = <span class="hljs-number">0</span>;<br>                &#125;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                dp[<span class="hljs-number">0</span>][i] = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; m; i++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt; n; j++)<br>            &#123;<br>                <span class="hljs-keyword">if</span>(obstacleGrid[i][j] == <span class="hljs-number">1</span>)<br>                    dp[i][j] = <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">else</span><br>                    dp[i][j] = dp[i<span class="hljs-number">-1</span>][j]+dp[i][j<span class="hljs-number">-1</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[m<span class="hljs-number">-1</span>][n<span class="hljs-number">-1</span>];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="整数拆分">343.整数拆分</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/integer-break/description/">https://leetcode.cn/problems/integer-break/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0343.%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86.html">https://programmercarl.com/0343.%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86.html</a></p>
+<h3 id="思路-83">思路</h3>
+<p>​ 对于的正整数 n，当 n≥2 时，可以拆分成至少两个正整数的和。令 k
+是拆分出的第一个正整数，则剩下的部分是 n−k，<strong>n−k
+可以不继续拆分，或者继续拆分成至少两个正整数的和（一个问题可以分解为相似的子问题因此想到动态规划）</strong>。由于每个正整数对应的最大乘积取决于比它小的正整数对应的最大乘积，因此可以使用动态规划求解。=&gt;leetcode题解。</p>
+<ol type="1">
+<li><p>dp[i] ： 整数i拆分的最大乘积；</p></li>
+<li><p>dp[i] = max(dp[i],max(j * (i-j) , j *
+dp[i-j]))，其中j的范围是2~i-2（i/2）；</p>
+<p>（对于i *
+(i-j)部分，1没有意义，i-1和1本质一样；这里j也可以直接取到i/2，后面部分重复；对于后续继续拆分的部分，<strong>拆分一个数n
+使之乘积最大，那么一定是拆分成m个近似相同的子数相乘才是最大的</strong>，这里可能超过一半的j和dp[i-j]中的拆分数字大小差距过大，需要严格的数学证明。）</p></li>
+<li><p>dp[0]和dp[1]没有意义，dp[2] = 1，dp[3] = 2;</p></li>
+<li><p>前往后遍历。</p></li>
+</ol>
+<h3 id="详细代码-97">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">integerBreak</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-type">int</span> dp[<span class="hljs-number">60</span>];<br>        dp[<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">3</span>] = <span class="hljs-number">2</span>;   <span class="hljs-comment">//j从2开始，到i/2结束，需要把3独立出来</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">3</span>; i &lt;= n; i++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">2</span>; j &lt;= i/<span class="hljs-number">2</span>; j++)<br>            &#123;<br>                dp[i] = <span class="hljs-built_in">max</span>(dp[i],<span class="hljs-built_in">max</span>(j*(i-j),j*dp[i-j]));<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="不同的二叉搜索树">96.不同的二叉搜索树</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-binary-search-trees/description/">https://leetcode.cn/problems/unique-binary-search-trees/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0096.%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html">https://programmercarl.com/0096.%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</a></p>
+<h3 id="思路-84">思路</h3>
+<p>图中发现规律：</p>
+<figure>
+<img src="/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739528668291.png" srcset="/img/loading.gif" lazyload alt="1739528668291">
+<figcaption aria-hidden="true">1739528668291</figcaption>
+</figure>
+<figure>
+<img src="/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739528720197.png" srcset="/img/loading.gif" lazyload alt="1739528720197">
+<figcaption aria-hidden="true">1739528720197</figcaption>
+</figure>
+<p>dp[3]，就是 元素1为头结点搜索树的数量 + 元素2为头结点搜索树的数量 +
+元素3为头结点搜索树的数量</p>
+<p>元素1为头结点搜索树的数量 = 右子树有2个元素的搜索树数量
+（n=2的布局）* 左子树有0个元素的搜索树数量</p>
+<p>元素2为头结点搜索树的数量 = 右子树有1个元素的搜索树数量（n=1的布局）
+* 左子树有1个元素的搜索树数量</p>
+<p>元素3为头结点搜索树的数量 = 右子树有0个元素的搜索树数量 *
+左子树有2个元素的搜索树数量（n=2的布局）</p>
+<ol type="1">
+<li>dp[i]为i个节点的二叉搜索树的数量；</li>
+<li>dp[i] += dp[j] * dp[i-j] (左右子树平分节点数-1)；</li>
+<li>dp[0] = 1（空节点也是一棵二叉搜索树），dp[1] = 1, dp[2] = 2;</li>
+<li>从前往后遍历。</li>
+</ol>
+<h3 id="详细代码-98">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">numTrees</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-type">int</span> dp[<span class="hljs-number">20</span>];<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">3</span>; i &lt;= n; i++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt;= i - <span class="hljs-number">1</span>; j++)<br>            &#123;<br>                dp[i] += dp[j] * dp[i<span class="hljs-number">-1</span>-j];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
