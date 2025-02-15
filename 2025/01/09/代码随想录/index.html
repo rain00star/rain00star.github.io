@@ -19,12 +19,12 @@
   <meta name="author" content="rainstar">
   <meta name="keywords" content="">
   
-    <meta name="description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;gt">
+    <meta name="description" content="day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;target">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码随想录">
 <meta property="og:url" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/index.html">
 <meta property="og:site_name" content="RainStar&#39;s Blog">
-<meta property="og:description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;gt">
+<meta property="og:description" content="day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;target">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736407983518.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736563092460.png">
@@ -71,8 +71,9 @@
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739251969835.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739528668291.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739528720197.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739622135036.png">
 <meta property="article:published_time" content="2025-01-09T03:21:30.000Z">
-<meta property="article:modified_time" content="2025-02-14T10:34:50.806Z">
+<meta property="article:modified_time" content="2025-02-15T15:18:24.439Z">
 <meta property="article:author" content="rainstar">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary_large_image">
@@ -309,7 +310,7 @@
         
         
         
-          313 mins
+          320 mins
         
       </span>
     
@@ -360,8 +361,7 @@
             
               <div class="markdown-body">
                 
-                <p>[TOC]</p>
-<h1 id="day1-704.-二分查找-27.-移除元素977.有序数组的平方">day1| 704.
+                <h1 id="day1-704.-二分查找-27.-移除元素977.有序数组的平方">day1| 704.
 二分查找 、 27. 移除元素、<strong>977.有序数组的平方</strong></h1>
 <h2 id="二分查找">二分查找</h2>
 <h3 id="知识点-区间定义">知识点-区间定义</h3>
@@ -2253,6 +2253,49 @@ dp[i-j]))，其中j的范围是2~i-2（i/2）；</p>
 </ol>
 <h3 id="详细代码-98">详细代码</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">numTrees</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>        <span class="hljs-type">int</span> dp[<span class="hljs-number">20</span>];<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">3</span>; i &lt;= n; i++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt;= i - <span class="hljs-number">1</span>; j++)<br>            &#123;<br>                dp[i] += dp[j] * dp[i<span class="hljs-number">-1</span>-j];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h1 id="day39背包问题分类背包问题二维背包问题一维416.分割等和子集">day39|背包问题分类、背包问题二维、背包问题一维、416.分割等和子集</h1>
+<h2 id="背包问题分类">背包问题分类</h2>
+<figure>
+<img src="/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739622135036.png" srcset="/img/loading.gif" lazyload alt="1739622135036">
+<figcaption aria-hidden="true">1739622135036</figcaption>
+</figure>
+<h2 id="背包问题二维">背包问题二维</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://kamacoder.com/problempage.php?pid=1046">https://kamacoder.com/problempage.php?pid=1046</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/%E8%83%8C%E5%8C%85%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%8001%E8%83%8C%E5%8C%85-1.html">https://programmercarl.com/%E8%83%8C%E5%8C%85%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%8001%E8%83%8C%E5%8C%85-1.html</a></p>
+<h3 id="思路-85">思路</h3>
+<ol type="1">
+<li>dp[i]
+[j]表示从0~i的物品中选择，装入背包容量为j，所能得到的最大价值；</li>
+<li>对于每件物品，有选与不选
+两个选项，如果当前背包容量小于这件物品，不选，dp[i] [j] = dp[i-1]
+[j]；如果可以选，求选与不选的最大值，dp[i] [j] = max(dp[i-1] [j] , dp[i
+- 1] [j - weight[i]]+ value[i]);</li>
+<li>初始化，dp[i] [0] = 0(背包容量为0)；dp[0] [j] = 0(weight[0] &gt; j)
+或者value[0] (weight[0] &lt;= j)；</li>
+<li>每个dp[i] [j]仅与正上方或者左上方的数值有关（后续一维）</li>
+</ol>
+<h3 id="详细代码-99">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">5010</span>;<br><span class="hljs-type">int</span> val[N];<br><span class="hljs-type">int</span> weight[N];<br><span class="hljs-type">int</span> dp[N][N];<br><span class="hljs-type">int</span> n,baseweight;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; n &gt;&gt; baseweight;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        cin &gt;&gt; weight[i];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        cin &gt;&gt; val[i];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = weight[<span class="hljs-number">0</span>]; i &lt;= baseweight; i++)<br>    &#123;<br>        dp[<span class="hljs-number">0</span>][i] = val[<span class="hljs-number">0</span>];<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt;= baseweight; j++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(j &lt; weight[i])   dp[i][j] = dp[i<span class="hljs-number">-1</span>][j];<br>            <span class="hljs-keyword">else</span> dp[i][j] = <span class="hljs-built_in">max</span>(dp[i<span class="hljs-number">-1</span>][j],dp[i<span class="hljs-number">-1</span>][j-weight[i]]+val[i]);<br>        &#125;<br>    &#125;<br>    cout &lt;&lt; dp[n<span class="hljs-number">-1</span>][baseweight] &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="背包问题一维">背包问题一维</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://kamacoder.com/problempage.php?pid=1046">https://kamacoder.com/problempage.php?pid=1046</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/%E8%83%8C%E5%8C%85%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%8001%E8%83%8C%E5%8C%85-2.html">https://programmercarl.com/%E8%83%8C%E5%8C%85%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%8001%E8%83%8C%E5%8C%85-2.html</a></p>
+<h3 id="思路-86">思路</h3>
+<p>​ 由于dp[i] [j] 仅取决于dp[i-1] [j] (正上方)和dp[i - 1] [j -
+weight[i]]
+（左上方），可以使用一维滚动数组来替代，需要前面的值，所有从后往前遍历；</p>
+<p>​ 滚动：第i次滚动表示从前 i 个物品当中选。</p>
+<h3 id="详细代码-100">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">5010</span>;<br><span class="hljs-type">int</span> dp[N];<br><br><span class="hljs-type">int</span> val[N];<br><span class="hljs-type">int</span> weight[N];<br><br><span class="hljs-type">int</span> n,baseweight;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; n &gt;&gt; baseweight;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        cin &gt;&gt; weight[i];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        cin &gt;&gt; val[i];<br>    <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = baseweight; j &gt;= weight[i]; j--)<br>        &#123;<br>            dp[j] = <span class="hljs-built_in">max</span>(dp[j],dp[j-weight[i]]+val[i]);<br>        &#125;<br>    &#125;<br>    cout &lt;&lt; dp[baseweight] &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="分割等和子集">416.分割等和子集</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/partition-equal-subset-sum/description/">https://leetcode.cn/problems/partition-equal-subset-sum/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0416.%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86.html">https://programmercarl.com/0416.%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86.html</a></p>
+<h3 id="思路-87">思路</h3>
+<p>问题转化：</p>
+<p>数组内的和为sum，数组大小为n；</p>
+<p>刚开始把背包容量设置为n-1，要求背包里的数值和能否到达sum/2，这里没有体现最大价值，行不通；</p>
+<p>这里<strong>把数值同化为两个维度，既是价值，又是容量</strong>，转化为容量为sum/2的背包，能装的最大价值是多少（如果最大能达到装满，既满足题意，又体现背包问题最大价值）</p>
+<h3 id="详细代码-101">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">canPartition</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>            sum += nums[i];<br>        <span class="hljs-keyword">if</span>(sum%<span class="hljs-number">2</span> != <span class="hljs-number">0</span>)   <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-type">int</span> baseweight = sum / <span class="hljs-number">2</span>;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(baseweight<span class="hljs-number">+1</span>,<span class="hljs-number">0</span>)</span></span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = baseweight; j &gt;= nums[i]; j--)<br>            &#123;<br>                dp[j] = <span class="hljs-built_in">max</span>(dp[j],dp[j-nums[i]]+nums[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(dp[baseweight] == baseweight)    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
