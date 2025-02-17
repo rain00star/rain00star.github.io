@@ -19,12 +19,12 @@
   <meta name="author" content="rainstar">
   <meta name="keywords" content="">
   
-    <meta name="description" content="day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;target">
+    <meta name="description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码随想录">
 <meta property="og:url" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/index.html">
 <meta property="og:site_name" content="RainStar&#39;s Blog">
-<meta property="og:description" content="day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;target">
+<meta property="og:description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;gt">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736407983518.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736563092460.png">
@@ -73,7 +73,7 @@
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739528720197.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739622135036.png">
 <meta property="article:published_time" content="2025-01-09T03:21:30.000Z">
-<meta property="article:modified_time" content="2025-02-15T15:18:24.439Z">
+<meta property="article:modified_time" content="2025-02-17T15:18:07.352Z">
 <meta property="article:author" content="rainstar">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary_large_image">
@@ -299,7 +299,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          38k words
+          39k words
         
       </span>
     
@@ -310,7 +310,7 @@
         
         
         
-          320 mins
+          328 mins
         
       </span>
     
@@ -361,7 +361,8 @@
             
               <div class="markdown-body">
                 
-                <h1 id="day1-704.-二分查找-27.-移除元素977.有序数组的平方">day1| 704.
+                <p>[TOC]</p>
+<h1 id="day1-704.-二分查找-27.-移除元素977.有序数组的平方">day1| 704.
 二分查找 、 27. 移除元素、<strong>977.有序数组的平方</strong></h1>
 <h2 id="二分查找">二分查找</h2>
 <h3 id="知识点-区间定义">知识点-区间定义</h3>
@@ -2296,6 +2297,68 @@ weight[i]]
 <p>这里<strong>把数值同化为两个维度，既是价值，又是容量</strong>，转化为容量为sum/2的背包，能装的最大价值是多少（如果最大能达到装满，既满足题意，又体现背包问题最大价值）</p>
 <h3 id="详细代码-101">详细代码</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">canPartition</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>            sum += nums[i];<br>        <span class="hljs-keyword">if</span>(sum%<span class="hljs-number">2</span> != <span class="hljs-number">0</span>)   <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-type">int</span> baseweight = sum / <span class="hljs-number">2</span>;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(baseweight<span class="hljs-number">+1</span>,<span class="hljs-number">0</span>)</span></span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = baseweight; j &gt;= nums[i]; j--)<br>            &#123;<br>                dp[j] = <span class="hljs-built_in">max</span>(dp[j],dp[j-nums[i]]+nums[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(dp[baseweight] == baseweight)    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h1 id="day411049.-最后一块石头的重量-ii494.-目标和474.一和零01背包总结">day41|1049.
+最后一块石头的重量 II、494. 目标和、474.一和零、01背包总结</h1>
+<h2 id="最后一块石头的重量-ii">1049. 最后一块石头的重量 II</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/last-stone-weight-ii/description/">https://leetcode.cn/problems/last-stone-weight-ii/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/1049.%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8FII.html">https://programmercarl.com/1049.%E6%9C%80%E5%90%8E%E4%B8%80%E5%9D%97%E7%9F%B3%E5%A4%B4%E7%9A%84%E9%87%8D%E9%87%8FII.html</a></p>
+<h3 id="思路-88">思路</h3>
+<p>本质：将石头分为两堆，使两堆的重量尽可能接近，</p>
+<p>将重量视为容量和价值，转化为容量为sum/2的背包所能装的最大价值是多少。与分割等和子集相似，</p>
+<h3 id="详细代码-102">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">lastStoneWeightII</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; stones)</span> </span>&#123;<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; stones.<span class="hljs-built_in">size</span>(); i++)<br>            sum += stones[i];<br>        <span class="hljs-type">int</span> baseweight = sum / <span class="hljs-number">2</span>;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(baseweight<span class="hljs-number">+1</span>,<span class="hljs-number">0</span>)</span></span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; stones.<span class="hljs-built_in">size</span>(); i++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = baseweight; j &gt;= stones[i]; j--)<br>            &#123;<br>                dp[j] = <span class="hljs-built_in">max</span>(dp[j],dp[j-stones[i]]+stones[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> heap1 = dp[baseweight];<br>        <span class="hljs-type">int</span> heap2 = sum - heap1;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">abs</span>(heap1 - heap2);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="目标和">494.目标和</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/target-sum/description/">https://leetcode.cn/problems/target-sum/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0494.%E7%9B%AE%E6%A0%87%E5%92%8C.html">https://programmercarl.com/0494.%E7%9B%AE%E6%A0%87%E5%92%8C.html</a></p>
+<h3 id="思路-89">思路</h3>
+<h4 id="回溯-超时">回溯-超时</h4>
+<p>分为两部分（前面添加+为left,前面添加-为right），有：</p>
+<p>left - right = target; left + right = sum；所以left = (target+sum) /
+2；</p>
+<p>问题转化为从数组中选取若干个数使其和为(target+sum)/2; =&gt;
+组合问题，回溯法</p>
+<h4 id="dp-1">dp</h4>
+<p>同上述推导，将num视为容量和价值，求将容量为(target+sum) /
+2装满有多少种方法。</p>
+<ol type="1">
+<li>dp[i] [j]
+表示从0-i数字中选出数字装入容量为j的背包，能装满有多少种方法；</li>
+<li>dp[i] [j] = dp[i-1] [j] （原本就满）+ dp[i - 1] [ j - nums[i]]
+（前一次选的时候，容量刚好差nums[i]）；</li>
+<li>dp[0] [0] = 1（放零件物品） ；</li>
+</ol>
+<p>滚动数组进行空间优化。</p>
+<h3 id="详细代码-103">详细代码</h3>
+<h4 id="回溯-超时-1">回溯-超时</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> tmpsum = <span class="hljs-number">0</span>;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">backtracing</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; nums,<span class="hljs-type">int</span> target, <span class="hljs-type">int</span> start)</span></span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">if</span>(tmpsum == target)<br>        &#123;<br>            ans++;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = start; i &lt; nums.<span class="hljs-built_in">size</span>() &amp;&amp; tmpsum + nums[i] &lt;= target; i++)<br>        &#123;<br>            tmpsum+=nums[i];<br>            <span class="hljs-built_in">backtracing</span>(nums,target,i<span class="hljs-number">+1</span>);<br>            tmpsum-=nums[i];<br>        &#125;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findTargetSumWays</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); i++)<br>            sum += nums[i];<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">abs</span>(target) &gt; sum)    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span>((target+sum) %<span class="hljs-number">2</span> != <span class="hljs-number">0</span>)    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> left = (target+sum) / <span class="hljs-number">2</span>;<br>        <span class="hljs-built_in">sort</span>(nums.<span class="hljs-built_in">begin</span>(),nums.<span class="hljs-built_in">end</span>());<br>        <span class="hljs-built_in">backtracing</span>(nums,left,<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="dp-2">dp</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findTargetSumWays</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); i++)<br>            sum+=nums[i];<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">abs</span>(target) &gt; sum )  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span>((sum+target) % <span class="hljs-number">2</span> != <span class="hljs-number">0</span>)   <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> baseweight = (sum+target)/<span class="hljs-number">2</span>;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(baseweight<span class="hljs-number">+1</span>,<span class="hljs-number">0</span>)</span></span>;<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;    <br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); i++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = baseweight; j &gt;= nums[i]; j--)<br>            &#123;<br>                dp[j] += dp[j - nums[i]];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[baseweight];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="一和零">474.一和零</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/ones-and-zeroes/description/">https://leetcode.cn/problems/ones-and-zeroes/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0474.%E4%B8%80%E5%92%8C%E9%9B%B6.html">https://programmercarl.com/0474.%E4%B8%80%E5%92%8C%E9%9B%B6.html</a></p>
+<h3 id="思路-90">思路</h3>
+<p>一和零可以看成背包容量的两个维度：使用滚动(滚动字符串)二维数组完成</p>
+<ol type="1">
+<li>dp[i] [j] 表示i个0和j个1的字符串子集最大长度；</li>
+<li>dp[i] [j] = max(dp[i] [j]，dp[i - a] [j - b] + 1)
+当前滚动到的字符串0的个数为a,1的个数为b；</li>
+<li>dp[0] [0] = 0</li>
+</ol>
+<h3 id="详细代码-104">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findMaxForm</span><span class="hljs-params">(vector&lt;string&gt;&amp; strs, <span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">dp</span>(m<span class="hljs-number">+1</span>,<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(n<span class="hljs-number">+1</span>,<span class="hljs-number">0</span>));<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; strs.<span class="hljs-built_in">size</span>(); i++)<br>        &#123;<br>            <span class="hljs-type">int</span> onenum = <span class="hljs-number">0</span>;<br>            <span class="hljs-type">int</span> zeronum = <span class="hljs-number">0</span>;<br>            string gunstring = strs[i];<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; gunstring.<span class="hljs-built_in">length</span>(); i++)<br>            &#123;<br>                <span class="hljs-keyword">if</span>(gunstring[i] == <span class="hljs-string">&#x27;0&#x27;</span>) zeronum++;<br>                <span class="hljs-keyword">else</span> onenum++;<br>            &#125;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = m; j &gt;= zeronum; j--)<br>            &#123;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k = n; k &gt;= onenum; k--)<br>                &#123;<br>                    dp[j][k] = <span class="hljs-built_in">max</span>(dp[j][k],dp[j-zeronum][k-onenum]<span class="hljs-number">+1</span>);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[m][n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="总结-8">总结</h2>
+<h3 id="背包的应用">01背包的应用</h3>
+<ul>
+<li><p>纯 0 - 1 背包是求给定背包容量 装满背包
+的最大价值是多少；</p></li>
+<li><p>分割等和子集是求
+给定背包容量，能不能装满这个背包（与下面一题相同，多一个判断）；</p></li>
+<li><p>最后一块石头的重量 II 是求
+给定背包容量，尽可能装，最多能装多少；</p></li>
+<li><p>目标和 (opens new window)是求
+给定背包容量，装满背包有多少种方法；</p></li>
+<li><p>一和零是将容量分为两个维度。</p></li>
+</ul>
 
                 
               </div>
