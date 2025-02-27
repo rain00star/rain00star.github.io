@@ -19,12 +19,12 @@
   <meta name="author" content="rainstar">
   <meta name="keywords" content="">
   
-    <meta name="description" content="day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;target">
+    <meta name="description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码随想录">
 <meta property="og:url" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/index.html">
 <meta property="og:site_name" content="RainStar&#39;s Blog">
-<meta property="og:description" content="day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&gt;target">
+<meta property="og:description" content="[TOC] day1| 704. 二分查找 、 27. 移除元素、977.有序数组的平方 二分查找 知识点-区间定义 性质一分为二，寻找两种性质的边界。 区间规则：（区分r&#x3D;mid&#x2F;r&#x3D;mid+1和while(r&gt;l)&#x2F;while(r &gt;&#x3D; l)）  左闭右闭：   假设我们寻找的target落在[l,r]的闭区间，使用mid来寻找试探，当nums[mid]&amp;gt">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736407983518.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1736563092460.png">
@@ -74,7 +74,7 @@
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1739622135036.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/01/09/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/1740212446814.png">
 <meta property="article:published_time" content="2025-01-09T03:21:30.000Z">
-<meta property="article:modified_time" content="2025-02-26T14:00:18.100Z">
+<meta property="article:modified_time" content="2025-02-27T06:54:20.443Z">
 <meta property="article:author" content="rainstar">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary_large_image">
@@ -300,7 +300,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          48k words
+          49k words
         
       </span>
     
@@ -311,7 +311,7 @@
         
         
         
-          397 mins
+          409 mins
         
       </span>
     
@@ -362,7 +362,8 @@
             
               <div class="markdown-body">
                 
-                <h1 id="day1-704.-二分查找-27.-移除元素977.有序数组的平方">day1| 704.
+                <p>[TOC]</p>
+<h1 id="day1-704.-二分查找-27.-移除元素977.有序数组的平方">day1| 704.
 二分查找 、 27. 移除元素、<strong>977.有序数组的平方</strong></h1>
 <h2 id="二分查找">二分查找</h2>
 <h3 id="知识点-区间定义">知识点-区间定义</h3>
@@ -2823,6 +2824,156 @@ word2 所使用的最少操作数 。</li>
 表示在word1[0-(i-1)]的子序列中和word2[0-(j-1)]的子序列中，使两个子序列相同需要的最小编辑距离。</p>
 <p>如果s[i-1] == t[j-1]，dp[i] [j] = dp[i-1] [j-1] ；如果不相等，dp[i]
 [j] = min(dp[i-1] [j] +1 , dp[i] [j-1] + 1，dp[i-1] [j-1]+1)</p>
+<h1 id="day51647.回文子串516.最长回文子序列总结">day51|647.回文子串、516.最长回文子序列、总结</h1>
+<h2 id="回文子串">647.回文子串</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/palindromic-substrings/description/">https://leetcode.cn/problems/palindromic-substrings/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0647.%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2.html">https://programmercarl.com/0647.%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2.html</a></p>
+<h3 id="思路-118">思路</h3>
+<h4 id="动态规划-2">动态规划</h4>
+<ol type="1">
+<li>dp[i] [j]表示从s[i-j]是否为回文串；</li>
+<li>如果j-i &lt;= 1,s[i] == s[j]说明dp[i] [j]为true,否则dp[i]
+[j]为false；其余长度，dp[i] [j]除了与s[i]和s[j]有关，还与dp[i+1]
+[j-1]有关</li>
+<li>全部初始化为false</li>
+</ol>
+<p>在每一次判断为true的时候累积个数加1；本来想直接在dp上累加，但只能得到s[i-j]的回文子串数量，无法累加s[i-(j-1)]等回文子串的数量。</p>
+<h4 id="双指针">双指针</h4>
+<p>节省空间。</p>
+<p>确定回文串，就是找中心然后向两边扩散看是不是对称的就可以了。</p>
+<p><strong>在遍历中心点的时候，要注意中心点有两种情况</strong>。一个元素可以作为中心点，两个元素也可以作为中心点。</p>
+<h3 id="详细代码-132">详细代码</h3>
+<h4 id="动态规划-3">动态规划</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">countSubstrings</span><span class="hljs-params">(string s)</span> </span>&#123;<br>        vector&lt;vector&lt;<span class="hljs-type">bool</span>&gt;&gt; <span class="hljs-built_in">dp</span>(s.<span class="hljs-built_in">length</span>(),<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">bool</span>&gt;(s.<span class="hljs-built_in">length</span>(),<span class="hljs-literal">false</span>));<br>        <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; s.<span class="hljs-built_in">length</span>(); j++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = j; i &gt;= <span class="hljs-number">0</span>; i--)<br>            &#123;<br>                <span class="hljs-keyword">if</span>(j-i &lt;= <span class="hljs-number">1</span>)<br>                &#123;<br>                    <span class="hljs-keyword">if</span>(s[j] == s[i])<br>                    &#123;<br>                        dp[i][j] = <span class="hljs-literal">true</span>;<br>                        ans++;<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">else</span><br>                &#123;<br>                    <span class="hljs-keyword">if</span>(s[j] == s[i] &amp;&amp; dp[i<span class="hljs-number">+1</span>][j<span class="hljs-number">-1</span>])<br>                    &#123;<br>                        dp[i][j] = <span class="hljs-literal">true</span>;<br>                        ans++;<br>                    &#125;<br>                &#125; <br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="双指针-1">双指针</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">extend</span><span class="hljs-params">(string s,<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> j)</span></span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &lt; s.<span class="hljs-built_in">length</span>() &amp;&amp; s[i] == s[j])<br>        &#123;<br>            i--;<br>            j++;<br>            res++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">countSubstrings</span><span class="hljs-params">(string s)</span> </span>&#123;<br>        <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; s.<span class="hljs-built_in">length</span>(); i++)  <span class="hljs-comment">//遍历中心点</span><br>        &#123;<br>            ans += <span class="hljs-built_in">extend</span>(s,i,i);    <span class="hljs-comment">//以i为中心</span><br>            ans += <span class="hljs-built_in">extend</span>(s,i,i<span class="hljs-number">+1</span>);  <span class="hljs-comment">//以i和i+1为中心</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="最长回文子序列">516.最长回文子序列</h2>
+<p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-palindromic-subsequence/description/">https://leetcode.cn/problems/longest-palindromic-subsequence/description/</a></p>
+<p>文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97.html">https://programmercarl.com/0516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97.html</a></p>
+<h3 id="思路-119">思路</h3>
+<ol type="1">
+<li>dp[i] [j]表示s[i-j]的子序列中最长回文子序列的长度；</li>
+<li>如果s[i] == s[j]，dp[i] [j] = dp[i+1] [j-1]+2；如果不相等，dp[i] [j]
+= max(dp[i+1] [j] , dp[i] [j-1])；</li>
+<li>初始化dp[i] [i] = 1。</li>
+</ol>
+<p>这里不需要额外讨论长度，长度为1已经初始化为1，长度为2的会使用永远不会遍历到的dp[i]
+[j]其中i大于j，这里永远为0，符合意义。</p>
+<h3 id="详细代码-133">详细代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">longestPalindromeSubseq</span><span class="hljs-params">(string s)</span> </span>&#123;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">dp</span>(s.<span class="hljs-built_in">length</span>(),<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(s.<span class="hljs-built_in">length</span>(),<span class="hljs-number">0</span>));<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; s.<span class="hljs-built_in">length</span>(); i++)<br>            dp[i][i] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; s.<span class="hljs-built_in">length</span>(); j++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = j<span class="hljs-number">-1</span>; i &gt;= <span class="hljs-number">0</span>; i--)<br>            &#123;<br>                <span class="hljs-keyword">if</span>(s[i] == s[j])    dp[i][j] = dp[i<span class="hljs-number">+1</span>][j<span class="hljs-number">-1</span>]<span class="hljs-number">+2</span>;<br>                <span class="hljs-keyword">else</span> dp[i][j] = <span class="hljs-built_in">max</span>(dp[i<span class="hljs-number">+1</span>][j],dp[i][j<span class="hljs-number">-1</span>]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[<span class="hljs-number">0</span>][s.<span class="hljs-built_in">length</span>()<span class="hljs-number">-1</span>];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="总结-10">总结</h2>
+<h3 id="复习提纲-1">复习提纲</h3>
+<h4 id="动态规划基础">动态规划基础</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/动态规划理论基础.html">关于动态规划，你该了解这些！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0509.斐波那契数.html">动态规划：斐波那契数(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0070.爬楼梯.html">动态规划：爬楼梯(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0746.使用最小花费爬楼梯.html">动态规划：使用最小花费爬楼梯(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0062.不同路径.html">动态规划：不同路径(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0063.不同路径II.html">动态规划：不同路径还不够，要有障碍！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0343.整数拆分.html">动态规划：整数拆分，你要怎么拆？(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0096.不同的二叉搜索树.html">动态规划：不同的二叉搜索树(opens
+new window)</a></li>
+</ul>
+<h4 id="背包问题系列">背包问题系列</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/背包理论基础01背包-1.html">动态规划：关于01背包问题，你该了解这些！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/背包理论基础01背包-2.html">动态规划：关于01背包问题，你该了解这些！（滚动数组）(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0416.分割等和子集.html">动态规划：分割等和子集可以用01背包！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/1049.最后一块石头的重量II.html">动态规划：最后一块石头的重量
+II(opens new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0494.目标和.html">动态规划：目标和！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0474.一和零.html">动态规划：一和零！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/背包问题理论基础完全背包.html">动态规划：关于完全背包，你该了解这些！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0518.零钱兑换II.html">动态规划：给你一些零钱，你要怎么凑？(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0377.组合总和Ⅳ.html">动态规划：Carl称它为排列总和！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0070.爬楼梯完全背包版本.html">动态规划：以前我没得选，现在我选择再爬一次！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0322.零钱兑换.html">动态规划：
+给我个机会，我再兑换一次零钱(opens new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0279.完全平方数.html">动态规划：一样的套路，再求一次完全平方数(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0139.单词拆分.html">动态规划：单词拆分(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/背包问题理论基础多重背包.html">动态规划：关于多重背包，你该了解这些！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/背包总结篇.html">听说背包问题很难？
+这篇总结篇来拯救你了(opens new window)</a></li>
+</ul>
+<h4 id="打家劫舍系列">打家劫舍系列</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0198.打家劫舍.html">动态规划：开始打家劫舍！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0213.打家劫舍II.html">动态规划：继续打家劫舍！(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0337.打家劫舍III.html">动态规划：还要打家劫舍！(opens
+new window)</a></li>
+</ul>
+<h4 id="股票系列">股票系列</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0121.买卖股票的最佳时机.html">动态规划：买卖股票的最佳时机(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/周总结/20210225动规周末总结.html">动态规划：本周我们都讲了这些（系列六）(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0122.买卖股票的最佳时机II（动态规划）.html">动态规划：买卖股票的最佳时机II(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0123.买卖股票的最佳时机III.html">动态规划：买卖股票的最佳时机III(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0188.买卖股票的最佳时机IV.html">动态规划：买卖股票的最佳时机IV(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0309.最佳买卖股票时机含冷冻期.html">动态规划：最佳买卖股票时机含冷冻期(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/周总结/20210304动规周末总结.html">动态规划：本周我们都讲了这些（系列七）(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0714.买卖股票的最佳时机含手续费（动态规划）.html">动态规划：买卖股票的最佳时机含手续费(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/动态规划-股票问题总结篇.html">动态规划：股票系列总结篇(opens
+new window)</a></li>
+</ul>
+<h4 id="子序列系列">子序列系列</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0300.最长上升子序列.html">动态规划：最长递增子序列(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0674.最长连续递增序列.html">动态规划：最长连续递增序列(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0718.最长重复子数组.html">动态规划：最长重复子数组(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/1143.最长公共子序列.html">动态规划：最长公共子序列(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/1035.不相交的线.html">动态规划：不相交的线(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0053.最大子序和（动态规划）.html">动态规划：最大子序和(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0392.判断子序列.html">动态规划：判断子序列(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0115.不同的子序列.html">动态规划：不同的子序列(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0583.两个字符串的删除操作.html">动态规划：两个字符串的删除操作(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0072.编辑距离.html">动态规划：编辑距离(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/为了绝杀编辑距离，卡尔做了三步铺垫.html">为了绝杀编辑距离，我做了三步铺垫，你都知道么？(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0647.回文子串.html">动态规划：回文子串(opens
+new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0516.最长回文子序列.html">动态规划：最长回文子序列(opens
+new window)</a></li>
+</ul>
 
                 
               </div>
