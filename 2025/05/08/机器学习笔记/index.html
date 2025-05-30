@@ -124,8 +124,16 @@
 <meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748398451772.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748400504235.png">
 <meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748400612423.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748486108719.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748486133297.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748486716547.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748486757150.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748486849514.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748487609114.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748488425446.png">
+<meta property="og:image" content="https://rain00star.github.io/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748488941788.png">
 <meta property="article:published_time" content="2025-05-08T06:44:44.000Z">
-<meta property="article:modified_time" content="2025-05-28T03:03:36.618Z">
+<meta property="article:modified_time" content="2025-05-30T01:48:08.012Z">
 <meta property="article:author" content="rainstar">
 <meta property="article:tag" content="machine learning">
 <meta name="twitter:card" content="summary_large_image">
@@ -351,7 +359,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          10k words
+          12k words
         
       </span>
     
@@ -362,7 +370,7 @@
         
         
         
-          86 mins
+          96 mins
         
       </span>
     
@@ -942,6 +950,59 @@
 </li>
 </ul>
 <h2 id="无监督学习-2">无监督学习</h2>
+<h3 id="聚类算法">聚类算法</h3>
+<p>聚类是一种无监督学习方法，**通过寻找数据中一种特定类型的结构将相似或相关的数据点自动分组到一起。**与监督学习（如二分类）相比，<strong>无监督学习没有目标标签y</strong>，因此我们需要让算法找到数据中的有趣结构或模式。</p>
+<h4 id="K-means算法">K-means算法</h4>
+<h5 id="具体步骤">具体步骤</h5>
+<ul>
+<li>随机初始化：K-means首先随机猜测簇的中心（称为簇质心 Cluster centroides）。这只是一个初始猜测，可能并不是最佳选择，但它是一个开始。</li>
+<li>K-means的两个关键步骤：K-means算法反复执行两个步骤，直到收敛。这些步骤是：
+<ul>
+<li><strong>将点分配给簇质心</strong>：算法检查每个数据点，判断它离哪个簇质心更近，并将其分配给最近的簇质心。</li>
+<li><strong>移动簇质心</strong>：接着，算法计算每个簇中所有数据点的平均位置，并将簇质心移动到这个平均位置。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748486108719.png" srcset="/img/loading.gif" lazyload alt="1748486108719"></p>
+<p><img src="/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748486133297.png" srcset="/img/loading.gif" lazyload alt="1748486133297"></p>
+<h5 id="算法实现-2">算法实现</h5>
+<ul>
+<li>关键步骤1</li>
+</ul>
+<p><img src="/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748486716547.png" srcset="/img/loading.gif" lazyload alt="1748486716547"></p>
+<ul>
+<li>关键步骤2</li>
+</ul>
+<p><img src="/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748486757150.png" srcset="/img/loading.gif" lazyload alt="1748486757150"></p>
+<p>需要注意的是，**如果一个簇没有分配到任何训练样本，**那么在第二步中更新 Mu k 时会出现问题。在这种情况下，最常见的做法是消除该簇，这样就只剩下 K-1 个簇。或者，如果你确实需要 K 个簇，另一种选择是随机重新初始化该簇质心，希望下一轮能分配到一些点。</p>
+<p>另外，尽管<strong>数据集可能没有明显的分界线</strong>，K-means 仍然可以有效地找到数据的集群结构。这可以帮助你更好地了解你的客户群，并确定最适合他们需求的产品尺寸。例如服装设计的例子：</p>
+<p><img src="/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748486849514.png" srcset="/img/loading.gif" lazyload alt="1748486849514"></p>
+<h5 id="背后的成本函数及优化过程">背后的成本函数及优化过程</h5>
+<p><img src="/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748487609114.png" srcset="/img/loading.gif" lazyload alt="1748487609114"></p>
+<p>成本函数 J 是 K-means 算法试图最小化的目标。它表示为 J(C1,…,Cm, μ1,…,μK)，其中 C1,…,Cm 是数据点到聚类中心的分配，μ1,…,μK 是聚类中心的位置。<strong>成本函数的值是所有数据点到其所分配的聚类中心的平均平方距离。</strong></p>
+<p>优化过程：</p>
+<ul>
+<li>分配数据点到最近的聚类中心：该步骤通过<strong>更新 C1,…,Cm 来尽可能降低成本函数 J，同时保持 μ1,…,μK 固定。</strong></li>
+<li>移动聚类中心：在该步骤中，<strong>保持 C1,…,Cm 固定，但更新 μ1,…,μK 以尽可能降低成本函数或失真。</strong></li>
+</ul>
+<p>**K-means 算法通过最小化成本函数 J 来优化聚类中心的位置。**每个步骤都会调整数据点的分配和聚类中心的位置以减小 J。如果 J 的值不再减小或减小速度非常慢，那么算法可能已经收敛，可以停止迭代。</p>
+<h5 id="随机初始聚类中心位置">随机初始聚类中心位置</h5>
+<ol>
+<li>随机初始化聚类中心：在K-means算法的第一步中，我们需要随机选择K个初始聚类中心。**通常的方法是从训练集中随机挑选K个样本作为初始聚类中心。**这与之前的视频中的随机选择聚类中心的方法略有不同，但这种方法更为常用。</li>
+<li>多次随机初始化：由于K-means算法容易陷入局部最优解，为了找到更好的聚类结果，可以多次运行K-means算法，每次使用不同的随机初始化方法。运行K-means算法后，计算每次迭代得到的聚类结果的代价函数J，最后<strong>选择具有最小代价函数值的聚类结果</strong>。通常情况下，<strong>运行50到1000次随机初始化是比较常见的做法</strong>。</li>
+</ol>
+<p><img src="/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748488425446.png" srcset="/img/loading.gif" lazyload alt="1748488425446"></p>
+<h5 id="确定簇数">确定簇数</h5>
+<ul>
+<li>拐点方法（Elbow Method）:</li>
+</ul>
+<p>尽管在学术文献中有一些用于自动选择k值的技巧，但其中的一个方法叫做“拐点方法”。在这个方法中，你需要运行K-means算法，使用不同的k值，并将成本函数（或者称为失真函数，Distortion Function）J与聚类数量绘制成图。如果你发现成本函数随着聚类数量的增加而显著减少，那么你<strong>可以选择使成本函数显著减少的k值</strong>。然而，拐点方法并不总是能给出一个明确的拐点，因此在实际应用中可能并不总是有用。</p>
+<p><img src="/2025/05/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1748488941788.png" srcset="/img/loading.gif" lazyload alt="1748488941788"></p>
+<ul>
+<li><strong>基于下游任务选择k值</strong></li>
+</ul>
+<p>实际上，通常会将K-means算法生成的聚类用于后续任务。在这种情况下，可以根据K-means在下游任务中的表现来评估k值。例如，在T恤尺寸的例子中，你可以尝试使用k=3和k=5生成聚类，然后根据成本效益分析（如成本、运输、生产等）来决定哪个k值更合适。同样，在图像压缩的例子中，可以根据压缩图像的质量和大小来选择合适的k值。</p>
+<h3 id="异常检测">异常检测</h3>
 
                 
               </div>
